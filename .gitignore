@@ -1,0 +1,28 @@
+# Data - Do NOT track 80GB files
+data/
+Datasets/
+
+# Environments
+.venv/
+.venv_wsl/
+env/
+venv/
+tesis_nk_env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# R
+.Rhistory
+.RData
+.Ruserdata
