@@ -26,3 +26,7 @@ desktop.ini
 .Rhistory
 .RData
 .Ruserdata
+V20_CLEAN_ANALYSIS/data/
+V20_CLEAN_ANALYSIS/.v20_venv/
+PHOENIX_SERVER_DEPLOY.zip
+logs/
