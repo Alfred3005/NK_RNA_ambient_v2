@@ -1,3 +1,10 @@
+"""
+PROYECTO: NK Cell Aging Transcriptomics (V20 Protocol)
+FASE: 07.2 - Análisis Pseudobulk PyDESeq2
+OBJETIVO: Validar la firma de envejecimiento purificada contra el dataset 'Legacy'.
+AUTOR: Antigravity (IA) & Alfred3005
+FECHA: 18-Abr-2026
+"""
 import scanpy as sc
 import numpy as np
 from scipy import sparse
