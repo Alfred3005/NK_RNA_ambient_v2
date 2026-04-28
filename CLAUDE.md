@@ -19,7 +19,8 @@ Soy **Antigravity**, tu asistente de codificación de élite. Mi objetivo es lle
     - Siempre verificar la integridad de los símbolos HGNC.
 
 ## 🛠️ Comandos Frecuentes
-- **Diagnóstico**: `wsl -d Ubuntu /mnt/c/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/V20_CLEAN_ANALYSIS/.v20_venv/bin/python3 V20_CLEAN_ANALYSIS/scripts/01-diagnostic-report.py`
+- **Estado Actual**: `wsl -d Ubuntu /mnt/c/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/V20_CLEAN_ANALYSIS/.v20_venv/bin/python3 scAR_python_validation/scripts/final_stats.py`
+- **Dataset Principal**: `scAR_python_validation/data/v20_python_gold_standard.h5ad`
 - **Limpieza**: `git clean -nd` (dry run).
 
 ## 💎 Obsidian Vault
