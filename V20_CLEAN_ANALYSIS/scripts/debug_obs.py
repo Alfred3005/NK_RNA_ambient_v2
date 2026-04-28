@@ -1,5 +1,9 @@
 import scanpy as sc
-adata = sc.read_h5ad('data/nk_v20_singlets.h5ad')
-print("Unique age_group:", adata.obs['age_group'].unique().tolist())
-print("Value counts:\n", adata.obs['age_group'].value_counts())
-print("Dtype:", adata.obs['age_group'].dtype)
+import pandas as pd
+
+MASTER_ADATA_PATH = "data/raw/131224_full_dataset.h5ad"
+print(f"Scanning master dataset: {MASTER_ADATA_PATH}")
+adata_full = sc.read_h5ad(MASTER_ADATA_PATH, backed='r')
+print(f"Index type: {type(adata_full.obs.index)}")
+print(f"Columns: {adata_full.obs.columns.tolist()}")
+print(f"development_stage sample: {adata_full.obs['development_stage'].head()}")

@@ -1,0 +1,27 @@
+Workflow,Gene,Pct_Detected
+No Correction,GNLY,
+No Correction,GZMB,
+No Correction,PRF1,
+No Correction,MS4A1,
+No Correction,MZB1,
+No Correction,C1QA,
+No Correction,CXCL8,
+No Correction,SPON1,
+No Correction,ZFHX2-AS1,
+No Correction,IGLC2,
+No Correction,TRAC,
+No Correction,TRDC,
+No Correction,TRGC1,
+scAR Corrected,GNLY,77.4715398442181
+scAR Corrected,GZMB,65.06890353505092
+scAR Corrected,PRF1,59.376872378669866
+scAR Corrected,MS4A1,1.6177351707609346
+scAR Corrected,MZB1,0.4194128220491312
+scAR Corrected,C1QA,0.35949670461354105
+scAR Corrected,CXCL8,0.9586578789694428
+scAR Corrected,SPON1,0.0
+scAR Corrected,ZFHX2-AS1,2.5164769322947875
+scAR Corrected,IGLC2,0.0
+scAR Corrected,TRAC,0.0
+scAR Corrected,TRDC,0.0
+scAR Corrected,TRGC1,0.05991611743559017
