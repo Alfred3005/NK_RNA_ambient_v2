@@ -31,4 +31,20 @@
 - [x] Consolidation of 1,582 donor files.
 - [x] Adaptive QC (ddqc).
 - [x] Gold Standard Purification (200 cell threshold).
-- [ ] Differential Expression (Adult vs Old).
+- [x] Differential Expression (Adult vs Old) - Pseudobulk PyDESeq2.
+- [ ] Functional Enrichment (GO/KEGG).
+
+---
+
+## 🔬 Analysis Phase: DE "Adult vs Old" (2026-04-28)
+
+We performed a comparative DE analysis using PyDESeq2 on the Gold Standard dataset (547 donors).
+
+### Results:
+- **Significance**: 232 genes found (padj < 0.05, |LFC| > 1).
+- **Venn Contrast (Original vs V20)**:
+  - Original Signature: 83 genes.
+  - Intersection (15 genes): `SERPINA1`, `CST3`, `LST1`, `FAM131B-AS2`, `DEGS2`, `AIF1`, `LINC00513`, `SPON1`, `ANGPT2`, `ANKRD20A4P`, `JAKMIP1`, `ST3GAL1-DT`, `SIDT1-AS1`, `DUOX1`, `HBA2`.
+  - Purified Out: 68 genes (Noise/Contamination removed).
+  - Emergent Hits: 217 genes (Increased sensitivity).
+- **Outcome**: Successfully rescued the NK identity and identified a robust inflammatory aging signature.
