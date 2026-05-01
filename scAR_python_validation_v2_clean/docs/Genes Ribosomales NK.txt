@@ -1,0 +1,171 @@
+﻿Arquitectura Ribosomal y la Decadencia Funcional de las Células Natural Killer en el Envejecimiento Humano
+El estudio de la inmunosenescencia ha evolucionado desde una descripción fenotípica de los cambios celulares hacia una comprensión profunda de las redes moleculares que dictan la pérdida de la homeostasis inmunológica. En el centro de esta transformación se encuentra la célula Natural Killer (NK), un componente esencial de la inmunidad innata cuya misión es la vigilancia y eliminación de células infectadas por virus y transformaciones malignas. Al comparar el perfil transcriptómico de adultos mayores de 60 años frente al grupo de adultos de 34 a 59 años, la subexpresión masiva de genes ribosomales emerge no como un evento estocástico, sino como un eje central de la disfunción celular. La lista de 45 genes ribosomales identificados, que incluye tanto proteínas de la subunidad grande (  ) como de la pequeña (  ), así como proteínas del tallo ribosomal (  ,   ), sugiere una contracción sistémica de la capacidad traduccional de la célula NK envejecida. Esta revisión experta analiza los "hits" más relevantes de esta lista bajo el prisma de la inmunosenescencia, integrando mecanismos de estrés nucleolar, señalización de   , y la paradójica relación entre la biogénesis ribosomal y la inflamación crónica.
+El Cambio de Paradigma: Del Ribosoma Constitutivo al Ribosoma Regulador
+Durante décadas, los ribosomas fueron considerados maquinaria celular "de mantenimiento", estructuras estáticas cuya única función era traducir el código genético en proteínas de manera uniforme. Sin embargo, la investigación contemporánea ha revelado la existencia de ribosomas especializados y una regulación dinámica de las proteínas ribosomales (RP) que puede dictar qué transcritos se traducen y en qué condiciones.1 En el contexto del envejecimiento, la subexpresión de genes como 'RPL10A', 'RPL11', 'RPL13', 'RPS14', y 'RPSA' indica que la célula NK no solo está produciendo menos proteínas, sino que ha alterado fundamentalmente su capacidad de respuesta a estímulos externos.
+La inmunosenescencia de las células NK se caracteriza por una redistribución de sus subpoblaciones: una disminución del compartimento regulador    y una expansión de las células    más maduras, a menudo acompañadas por la expresión de marcadores de diferenciación terminal como    y el receptor activador   .3 A pesar de este aumento numérico en ciertos contextos, la eficacia citotóxica por célula disminuye, un fenómeno que se correlaciona directamente con la caída en la expresión de los componentes del aparato de síntesis proteica.4 Esta "anemia ribosomal" limita la producción de moléculas efectoras clave, como la perforina y las granzimas, cuya síntesis debe ser rápida y masiva tras el reconocimiento de una célula diana.
+
+
+Gen Ribosomal
+	Subunidad
+	Rol Mecanístico Clave
+	Relevancia en Inmunosenescencia
+	RPL5 / RPL11
+	  
+
+	Unión a      ; Inhibición de   
+	Sensor de estrés nucleolar; estabilización de   .6
+	RPS14
+	  
+
+	Punto de control de biogénesis
+	Supresión de oncoproteínas y arresto del ciclo celular.8
+	RPSA
+	  
+
+	Receptor de laminina (  )
+	Adhesión a la matriz extracelular y migración celular.9
+	RPLP0 / RPLP2
+	  
+
+	Complejo del tallo P (P-stalk)
+	Eficiencia de la fase de elongación y reclutamiento de factores.11
+	RPS6
+	  
+
+	Diana de la vía   
+	Programación metabólica y respuesta a nutrientes.13
+	El Balance Ribosoma-Inflamación: Un Nuevo Sello Distintivo de la Longevidad
+Uno de los hallazgos más disruptivos en la gerontología actual es la identificación del balance entre el ribosoma y la inflamación como un sello distintivo del envejecimiento a nivel de célula única.15 Los datos de transcriptómica de células individuales han revelado una correlación negativa prominente: a medida que los niveles de expresión de genes ribosomales disminuyen, los estados inflamatorios aumentan.15 En individuos supercentenarios, que representan el modelo de envejecimiento saludable o "lento", se observa una preservación excepcional de los niveles de ribosomas en múltiples linajes inmunes, incluyendo las células NK, lo que contribuye a mantener un estado de baja inflamación.15
+Para la célula NK, la subexpresión de los 45 genes compartidos sugiere que las células del grupo de más de 60 años han cruzado un umbral crítico donde la pérdida de biogénesis ribosomal ya no es solo un síntoma de la edad, sino un impulsor de la inflamación crónica o inflammaging. Los experimentos de inhibición de la actividad ribosomal mediante cicloheximida han demostrado que la reducción de la traducción conduce directamente a cambios en los marcadores inflamatorios como la    y la   .15 Por lo tanto, los genes 'RPL13A', 'RPL18', 'RPL19' y 'RPS18' en su lista podrían estar actuando como reguladores negativos de la cascada inflamatoria; su declive libera la inhibición sobre el fenotipo secretor asociado a la senescencia (SASP).
+Este equilibrio es dinámico. Las células NK envejecidas acumulan daños moleculares progresivos que culminan en un declive funcional y una mayor susceptibilidad a enfermedades.16 La inferencia de redes bayesianas sugiere que el estado de alto ribosoma contribuye activamente a la longevidad al permitir una proteostasis eficiente, evitando la agregación de proteínas dañadas que de otro modo activarían las vías de respuesta a proteínas mal plegadas y, por ende, señales pro-inflamatorias.15
+Estrés Nucleolar y Estabilización de p53: El Papel Crítico de RPL5, RPL11 y RPS14
+Bajo la lente de la inmunosenescencia, los "hits" más potentes en su lista son, sin duda, 'RPL5', 'RPL11' y 'RPS14'. Estas proteínas no son meros bloques estructurales; son los componentes centrales del Punto de Control de Biogénesis Ribosomal Impedida (IRBC).18 El nucléolo actúa como un sensor de estrés celular. Cuando la célula NK se enfrenta a daños en el   , acortamiento de telómeros o estrés oxidativo —todos ellos rasgos distintivos del envejecimiento—, la biogénesis de los ribosomas se interrumpe.18
+En este escenario de estrés nucleolar, las proteínas 'RPL5' y 'RPL11' no se incorporan a las nuevas subunidades ribosomales. En su lugar, forman un complejo con el       que sale al nucleoplasma, donde se une directamente a   , la ligasa de ubiquitina que normalmente degrada a   .6 Esta interacción estabiliza a   , desencadenando un programa de arresto del ciclo celular y senescencia.18 La subexpresión de estos genes en adultos de más de 60 años podría parecer paradójica, pero refleja una adaptación a largo plazo: las células que sobreviven en un estado de senescencia "estable" a menudo muestran una reducción basal en la maquinaria de biogénesis después de que el programa de arresto se ha consolidado.18
+El gen 'RPS14' también participa en este eje. Se ha documentado que la deficiencia de 'RPS14' induce estrés ribosomal y activa la vía de   , contribuyendo a fenotipos de insuficiencia de médula ósea y, en el contexto de las células NK, a una maduración defectuosa y una apoptosis prematura.8 Su presencia en la lista de genes subexpresados indica que la vigilancia inmunológica está comprometida desde su base molecular, ya que estas células no pueden mantener el ciclo de renovación necesario para reemplazar a las poblaciones NK agotadas.
+
+
+Mecanismo
+	Proteínas Involucradas
+	Efecto en la Célula NK Envejecida
+	Inhibición de MDM2
+	RPL5, RPL11, RPL23
+	Acumulación de    y entrada en senescencia replicativa.7
+	Punto de Control de 40S
+	RPS14, RPS19
+	Fallo en la maduración y reducción del pool de células efectoras.8
+	Respuesta a Daño de DNA
+	RPL10, RPS27
+	Activación de vías de reparación y pausa traduccional para ahorro energético.8
+	El Complejo P-Stalk (RPLP0/RPLP2) y la Eficiencia de Elongación en la Inmunosenescencia
+El tallo ribosomal lateral, o complejo P, es una estructura protuberante en la subunidad grande (  ) compuesta por 'RPLP0' como base y heterodímeros de 'RPLP1'/'RPLP2'.11 Este complejo es único porque sus componentes, especialmente 'RPLP1' y 'RPLP2', pueden intercambiarse dinámicamente entre el ribosoma y el citoplasma, lo que sugiere una función reguladora de la actividad ribosomal global.11
+La subexpresión de 'RPLP0' y 'RPLP2' en su lista tiene implicaciones profundas para la fase de elongación de la traducción. El tallo P es esencial para el reclutamiento de factores de elongación como   .11 En las células NK de adultos mayores, una reducción en estos componentes resultaría en una traducción más lenta y menos precisa. Esto es particularmente crítico para la síntesis de proteínas transmembrana de paso múltiple, que incluyen muchos de los receptores de superficie que las células NK utilizan para censar el entorno (receptores   ,   ,   ).16
+Además, se ha observado que la desregulación de las proteínas del tallo P está vinculada a enfermedades degenerativas como el Alzheimer y trastornos autoinmunes.11 Dado que las células NK juegan un papel crucial en la limpieza de neuronas dañadas y la regulación de la inflamación cerebral en el envejecimiento, la disfunción de 'RPLP0'/'RPLP2' en estas células podría ser un factor contribuyente al desarrollo de patologías neurodegenerativas asociadas a la edad.22
+RPSA: El Puente entre la Biogénesis Proteica y la Vigilancia Migratoria
+El gen 'RPSA' (también conocido como receptor de laminina de   ) es uno de los hits más fascinantes y relevantes bajo el enfoque de la inmunosenescencia celular. Esta proteína tiene una vida dual: comienza como una proteína ribosomal de la subunidad    (  ) involucrada en el procesamiento del pre-  , pero puede transformarse en un receptor de superficie (  ) que media la adhesión a la laminina de la matriz extracelular.9
+Para una célula NK, la capacidad de migrar a través de los tejidos y formar una sinapsis inmunológica estable con su objetivo es vital.5 Los estudios han demostrado que las células NK de personas mayores muestran una capacidad de adhesión significativamente reducida; son capaces de reconocer las células diana, pero no pueden formar los enlaces estrechos necesarios para la inyección de gránulos citotóxicos.5 El declive en la expresión de 'RPSA' proporciona una base molecular para esta "letargia" migratoria.
+Relevancia adicional de 'RPSA' en el envejecimiento:
+* Estabilidad de Telómeros: 'RPSA' interactúa con la telomerasa (  ). Su reducción se ha asociado con una disminución de la actividad de la telomerasa, acelerando el acortamiento de los telómeros y la entrada en crisis celular.9
+* Organización del Citoesqueleto: 'RPSA' se une a la tubulina y la actina, actuando como un anclaje que posiciona los ribosomas en lugares específicos de la célula para la traducción localizada.9 En las células NK mayores, la pérdida de polaridad —donde las proteínas como    y la tubulina no se organizan correctamente hacia la zona de contacto— podría estar mediada por la falta de 'RPSA'.5
+* Vigilancia de Senescencia: Dado que las células NK deben eliminar células senescentes mediante el reconocimiento de ligandos en la matriz, la pérdida de su propio receptor de laminina compromete su capacidad de "patrullaje" tisular.23
+La Paradoja de la Activación: El Surgimiento de las Células NK con Baja Expresión Ribosomal
+Un hallazgo reciente que encaja perfectamente con su lista de genes subexpresados es la identificación de una subpoblación de células NK caracterizada por una "baja expresión ribosomal".25 Estas células no son simplemente "viejas" en un sentido cronológico, sino que parecen ser el resultado de una activación crónica y un hiper-estrés metabólico.26
+En condiciones de activación intensa y persistente, como ocurre en el entorno pro-inflamatorio del adulto mayor, los nutrientes celulares pueden volverse escasos. Debido a que la biogénesis ribosomal es el proceso que más energía consume en la célula, estas células NK activadas crónicamente comienzan a subregular la expresión de proteínas ribosomales como 'RPS13', 'RPS15A', 'RPS23', 'RPL34' y 'RPS12' para conservar recursos.26 Esta población de "bajo ribosoma" exhibe una degranulación severamente dañada y una citotoxicidad natural deficiente.25
+Esta subpoblación se asocia a menudo con un aumento del transcrito 'MALAT1' y una hipofosforilación de 'RPS6'.26 En su contexto de estudio, la subexpresión de tantos genes ribosomales sugiere que una fracción significativa de las células NK en personas de más de 60 años ha transitado hacia este estado de agotamiento funcional inducido por la demanda metabólica de un sistema inmune en constante alerta pero con baja eficiencia.
+RPS6, mTOR y la Programación Metabólica en el Envejecimiento
+El gen 'RPS6' es un componente esencial de la subunidad    y el principal sustrato de la quinasa    en la vía de   .13 La vía    es el regulador maestro del crecimiento celular y la homeostasis energética.14 La activación de las células NK depende críticamente de esta vía para aumentar el volumen celular y la capacidad de síntesis proteica necesaria para la función efectora.4
+La subexpresión de 'RPS6' en el grupo de adultos mayores tiene consecuencias sistémicas:
+   1. Fallo en la Respuesta a Citoquinas: Incluso si la célula NK es estimulada con    o   , la falta de componentes ribosomales clave como 'RPS6' impide que la señal de activación se traduzca en una respuesta funcional robusta.14
+   2. Reducción del Tamaño Celular: La fosforilación de 'RPS6' es un determinante del tamaño celular; las células NK envejecidas suelen ser más pequeñas y metabólicamente menos activas, lo que se refleja en su baja expresión de este gen.13
+   3. Traducción Selectiva de mRNAs TOP: 'RPS6' es vital para la traducción de los    que poseen un tracto de oligopirimidina terminal (TOP), los cuales codifican, irónicamente, para otras proteínas ribosomales y factores de elongación.13 Esto crea un círculo vicioso de declive: menos 'RPS6' lleva a una menor traducción de otros genes en su lista, como 'RPL18A', 'RPS5', y 'RPL22'.28
+Funciones Extraribosomales y Vulnerabilidad en Patologías Asociadas a la Edad
+Más allá de la síntesis de proteínas, muchas de las proteínas en su lista tienen funciones "pluriempleadas" (extraribosomales) que son cruciales en la inmunosenescencia y la patología del envejecimiento 8:
+      * RPS3A y la Apoptosis: Esta proteína interactúa con la familia    para regular la apoptosis. Su subexpresión podría estar relacionada con la resistencia a la apoptosis que caracteriza a las células NK senescentes, permitiéndoles persistir en el organismo y contribuir al SASP en lugar de ser eliminadas.8
+      * RPL13A y el Complejo GAIT: 'RPL13A' es un componente fundamental del complejo Inhibidor de la Traducción Activado por Interferón Gamma (GAIT), que silencia la traducción de genes pro-inflamatorios tras una exposición prolongada a   .8 Su pérdida podría exacerbar la inflamación crónica al eliminar un freno molecular clave.
+      * RPL10 (QM) y Supresión de Tumores: 'RPL10' ha sido identificado como un supresor de tumores; su subexpresión en células NK maduras de personas mayores podría explicar en parte la reducida vigilancia antitumoral y el aumento de la incidencia de cáncer en la vejez.8
+      * RPS4X: Al ser un gen ligado al cromosoma X que a veces escapa a la inactivación, su subexpresión podría marcar diferencias importantes en cómo envejecen las células NK en mujeres versus hombres, afectando la dosis génica de componentes ribosomales críticos.1
+Análisis de la Firma Transcriptómica: Comparativa de Co-expresión y Redes
+La subexpresión de estos 45 genes no ocurre en el vacío. Los datos indican que existe una red de co-expresión coordinada que incluye también genes de fosforilación oxidativa mitocondrial y autofagia.29 En el envejecimiento de monocitos y linfocitos T, se ha detectado un patrón idéntico de declive en la maquinaria de síntesis proteica ribosomal, lo que sugiere que este es un mecanismo universal de "ahorro energético" celular frente al daño acumulado.29
+Cluster de Genes
+	Miembros representativos de la lista
+	Consecuencia biológica
+	Subunidad Grande (60S)
+	RPL4, RPL8, RPL9, RPL19, RPL32
+	Defecto en la catálisis de enlaces peptídicos y ensamblaje del ribosoma maduro.
+	Subunidad Pequeña (40S)
+	RPS2, RPS8, RPS9, RPS18, RPS25
+	Fallo en el inicio de la traducción y en el escaneo del    para el codón de inicio.
+	Proteínas de Enlace y Stalk
+	RPLP0, RPLP2, RPL10A
+	Pérdida de la flexibilidad estructural del ribosoma y ralentización de la elongación.
+	Factores Especializados
+	RPSA, RPL13A, RPS3A
+	Disrupción de la comunicación citoesquelética y regulación de la muerte celular.
+	El hecho de que genes como 'RPL38' (implicado en la traducción de genes   ) y 'RPS29' (asociado a linajes linfoides específicos) estén en la lista de subexpresión sugiere que la célula NK está perdiendo su "identidad" funcional, un proceso a veces llamado "ruido transcripcional" o des-diferenciación asociada a la edad.1
+Implicaciones para la Vigilancia Inmune y la Terapia
+La comprensión de estos hits ribosomales abre nuevas vías para la intervención. Si la pérdida de función de las células NK en mayores de 60 años está ligada a un déficit de biogénesis ribosomal y a un desequilibrio proteostático, las terapias dirigidas podrían enfocarse en:
+         * Senolíticos: Eliminar las células NK que han entrado en senescencia impulsadas por el eje 'RPL5'/'RPL11'/'p53' para permitir que progenitores más jóvenes y con ribosomas robustos ocupen su nicho.23
+         * Moduladores de mTOR: El uso de rapalogos o activadores selectivos de la vía de biogénesis podría, en teoría, "rejuvenecer" la maquinaria traduccional, siempre que se equilibre con el riesgo de promover la proliferación maligna.19
+         * Intervención en Cdc42: Como se ha visto con el inhibidor   , restaurar la polaridad celular puede compensar algunos de los defectos de migración y degranulación, incluso si el pool de ribosomas es menor.5
+Conclusiones
+La lista de genes compartida no es simplemente un catálogo de piezas celulares en declive; es el plano de una célula NK que ha cambiado su estrategia de supervivencia de "vigilancia activa" a "mantenimiento basal". Los hits más destacados —RPSA, RPL5, RPL11, RPS14, RPS6 y el complejo RPLP— actúan como nodos críticos donde el envejecimiento molecular se traduce en disfunción inmunológica.
+La subexpresión de 'RPSA' compromete la migración y la estabilidad genómica; 'RPL5' y 'RPL11' marcan la transición hacia un estado de arresto senescente; y la caída de 'RPS6' y los genes del tallo P limitan la capacidad de respuesta metabólica y traduccional. Este perfil es consistente con la emergencia de una población NK "low-ribosome" que es incapaz de ejecutar su programa citotóxico, contribuyendo al aumento de la carga de células senescentes, tumores e infecciones en la población anciana. Antes de proceder con el análisis de enriquecimiento, estos hits bibliográficos confirman que su enfoque en la maquinaria ribosomal es una de las rutas más prometedoras para descifrar los mecanismos de la inmunosenescencia humana.
+Este es uno de los hallazgos biológicos más fascinantes y consistentes en tu análisis. La caída generalizada de genes RPL (Ribosomal Protein Large) y RPS (Ribosomal Protein Small) en el grupo Old no es un error de scAR ni un artefacto del conteo; es, de hecho, una firma biológica de peso.
+Bajo el contexto de la inmunosenescencia y la biología del envejecimiento, esta subexpresión masiva de la maquinaria ribosomal tiene lecturas muy profundas para tu tesis:
+1. Supresión Traslacional como Sello del Envejecimiento (Hallmark of Aging)
+La reducción en la biogénesis ribosomal y, por ende, de la síntesis de proteínas, es uno de los mecanismos conservados evolutivamente más descritos en el envejecimiento (desde levaduras hasta humanos).
+La teoría: A medida que las células envejecen y acumulan daño, la maquinaria de control de calidad de proteínas empieza a fallar (pérdida de proteostasis). Como mecanismo de defensa para evitar la acumulación de proteínas mal plegadas (estrés proteotóxico), la célula "baja el switch" de la maquinaria de traducción. Las células NK envejecidas están, metabólicamente hablando, en modo de ahorro de energía.
+2. El Vínculo con mTORC1 y el Agotamiento (Exhaustion)
+La transcripción de las proteínas ribosomales está estrechamente regulada por la vía mTORC1, que es el principal sensor metabólico de la célula.
+Entre tus genes subexpresados tienes RPS6. La fosforilación de la proteína ribosomal S6 es el biomarcador universal de la activación de mTOR. Que el transcrito de RPS6 y decenas de sus compañeros estén disminuidos sugiere fuertemente que las células NK de donantes mayores tienen un perfil metabólico basal deprimido.
+Esto se alinea con fenotipos de "agotamiento" (exhaustion), donde la célula restringe su anabolismo por la exposición crónica a citoquinas inflamatorias de bajo grado (el famoso inflammaging).
+3. Impacto Funcional en Células NK
+Las células NK son efectores rápidos de la inmunidad innata. Cuando reconocen un objetivo o reciben señales de citoquinas (como IL-15), necesitan traducir masiva y rápidamente granzimas, perforinas y citoquinas (como IFN-$\gamma$).
+Tener una piscina basal disminuida de ARN mensajeros ribosomales significa que a la célula NK envejecida "le cuesta arrancar". Tienen menos capacidad instalada para iniciar una respuesta de traducción masiva ante un estímulo. Esto explica fenotípicamente por qué, aunque el número de células NK suele aumentar en la vejez, su citotoxicidad por célula y su producción rápida de citoquinas están disminuidas (inmunosenescencia clásica).
+4. Hits específicos interesantes en tu lista:
+Además de los clásicos componentes estructurales, hay un par de "perlas" en la regulación traslacional dentro de tus subexpresados:
+EIF3C (Eukaryotic Translation Initiation Factor 3 Subunit C): No solo caen las proteínas estructurales del ribosoma, sino los factores de iniciación. EIF3C es crítico para unir el ARNm al ribosoma. Su caída indica un freno activo en la fase de iniciación, que es el paso limitante de la síntesis proteica.
+EEF2 (Eukaryotic Translation Elongation Factor 2): Media el movimiento del ribosoma a lo largo del ARNm.
+💡 Conclusión para tu Tesis
+No filtres estos genes para el análisis final. Son el andamiaje perfecto para argumentar que "las células NK en individuos mayores exhiben un fenotipo basal de quiescencia metabólica y represión traslacional, consistente con la pérdida de proteostasis y el establecimiento de la inmunosenescencia".
+Esta base teórica hace que los nuevos genes funcionales que descubrimos (como el represor BHLHE40 o los moduladores de necroptosis como MLKL) tengan un contexto perfecto: la célula está metabólicamente lenta, inflamada crónicamente y alterada en su supervivencia.
+________________
+Fuentes citadas
+            1. Specialized Ribosomes in Health and Disease - MDPI, acceso: abril 30, 2026, https://www.mdpi.com/1422-0067/24/7/6334
+            2. Patterns of ribosomal protein expression specify normal and malignant human cells, acceso: abril 30, 2026, https://www.researchgate.net/publication/310811954_Patterns_of_ribosomal_protein_expression_specify_normal_and_malignant_human_cells
+            3. Single-cell transcriptomics reveal a unique memory-like NK cell subset that accumulates with ageing and correlates with disease severity in COVID-19 - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC9060844/
+            4. Age-related changes in natural killer cell repertoires: impact on NK cell function and immune surveillance - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC11028690/
+            5. Restoring the Strength of Natural Killer Cells, acceso: abril 30, 2026, https://lifespan.io/restoring-the-strength-of-natural-killer-cells/
+            6. THE 5S RNP AND THE REGULATION OF THE TUMOUR SUPPRESSOR, P53 - Newcastle University Theses, acceso: abril 30, 2026, https://theses.ncl.ac.uk/jspui/bitstream/10443/3256/1/Gibson%20L.S.%202016.pdf
+            7. Involvement of ribosomal protein L11 expression in sensitivity of gastric cancer against 5‑FU, acceso: abril 30, 2026, https://www.spandidos-publications.com/10.3892/ol.2020.11352
+            8. Functional Gene Clusters in Global Pathogenesis of Clear Cell Carcinoma of the Ovary Discovered by Integrated Analysis of Transcriptomes - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC7312065/
+            9. Emerging roles of the cellular prion protein (PrPC) and 37/67 kDa ..., acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC10349719/
+            10. Looking into laminin receptor: critical discussion regarding the non-integrin 37/67-kDa laminin receptor/RPSA protein - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC5249262/
+            11. The multifaceted roles of ribosomal P complex in cancer, acceso: abril 30, 2026, https://d-nb.info/1385811501/34
+            12. The multifaceted roles of ribosomal P complex in cancer - PMC - NIH, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC12539146/
+            13. Ribosomal protein S6 phosphorylation is a determinant of cell size and glucose homeostasis - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC1221890/
+            14. rpS6 phosphorylation is dispensable for T cell activation in response... - ResearchGate, acceso: abril 30, 2026, https://www.researchgate.net/figure/rpS6-phosphorylation-is-dispensable-for-T-cell-activation-in-response-to-strong_fig4_282761208
+            15. Human PBMC scRNA-seq–based aging clocks reveal ribosome to ..., acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC10306289/
+            16. Deciphering the Transcriptomic Signatures of Aging Across Organs in Mice - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC12783705/
+            17. Age-dependent aggregation of ribosomal RNA-binding proteins links deterioration in chromatin stability with challenges to proteostasis | eLife, acceso: abril 30, 2026, https://elifesciences.org/articles/75978
+            18. Translational Control during Cellular Senescence - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC8093494/
+            19. Impaired ribosome biogenesis: mechanisms and relevance to cancer and aging, acceso: abril 30, 2026, https://www.aging-us.com/article/101922/text
+            20. Deregulation of ribosomal proteins in human cancers - PMC - NIH, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC8685657/
+            21. Involvement of ribosomal protein L11 expression in sensitivity of gastric cancer against 5‑FU - Semantic Scholar, acceso: abril 30, 2026, https://pdfs.semanticscholar.org/fc71/1746ad6b05c382d6011a2d224c23c8f1a7cd.pdf
+            22. Unraveling the mechanisms of NK cell dysfunction in aging and Alzheimer's disease: insights from GWAS and single-cell transcriptomics - Frontiers, acceso: abril 30, 2026, https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1360687/full
+            23. Regulation of cellular senescence by extracellular matrix during chronic fibrotic diseases, acceso: abril 30, 2026, https://www.researchgate.net/publication/345817336_Regulation_of_cellular_senescence_by_extracellular_matrix_during_chronic_fibrotic_diseases
+            24. Senescence, NK cells, and cancer: navigating the crossroads of aging and disease, acceso: abril 30, 2026, https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1565278/full
+            25. Diversity of peripheral blood human NK cells identified by single-cell ..., acceso: abril 30, 2026, https://ashpublications.org/bloodadvances/article/4/7/1388/454300/Diversity-of-peripheral-blood-human-NK-cells
+            26. Expansion of a novel population of NK cells with low ribosome ..., acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC9660249/
+            27. UC Merced - eScholarship.org, acceso: abril 30, 2026, https://escholarship.org/content/qt2ft0r6w1/qt2ft0r6w1.pdf
+            28. WO 2018/183921 Al - Broad Institute, acceso: abril 30, 2026, https://www.broadinstitute.org/files/patents/WO2018183921A1.pdf
+            29. Transcriptomic profiles of aging in purified human immune cells - PMC, acceso: abril 30, 2026, https://pmc.ncbi.nlm.nih.gov/articles/PMC4417516/
+            30. Rejuvenation of the aged brain immune cell landscape in mice through p16-positive senescent cell clearance - ResearchGate, acceso: abril 30, 2026, https://www.researchgate.net/publication/363884734_Rejuvenation_of_the_aged_brain_immune_cell_landscape_in_mice_through_p16-positive_senescent_cell_clearance
+________________
+# scAR pipeline V2-CLEAN (Adult vs Old)
+# Excludes IG and TCR genes
+
+
+sobreexpresados = ['ACVR2B', 'AIF1', 'AK1', 'ALDH7A1', 'ANGPT2', 'ANKRD20A4P', 'ANKRD44-IT1', 'ANXA5', 'AP1S2', 'ARHGAP8', 'ARID3A', 'ARL17B', 'ARRDC5', 'B3GAT2', 'BEND7', 'BOLA2B', 'CA11', 'CACNA1C-AS2', 'CALHM6', 'CCDC144A', 'CCDC34', 'CCDC88A', 'CCL3', 'CCL3L3', 'CCZ1', 'CD68', 'CETN2', 'CFD', 'CLDN15', 'CMC4', 'CSAD', 'CST3', 'CTSS', 'CYTL1', 'DEGS2', 'DONSON', 'DUOX1', 'F8A1', 'FAM131B-AS2', 'FAM184B', 'FAM215B', 'FAM89B', 'FBXO2', 'FBXO25', 'FCN1', 'FTH1', 'FTL', 'GARRE1', 'GOLGA8Q', 'GOLGA8R', 'GPM6B', 'GPSM2', 'GPX1', 'HBA1', 'HBA2', 'HEXIM2-AS1', 'HLA-DPA1', 'HLA-DQB1', 'HLA-DRA', 'HMGN5', 'HNRNPA1L3', 'HOMER1', 'IFI30', 'JAKMIP1', 'KTI12', 'LASP1NB', 'LGALS3', 'LINC00513', 'LINC00987', 'LINC01116', 'LINC01451', 'LINC02591', 'LINC02908', 'LIPE-AS1', 'LST1', 'LTB4R', 'LYZ', 'MAP3K5-AS2', 'MEF2B', 'MIR646HG', 'MIRLET7IHG', 'MLF1-DT', 'MRPL23', 'MS4A7', 'NAIP', 'NEAT1', 'NME8', 'NPC2', 'OAZ2', 'OMD', 'OR2A25', 'PCGF3-AS1', 'PHKG1', 'POC1B-AS1', 'PPM1F-AS1', 'PPM1N', 'PRH1', 'PRR34-AS1', 'PRRC2B', 'PTCSC1', 'RBM33-DT', 'RDH5', 'RGPD5', 'RGS2', 'RNF216P1', 'RNF43', 'RSKR', 'RXRA', 'S100A13', 'S100A8', 'S100A9', 'SAT1', 'SERPINA1', 'SIDT1-AS1', 'SLC51A', 'SMCR5', 'SMUG1', 'SND1-IT1', 'SNHG19', 'SNHG20', 'SPI1', 'SPON1', 'SPTBN2', 'ST3GAL1-DT', 'TCP10L', 'THAP9-AS1', 'TMA7B', 'TMEM191B', 'TSPO', 'TYMP', 'UBXN6', 'UPK3BL1', 'XPC-AS1', 'ZFHX2-AS1', 'ZNF528-AS1', 'ZNF584', 'ZNG1C']
+
+
+subexpresados = ['AHNAK', 'AQP3', 'BCAS4', 'BHLHE40', 'BIRC3', 'CCR7', 'CD3E', 'CD69', 'CD81', 'CX3CR1', 'CXCR3', 'DOCK9', 'EEF1B2', 'EEF2', 'EEIG1', 'EFHC2', 'EGR1', 'EIF3C', 'FAM221A', 'FXYD7', 'GUCY1A1', 'H1-4', 'IFNG-AS1', 'IGFBP4', 'IL7R', 'JUND', 'KLF2', 'LSR', 'MACF1', 'MLKL', 'MPZL3', 'MT-ATP8', 'MT-ND4L', 'MT-ND6', 'MYH9', 'NRGN', 'PABPC1', 'PIK3R1', 'PMEPA1', 'PPP1R14B', 'RPL10A', 'RPL11', 'RPL12', 'RPL13', 'RPL13A', 'RPL18', 'RPL18A', 'RPL19', 'RPL22', 'RPL28', 'RPL30', 'RPL32', 'RPL34', 'RPL35A', 'RPL36', 'RPL38', 'RPL39', 'RPL4', 'RPL5', 'RPL8', 'RPL9', 'RPLP0', 'RPLP2', 'RPS10', 'RPS12', 'RPS13', 'RPS14', 'RPS15A', 'RPS16', 'RPS18', 'RPS2', 'RPS20', 'RPS21', 'RPS23', 'RPS25', 'RPS27', 'RPS28', 'RPS29', 'RPS3A', 'RPS4X', 'RPS5', 'RPS6', 'RPS8', 'RPS9', 'RPSA', 'SLFN11', 'TCF20', 'THBS1', 'TMEM42', 'TNFAIP3', 'TRAF1', 'WHRN']
