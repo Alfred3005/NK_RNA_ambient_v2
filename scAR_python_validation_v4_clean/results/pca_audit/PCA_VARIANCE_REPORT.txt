@@ -1,0 +1,52 @@
+
+    # 📊 Reporte Analítico del Consejo Nova: Auditoría de Varianza PCA
+
+    ## 1. Relación entre Componentes Principales y Complejidad
+    El Análisis de Componentes Principales (PCA) revela si la complejidad transcriptómica domina la varianza.
+    - Correlación de PC1 con n_genes: r = 0.5624 (p=0.00e+00)
+    - Correlación de PC1 con total_counts: r = 0.1081 (p=0.00e+00)
+    
+    ## 2. Descomposición de la Varianza (Varianza Explicada en PC1)
+    Mediante un modelo lineal (OLS), cuantificamos cuánto de la varianza en PC1 es explicada por factores biológicos vs. técnicos.
+    - R² de Age Group (Biológico): 22.6787%
+    - R² de Assay (Técnico): 65.6696%
+    
+    ## 3. Genes Conductores (Loadings del PC1)
+    Estos genes son los principales responsables de posicionar a las células a lo largo del eje principal de varianza.
+    
+    Top 15 Genes Positivos en PC1:
+    feature_name
+RPS29     0.193479
+RPS15A    0.191361
+RPS14     0.191318
+RPS27     0.188587
+RPL21     0.175597
+RPLP1     0.153006
+RPL23A    0.113020
+RPL7      0.111236
+RPS3      0.101486
+CD3D      0.078289
+CD52      0.066775
+DUSP2     0.066429
+IL7R      0.064320
+CD8B      0.061254
+FOS       0.060289
+    
+    Top 15 Genes Negativos en PC1:
+    feature_name
+TMSB4X   -0.169604
+FCER1G   -0.169087
+TYROBP   -0.167217
+KLRB1    -0.157128
+MALAT1   -0.154974
+NEAT1    -0.152943
+S100A4   -0.148657
+CCL3     -0.148436
+FTL      -0.144100
+CCL4     -0.139591
+TRDC     -0.133227
+MT-ND4   -0.131657
+ID2      -0.129806
+FTH1     -0.127256
+PLAC8    -0.124706
+    

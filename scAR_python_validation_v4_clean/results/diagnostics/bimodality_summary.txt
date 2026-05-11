@@ -1,0 +1,30 @@
+
+--- Distribution by assay ---
+assay       10x 3' transcription profiling  10x 3' v2  10x 3' v3  10x 5' transcription profiling  10x 5' v1  10x 5' v2  Seq-Well  Smart-seq2
+peak_group                                                                                                                                  
+High_Peak                             2699      10275       8533                               3       5836      81564      1232          32
+Low_Peak                               995      75029       1147                               0       1448       1112      1963          35
+
+--- Distribution by sex ---
+sex         female   male
+peak_group               
+High_Peak    51846  58328
+Low_Peak     44729  37000
+
+--- Distribution by age_group ---
+age_group   adult    old
+peak_group              
+High_Peak   76413  33761
+Low_Peak    19600  62129
+
+--- Distribution by dataset_id ---
+dataset_id  3c75a463-6a87-4132-83a8-c3002624394d  3faad104-2ab8-4434-816d-474d8d2641db  8c42cfd0-0b0a-46d5-910c-fc833d83c45e  9dbab10c-118d-496b-966a-67f1763a6b7d  19e46756-9100-4e01-8b0e-23b557558a4c  30cd5311-6c09-46c9-94f1-71fe4b91813c  53d208b0-2cfd-4366-9866-c3c6114081bc  59b69042-47c2-47fd-ad03-d21beb99818f  218acb0f-9f2f-4f76-b90b-15a4b7c7f629  456e8b9b-f872-488b-871d-94534090a865  b0e547f0-462b-4f81-b31b-5b0a5d96f537  c7775e88-49bf-4ba2-a03b-93f00447c958  de2c780c-1747-40bd-9ccf-9588ec186cee  e04daea4-4412-45b5-989e-76a9be070a89
+peak_group                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+High_Peak                                    150                                  9999                                    81                                  2570                                  1073                                  5686                                  2279                                  2059                                   195                                  1232                                 78994                                  2699                                  3157                                     0
+Low_Peak                                    1284                                 64907                                   417                                   361                                  1086                                   164                                     1                                    23                                  9705                                  1963                                   751                                   995                                    37                                    35
+
+--- Distribution by peak_group ---
+peak_group  High_Peak  Low_Peak
+peak_group                     
+High_Peak      110174         0
+Low_Peak            0     81729

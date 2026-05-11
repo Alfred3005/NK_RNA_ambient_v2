@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Técnico NK Aging - Árbol de Decisiones</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'neutral'});</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #fff;
+        }
+        h1 { color: #1a202c; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; }
+        h2 { color: #2d3748; margin-top: 40px; border-left: 4px solid #4b6bfb; padding-left: 15px; }
+        h3 { color: #4a5568; margin-top: 30px; }
+        .mermaid { margin: 40px 0; display: flex; justify-content: center; }
+        .note {
+            background-color: #f7fafc;
+            border-right: 4px solid #4b6bfb;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .stats-box {
+            display: flex;
+            justify-content: space-around;
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 1.5em; font-weight: bold; color: #4b6bfb; }
+        .stat-label { font-size: 0.9em; color: #718096; }
+        @media print {
+            body { padding: 0; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print" style="background: #ebf8ff; padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center; border: 1px solid #bee3f8;">
+        💡 <strong>Tip:</strong> Para convertir a PDF, presiona <code>Ctrl + P</code> (Windows) y selecciona "Guardar como PDF".
+    </div>
+
+    <h1>Árbol de Decisiones Técnicas: Pipeline NK Transcriptómica</h1>
+    <p>Este reporte documenta la evolución metodológica del proyecto <code>NK_pipeline_RNA_ambient</code>, desde la gestión de datos masivos hasta la firma final de alta confianza.</p>
+
+    <div class="stats-box">
+        <div class="stat-item">
+            <div class="stat-value">>4,000,000</div>
+            <div class="stat-label">Células PBMC Iniciales</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">196,091</div>
+            <div class="stat-label">Células NK "Gold Standard"</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">140</div>
+            <div class="stat-label">Genes Firma V4-Clean</div>
+        </div>
+    </div>
+
+    <h2>1. Arquitectura y Decisiones Críticas</h2>
+    <div class="mermaid">
+    graph TD
+        A["Raw Dataset (80GB)<br>4+ Millones PBMC"] --> B{"Arquitectura de Análisis"}
+        B -- "R (Seurat)" --> C["Cuello de Botella<br>Fricción AnnData ↔ Seurat"]
+        B -- "Python Nativo" --> D["Pipeline V20<br>(scAR + PyDESeq2)"]
+        
+        D --> E{"scAR: Remoción RNA Ambiental"}
+        E -- "A nivel de Dataset Global" --> F["Error: RAM Excedida (64GB)"]
+        E -- "A nivel de Donante" --> G["V20 Gold Standard<br>196,091 Células NK puras"]
+        
+        G --> H{"V2-Clean: Análisis Diferencial"}
+        H -- "Pseudobulk Estándar" --> I["Infección por Ruido Ambiental<br>(Señales B y T)"]
+        H -- "Filtrado Declarativo" --> J["Exclusión de TCRs e Inmunoglobulinas<br>Firma: 229 Genes (MLE)"]
+        
+        J --> K{"V3-Perfect: Modelo Estadístico"}
+        K -- "MLE Tradicional" --> L["Efecto Espejismo<br>Falsos Positivos por Low Counts"]
+        K -- "LFC Shrinkage<br>(Estimación Bayesiana)" --> M["Firma Estadísticamente Robusta<br>Firma: 182 Genes"]
+        
+        M --> N{"V4-Clean: Preparación Enriquecimiento"}
+        N -- "Firma Completa (182 Genes)" --> O["Sesgo en GSEA/ORA por<br>Fuerte Caída Ribosomal"]
+        N -- "Filtrado Ribosomal (RPS/RPL)" --> P["Firma Final Alta Confianza<br>Firma: 140 Genes"]
+    </div>
+
+    <h2>2. Justificación de Fases</h2>
+
+    <h3>Fase 1: Escalabilidad (Python vs R)</h3>
+    <p>La transición a una tubería 100% nativa en Python fue forzada por el tamaño del dataset (>4M células). La fricción de conversión entre objetos AnnData y Seurat consumía recursos críticos y generaba inconsistencias. Python permitió una gestión eficiente de los 80GB de datos brutos.</p>
+
+    <h3>Fase 2: Estrategia de scAR (Nivel Donante)</h3>
+    <p>Debido al límite de 64GB de RAM, la remoción de RNA ambiental se realizó a nivel de donante. Esta decisión técnica no solo salvó el proceso de fallos de memoria, sino que aumentó la precisión biológica al modelar el ruido ambiental de forma local para cada pozo de secuenciación.</p>
+
+    <h3>Fase 3: El Filtrado Declarativo (V2-Clean)</h3>
+    <p>Para garantizar una señal NK pura, se eliminaron preventivamente genes de Inmunoglobulinas y receptores T. Esto aseguró que la firma de envejecimiento no estuviera contaminada por transcritos ambientales de poblaciones altamente productivas (B y T cells).</p>
+
+    <h3>Fase 4: El Rigor Estadístico (V3-Perfect)</h3>
+    <p>Con un n=547 donantes, el poder estadístico detectaba ruidos insignificantes como significativos. La implementación de LFC Shrinkage permitió colapsar estos falsos positivos hacia cero, dejando una firma robusta de 182 genes defendible científicamente.</p>
+
+    <h3>Fase 5: Alineamiento Científico (V4-Clean)</h3>
+    <p>Se removieron los 45 genes ribosomales para evitar el sesgo dominante en los análisis de vías genéticas. Esto permite que el reporte de enriquecimiento muestre los mecanismos biológicos subyacentes más allá de la maquinaria de traducción.</p>
+
+</body>
+</html>
