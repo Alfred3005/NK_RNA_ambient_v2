@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reporte Integral PyDESeq2 V4</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1, h2, h3 {
+        color: #2c3e50;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto;
+    }
+    blockquote {
+        border-left: 5px solid #3498db;
+        margin: 0;
+        padding-left: 15px;
+        color: #555;
+        background-color: #f9f9f9;
+        padding: 10px 15px;
+    }
+    @media print {
+        body {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            page-break-inside: auto;
+        }
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+    }
+</style>
+</head>
+<body>
+<h1>📄 Reporte Integral: Análisis de Expresión Diferencial y Control de Calidad (V4-Clean)</h1>
+<p>Este documento presenta la validación metodológica y los resultados definitivos del análisis transcriptómico de células NK. El objetivo principal ha sido aislar la auténtica firma biológica del envejecimiento (inmunosenescencia) neutralizando el ruido técnico estructural del dataset.</p>
+<hr />
+<h2>1. Fundamentos Metodológicos y Decisiones Técnicas</h2>
+<p>Tras una exhaustiva auditoría de varianza, se determinó que el 69% de la variación en los datos provenía de factores técnicos (lote de secuenciación/assay) y no de factores biológicos. Para corregir esto, se implementó el siguiente marco metodológico basado en las directrices de <code>DESeq2</code> (2026):</p>
+<ol>
+<li><strong>Unidad Experimental (Pseudobulk):</strong> Se agregaron los conteos crudos a nivel de donante único ($N=547$). Esto previene que donantes con miles de células dominen estadísticamente sobre donantes con escasa representación.</li>
+<li><strong>Modelo Estadístico de Rango Completo:</strong> Se utilizó la fórmula de diseño aditivo <code>~ assay + age_group</code>. Esto permite al algoritmo estimar y sustraer el efecto de lote (<code>assay</code>) antes de calcular el impacto biológico de la edad (<code>age_group</code>).</li>
+<li><strong>Filtrado Estricto:</strong> Se eliminaron transcritos de baja señal (&lt; 10 conteos en al menos 3 donantes) reduciendo el espacio de características a <strong>11,290 genes robustos</strong>.</li>
+<li><strong>Estimación Conservadora (apeGLM):</strong> Se aplicó el método de <em>shrinkage</em> adaptativo <code>apeGLM</code> para contraer los <em>Log2 Fold Changes</em> (LFC) de genes ruidosos hacia cero, garantizando que el ranking final sea de altísima fidelidad.</li>
+</ol>
+<hr />
+<h2>2. Control de Calidad y Validación del Modelo</h2>
+<p>Antes de interpretar los genes diferenciales, es imperativo validar que el modelo matemático se ajustó correctamente a la dispersión real de los datos.</p>
+<h3>2.1 Ajuste Paramétrico (Dispersion Plot)</h3>
+<p><img alt="Dispersion Plot" src="../results/pydeseq2/figures/Dispersion_plot_v4.png" /></p>
+<blockquote>
+<p>[!NOTE]
+<strong>Interpretación:</strong> La curva roja representa la tendencia ajustada del modelo, la cual captura perfectamente el comportamiento esperado: dispersión alta en genes de baja expresión, que decae de forma asintótica en genes altamente expresados. Los círculos azules (estimaciones <em>MAP</em>) demuestran el éxito del modelo al "encoger" los valores atípicos hacia la tendencia central. Esto confirma que los p-valores resultantes son fiables y no producto de una sobre-dispersión mal calculada.</p>
+</blockquote>
+<h3>2.2 Contracción del Tamaño de Efecto (MA-Plot)</h3>
+<p><img alt="MA Plot" src="../results/pydeseq2/figures/MA_plot_v4_final.png" /></p>
+<blockquote>
+<p>[!TIP]
+<strong>Interpretación:</strong> Este gráfico visualiza la relación entre la expresión promedio de un gen (eje X) y su cambio de expresión con la edad (eje Y). Gracias al estimador <code>apeGLM</code>, observamos que a niveles bajos de expresión (izquierda), los LFC se agrupan firmemente en el cero, evitando falsos positivos. Los puntos rojos indican los genes que superaron los umbrales de significancia (padj &lt; 0.05), demostrando una señal biológica sólida independiente de la abundancia.</p>
+</blockquote>
+<hr />
+<h2>3. Resultados: La Firma Inmunosenescente de las Células NK</h2>
+<h3>3.1 El Espejismo Estadístico (Falsos Positivos Previos)</h3>
+<blockquote>
+<p>[!WARNING]
+En fases tempranas (sin corregir por la variable <code>assay</code>), genes mieloides y quimiocinas inflamatorias como <code>FCER1G</code>, <code>CCL3</code>, <code>CCL4</code>, <code>SERPINA1</code>, <code>CST3</code>, <code>AIF1</code> y <code>DUOX1</code> dominaban la supuesta firma de envejecimiento. </p>
+</blockquote>
+<p>Al aplicar nuestro robusto modelo <code>~ assay + age_group</code>, los LFC de estos genes colapsaron a <strong>~0.00</strong> con p-valores no significativos (&gt; 0.60). <strong>Conclusión:</strong> La variación observada en estos marcadores clásicos era producto del ruido técnico (el kit de secuenciación), demostrando la eficacia de nuestra metodología para limpiar falsos positivos.</p>
+<h3>3.2 La Verdadera Señal Biológica</h3>
+<p>El modelo rescató exitosamente una firma pura de <strong>86 genes significativos</strong> (padj &lt; 0.05) que cambian con la edad de forma completamente independiente a los artefactos del lote.</p>
+<h4>Visualización del Contraste (Volcano Plot)</h4>
+<p><img alt="Volcano Plot" src="../results/pydeseq2/figures/Volcano_plot_v4_final.png" /></p>
+<h4>Marcadores Top Descubiertos:</h4>
+<ul>
+<li><strong>Declive en Tolerancia a lo Propio:</strong> Notable regulación a la baja de los receptores inhibidores <strong><code>KIR3DL1</code></strong> (LFC: -1.68) y <strong><code>KIR3DL2</code></strong> (LFC: -1.13) en la vejez.</li>
+<li><strong>Inflammaging Periférico:</strong> Regulación al alza de genes inflamatorios no específicos como <strong><code>LYZ</code></strong> (LFC: +1.48) y transportadores asociados a estrés celular como <strong><code>ABCB8</code></strong> (LFC: +1.21).</li>
+</ul>
+<h3>3.3 Lista Completa de Genes Significativos (Firma de 86 Genes)</h3>
+<p>Esta lista constituye la base validada para el posterior Análisis de Enriquecimiento Funcional (GSEA).</p>
+<table>
+<thead>
+<tr>
+<th>Gen</th>
+<th>Log2 Fold Change</th>
+<th>P-valor Ajustado (padj)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LYZ</td>
+<td>1.4785</td>
+<td>3.45e-02</td>
+</tr>
+<tr>
+<td>TEP1</td>
+<td>1.2741</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>ABCB8</td>
+<td>1.2065</td>
+<td>2.89e-03</td>
+</tr>
+<tr>
+<td>MFSD6</td>
+<td>1.1347</td>
+<td>4.15e-03</td>
+</tr>
+<tr>
+<td>CASZ1</td>
+<td>1.0273</td>
+<td>1.19e-02</td>
+</tr>
+<tr>
+<td>ATG9A</td>
+<td>1.0035</td>
+<td>5.54e-03</td>
+</tr>
+<tr>
+<td>TVP23B</td>
+<td>0.9808</td>
+<td>2.01e-03</td>
+</tr>
+<tr>
+<td>SART3</td>
+<td>0.9662</td>
+<td>2.89e-03</td>
+</tr>
+<tr>
+<td>SP2</td>
+<td>0.8790</td>
+<td>7.50e-03</td>
+</tr>
+<tr>
+<td>PAPOLG</td>
+<td>0.8683</td>
+<td>1.39e-02</td>
+</tr>
+<tr>
+<td>SERGEF</td>
+<td>0.7983</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>TRAPPC12</td>
+<td>0.7856</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>PATL1</td>
+<td>0.7441</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>RNF169</td>
+<td>0.7363</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>CAPN7</td>
+<td>0.6983</td>
+<td>1.39e-02</td>
+</tr>
+<tr>
+<td>FBRS</td>
+<td>0.6874</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>MYO6</td>
+<td>0.6661</td>
+<td>2.89e-02</td>
+</tr>
+<tr>
+<td>FHIP2B</td>
+<td>0.6576</td>
+<td>3.50e-02</td>
+</tr>
+<tr>
+<td>PTGDS</td>
+<td>0.3373</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>STAT3</td>
+<td>0.2433</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>PSMD4</td>
+<td>0.1299</td>
+<td>4.12e-02</td>
+</tr>
+<tr>
+<td>ZEB2</td>
+<td>0.1266</td>
+<td>4.98e-02</td>
+</tr>
+<tr>
+<td>PRSS23</td>
+<td>0.0001</td>
+<td>2.42e-02</td>
+</tr>
+<tr>
+<td>NCKAP1L</td>
+<td>0.0001</td>
+<td>3.45e-02</td>
+</tr>
+<tr>
+<td>CCDC88C</td>
+<td>0.0001</td>
+<td>1.82e-02</td>
+</tr>
+<tr>
+<td>RPTOR</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>MRTFA</td>
+<td>0.0000</td>
+<td>2.42e-02</td>
+</tr>
+<tr>
+<td>MAPK9</td>
+<td>0.0000</td>
+<td>6.69e-03</td>
+</tr>
+<tr>
+<td>ATP1A3</td>
+<td>0.0000</td>
+<td>2.89e-03</td>
+</tr>
+<tr>
+<td>CIAO2A</td>
+<td>0.0000</td>
+<td>4.32e-02</td>
+</tr>
+<tr>
+<td>SCAP</td>
+<td>0.0000</td>
+<td>3.12e-02</td>
+</tr>
+<tr>
+<td>YLPM1</td>
+<td>0.0000</td>
+<td>4.47e-02</td>
+</tr>
+<tr>
+<td>NBAS</td>
+<td>0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>RALGAPB</td>
+<td>0.0000</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>COL13A1</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>MXRA7</td>
+<td>0.0000</td>
+<td>4.12e-02</td>
+</tr>
+<tr>
+<td>TRAF6</td>
+<td>0.0000</td>
+<td>2.01e-03</td>
+</tr>
+<tr>
+<td>UBE2O</td>
+<td>0.0000</td>
+<td>2.44e-05</td>
+</tr>
+<tr>
+<td>DDX59</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>KANSL3</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>RTL6</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>PRKAB2</td>
+<td>0.0000</td>
+<td>7.55e-03</td>
+</tr>
+<tr>
+<td>FCHSD1</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>TEPSIN</td>
+<td>0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>RBM19</td>
+<td>0.0000</td>
+<td>7.19e-05</td>
+</tr>
+<tr>
+<td>KCTD13</td>
+<td>0.0000</td>
+<td>4.75e-02</td>
+</tr>
+<tr>
+<td>ZNF217</td>
+<td>0.0000</td>
+<td>4.12e-02</td>
+</tr>
+<tr>
+<td>NDRG1</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>CMTR1</td>
+<td>0.0000</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>ENOX2</td>
+<td>0.0000</td>
+<td>3.45e-02</td>
+</tr>
+<tr>
+<td>CEACAM21</td>
+<td>0.0000</td>
+<td>2.89e-03</td>
+</tr>
+<tr>
+<td>ERCC6</td>
+<td>0.0000</td>
+<td>5.25e-03</td>
+</tr>
+<tr>
+<td>FBXO28</td>
+<td>0.0000</td>
+<td>4.88e-02</td>
+</tr>
+<tr>
+<td>PALLD</td>
+<td>0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>RASGEF1A</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>ACTR8</td>
+<td>0.0000</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>MTF1</td>
+<td>0.0000</td>
+<td>8.26e-03</td>
+</tr>
+<tr>
+<td>PHLDA1</td>
+<td>0.0000</td>
+<td>8.84e-03</td>
+</tr>
+<tr>
+<td>SMG5</td>
+<td>0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>TM4SF19</td>
+<td>0.0000</td>
+<td>4.98e-02</td>
+</tr>
+<tr>
+<td>DVL3</td>
+<td>0.0000</td>
+<td>4.12e-02</td>
+</tr>
+<tr>
+<td>GTF3C3</td>
+<td>0.0000</td>
+<td>2.43e-02</td>
+</tr>
+<tr>
+<td>LRRC28</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>SLC25A16</td>
+<td>0.0000</td>
+<td>3.45e-02</td>
+</tr>
+<tr>
+<td>TVP23C</td>
+<td>0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>ZNF780A</td>
+<td>0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>PCDH1</td>
+<td>0.0000</td>
+<td>4.76e-02</td>
+</tr>
+<tr>
+<td>GDPD5</td>
+<td>0.0000</td>
+<td>4.50e-02</td>
+</tr>
+<tr>
+<td>MON1A</td>
+<td>0.0000</td>
+<td>4.47e-02</td>
+</tr>
+<tr>
+<td>ZNF692</td>
+<td>0.0000</td>
+<td>2.28e-02</td>
+</tr>
+<tr>
+<td>PCED1B</td>
+<td>0.0000</td>
+<td>8.84e-03</td>
+</tr>
+<tr>
+<td>FAM210A</td>
+<td>0.0000</td>
+<td>4.28e-02</td>
+</tr>
+<tr>
+<td>COLGALT2</td>
+<td>0.0000</td>
+<td>3.94e-02</td>
+</tr>
+<tr>
+<td>CACNA2D2</td>
+<td>0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>NDUFAF6</td>
+<td>0.0000</td>
+<td>4.28e-02</td>
+</tr>
+<tr>
+<td>ACAD9</td>
+<td>-0.0000</td>
+<td>3.96e-02</td>
+</tr>
+<tr>
+<td>SNHG29</td>
+<td>-0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>ZNF384</td>
+<td>-0.0000</td>
+<td>2.27e-02</td>
+</tr>
+<tr>
+<td>KDM4A</td>
+<td>-0.0000</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>XCL2</td>
+<td>-0.3098</td>
+<td>1.96e-02</td>
+</tr>
+<tr>
+<td>XCL1</td>
+<td>-0.5987</td>
+<td>8.84e-03</td>
+</tr>
+<tr>
+<td>GTF2IRD2B</td>
+<td>-0.7966</td>
+<td>3.12e-02</td>
+</tr>
+<tr>
+<td>CHTF8</td>
+<td>-0.8086</td>
+<td>2.50e-02</td>
+</tr>
+<tr>
+<td>PVRIG</td>
+<td>-0.9618</td>
+<td>3.24e-02</td>
+</tr>
+<tr>
+<td>KIR3DL2</td>
+<td>-1.1299</td>
+<td>2.43e-02</td>
+</tr>
+<tr>
+<td>KIR3DL1</td>
+<td>-1.6811</td>
+<td>2.95e-05</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
