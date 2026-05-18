@@ -43,16 +43,35 @@
         background-color: #f9f9f9;
         padding: 10px 15px;
     }
+    pre {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 15px;
+        overflow-x: auto;
+        font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+        font-size: 14px;
+    }
+    code {
+        font-family: Consolas, Monaco, 'Courier New', Courier, monospace;
+        background-color: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+    pre code {
+        padding: 0;
+        background-color: transparent;
+    }
     @media print {
         body {
             max-width: 100%;
             margin: 0;
             padding: 0;
         }
-        table {
+        table, pre {
             page-break-inside: auto;
         }
-        tr {
+        tr, img {
             page-break-inside: avoid;
             page-break-after: auto;
         }
@@ -74,58 +93,64 @@
 <h3>1.1 El Modelo Aditivo: Entendiendo la Matriz de Diseño (<code>~ assay + age_group</code>)</h3>
 <p>Para comprender cómo DESeq2 aísla la señal biológica del ruido técnico, es útil visualizar cómo construye la <strong>matriz de diseño</strong> a partir de nuestra fórmula. Tal como se explica en la viñeta oficial de DESeq2 para diseños multifactoriales, el algoritmo transforma los metadatos categóricos en coeficientes binarios.</p>
 <p>A continuación, recreamos un ejemplo simplificado de nuestra matriz de diseño usando un subconjunto de muestras imaginarias:</p>
-<p>```python
-import pandas as pd
-from patsy import dmatrix</p>
-<h1>1. Metadatos simplificados de 4 donantes</h1>
-<p>metadata = pd.DataFrame({
+<pre><code class="language-python">import pandas as pd
+from patsy import dmatrix
+
+# 1. Metadatos simplificados de 4 donantes
+metadata = pd.DataFrame({
     'donor': ['D1', 'D2', 'D3', 'D4'],
     'assay': ['10x_v2', '10x_v2', '10x_v3', '10x_v3'],
     'age_group': ['adult', 'old', 'adult', 'old']
-})</p>
-<h1>2. Definiendo niveles de referencia (baseline)</h1>
-<p>metadata['age_group'] = pd.Categorical(metadata['age_group'], categories=['adult', 'old'])
-metadata['assay'] = pd.Categorical(metadata['assay'], categories=['10x_v2', '10x_v3'])</p>
-<h1>3. Generando la Matriz de Diseño</h1>
-<p>design_matrix = dmatrix("~ assay + age_group", data=metadata, return_type='dataframe')
+})
+
+# 2. Definiendo niveles de referencia (baseline)
+metadata['age_group'] = pd.Categorical(metadata['age_group'], categories=['adult', 'old'])
+metadata['assay'] = pd.Categorical(metadata['assay'], categories=['10x_v2', '10x_v3'])
+
+# 3. Generando la Matriz de Diseño
+design_matrix = dmatrix(&quot;~ assay + age_group&quot;, data=metadata, return_type='dataframe')
 print(design_matrix)
-```</p>
-<p><strong>Salida (Matriz de Diseño):</strong>
-<code>text
-   Intercept  assay[T.10x_v3]  age_group[T.old]
+</code></pre>
+<p><strong>Salida (Matriz de Diseño):</strong></p>
+<pre><code class="language-text">   Intercept  assay[T.10x_v3]  age_group[T.old]
 0        1.0              0.0               0.0
 1        1.0              0.0               1.0
 2        1.0              1.0               0.0
-3        1.0              1.0               1.0</code></p>
+3        1.0              1.0               1.0
+</code></pre>
 <p><strong>Interpretación de los Coeficientes:</strong>
 *   <strong><code>Intercept</code>:</strong> Es la base (baseline). Representa el nivel de expresión esperado para un donante <strong>adulto</strong> secuenciado con <strong>10x_v2</strong> (donde todos los demás coeficientes son 0).
 *   <strong><code>assay[T.10x_v3]</code>:</strong> Este coeficiente calcula la diferencia pura causada por cambiar de kit de secuenciación (de v2 a v3), <em>independientemente de la edad</em>.
 *   <strong><code>age_group[T.old]</code>:</strong> Este es nuestro <strong>coeficiente de interés</strong>. Calcula el cambio en expresión puramente debido a la vejez. Al modelarlo <em>junto</em> con el <code>assay</code>, el modelo evalúa la edad solo después de que el efecto del kit de secuenciación ha sido absorbido por la columna <code>assay</code>.</p>
 <h3>1.2 Implementación en PyDESeq2</h3>
 <p>El análisis se ejecutó en Python (vía <code>PyDESeq2</code>) siguiendo el código a continuación, garantizando reproducibilidad:</p>
-<p>```python
-from pydeseq2.dds import DeseqDataSet
-from pydeseq2.ds import DeseqStats</p>
-<h1>1. Preparar metadatos y niveles de referencia</h1>
-<p>metadata = pb.obs.copy()
+<pre><code class="language-python">from pydeseq2.dds import DeseqDataSet
+from pydeseq2.ds import DeseqStats
+
+# 1. Preparar metadatos y niveles de referencia
+metadata = pb.obs.copy()
 metadata['age_group'] = pd.Categorical(metadata['age_group'], categories=['adult', 'old'])
-metadata['assay'] = metadata['assay'].astype('category')</p>
-<h1>2. Inicializar el dataset con diseño aditivo</h1>
-<p>dds = DeseqDataSet(
+metadata['assay'] = metadata['assay'].astype('category')
+
+# 2. Inicializar el dataset con diseño aditivo
+dds = DeseqDataSet(
     counts=counts_df,
     metadata=metadata,
     design_factors=['assay', 'age_group'],
     refit_cooks=True
-)</p>
-<h1>3. Ejecutar algoritmo central (estimación de tamaño y dispersión)</h1>
-<p>dds.deseq2()</p>
-<h1>4. Prueba estadística (Wald Test) extrayendo el contraste de interés</h1>
-<p>stat_res = DeseqStats(dds, contrast=["age_group", "old", "adult"])
-stat_res.summary()</p>
-<h1>5. Shrinkage LFC (apeGLM) para contracción de ruido en genes de baja abundancia</h1>
-<p>stat_res.lfc_shrink(coeff="age_group_old_vs_adult") # O el coeficiente correspondiente
+)
+
+# 3. Ejecutar algoritmo central (estimación de tamaño y dispersión)
+dds.deseq2()
+
+# 4. Prueba estadística (Wald Test) extrayendo el contraste de interés
+stat_res = DeseqStats(dds, contrast=[&quot;age_group&quot;, &quot;old&quot;, &quot;adult&quot;])
+stat_res.summary()
+
+# 5. Shrinkage LFC (apeGLM) para contracción de ruido en genes de baja abundancia
+stat_res.lfc_shrink(coeff=&quot;age_group_old_vs_adult&quot;) # O el coeficiente correspondiente
 results_df = stat_res.results_df
-```</p>
+</code></pre>
 <hr />
 <h2>2. Control de Calidad y Validación del Modelo</h2>
 <p>Antes de interpretar los genes diferenciales, es imperativo validar que el modelo matemático se ajustó correctamente a la dispersión real de los datos.</p>
