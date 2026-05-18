@@ -13,6 +13,79 @@ Tras una exhaustiva auditoría de varianza, se determinó que el 69% de la varia
 3.  **Filtrado Estricto:** Se eliminaron transcritos de baja señal (< 10 conteos en al menos 3 donantes) reduciendo el espacio de características a **11,290 genes robustos**.
 4.  **Estimación Conservadora (apeGLM):** Se aplicó el método de *shrinkage* adaptativo `apeGLM` para contraer los *Log2 Fold Changes* (LFC) de genes ruidosos hacia cero, garantizando que el ranking final sea de altísima fidelidad.
 
+### 1.1 El Modelo Aditivo: Entendiendo la Matriz de Diseño (`~ assay + age_group`)
+
+Para comprender cómo DESeq2 aísla la señal biológica del ruido técnico, es útil visualizar cómo construye la **matriz de diseño** a partir de nuestra fórmula. Tal como se explica en la viñeta oficial de DESeq2 para diseños multifactoriales, el algoritmo transforma los metadatos categóricos en coeficientes binarios.
+
+A continuación, recreamos un ejemplo simplificado de nuestra matriz de diseño usando un subconjunto de muestras imaginarias:
+
+```python
+import pandas as pd
+from patsy import dmatrix
+
+# 1. Metadatos simplificados de 4 donantes
+metadata = pd.DataFrame({
+    'donor': ['D1', 'D2', 'D3', 'D4'],
+    'assay': ['10x_v2', '10x_v2', '10x_v3', '10x_v3'],
+    'age_group': ['adult', 'old', 'adult', 'old']
+})
+
+# 2. Definiendo niveles de referencia (baseline)
+metadata['age_group'] = pd.Categorical(metadata['age_group'], categories=['adult', 'old'])
+metadata['assay'] = pd.Categorical(metadata['assay'], categories=['10x_v2', '10x_v3'])
+
+# 3. Generando la Matriz de Diseño
+design_matrix = dmatrix("~ assay + age_group", data=metadata, return_type='dataframe')
+print(design_matrix)
+```
+
+**Salida (Matriz de Diseño):**
+```text
+   Intercept  assay[T.10x_v3]  age_group[T.old]
+0        1.0              0.0               0.0
+1        1.0              0.0               1.0
+2        1.0              1.0               0.0
+3        1.0              1.0               1.0
+```
+
+**Interpretación de los Coeficientes:**
+*   **`Intercept`:** Es la base (baseline). Representa el nivel de expresión esperado para un donante **adulto** secuenciado con **10x_v2** (donde todos los demás coeficientes son 0).
+*   **`assay[T.10x_v3]`:** Este coeficiente calcula la diferencia pura causada por cambiar de kit de secuenciación (de v2 a v3), *independientemente de la edad*.
+*   **`age_group[T.old]`:** Este es nuestro **coeficiente de interés**. Calcula el cambio en expresión puramente debido a la vejez. Al modelarlo *junto* con el `assay`, el modelo evalúa la edad solo después de que el efecto del kit de secuenciación ha sido absorbido por la columna `assay`.
+
+### 1.2 Implementación en PyDESeq2
+
+El análisis se ejecutó en Python (vía `PyDESeq2`) siguiendo el código a continuación, garantizando reproducibilidad:
+
+```python
+from pydeseq2.dds import DeseqDataSet
+from pydeseq2.ds import DeseqStats
+
+# 1. Preparar metadatos y niveles de referencia
+metadata = pb.obs.copy()
+metadata['age_group'] = pd.Categorical(metadata['age_group'], categories=['adult', 'old'])
+metadata['assay'] = metadata['assay'].astype('category')
+
+# 2. Inicializar el dataset con diseño aditivo
+dds = DeseqDataSet(
+    counts=counts_df,
+    metadata=metadata,
+    design_factors=['assay', 'age_group'],
+    refit_cooks=True
+)
+
+# 3. Ejecutar algoritmo central (estimación de tamaño y dispersión)
+dds.deseq2()
+
+# 4. Prueba estadística (Wald Test) extrayendo el contraste de interés
+stat_res = DeseqStats(dds, contrast=["age_group", "old", "adult"])
+stat_res.summary()
+
+# 5. Shrinkage LFC (apeGLM) para contracción de ruido en genes de baja abundancia
+stat_res.lfc_shrink(coeff="age_group_old_vs_adult") # O el coeficiente correspondiente
+results_df = stat_res.results_df
+```
+
 ---
 
 ## 2. Control de Calidad y Validación del Modelo
