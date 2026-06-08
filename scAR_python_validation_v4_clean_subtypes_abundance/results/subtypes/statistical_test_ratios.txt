@@ -1,0 +1,5 @@
+Análisis de Ratio CD56bright/CD56dim (Mann-Whitney U Test)
+========================================================
+Donantes Adultos (N=152): Media Ratio = 0.0303 +/- 0.0361
+Donantes Viejos (N=35): Media Ratio = 0.0207 +/- 0.0258
+Estadístico U: 3059.0, p-valor: 0.167395

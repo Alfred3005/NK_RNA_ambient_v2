@@ -1,0 +1,17 @@
+Term,NES,FDR,pval,metric,gene_set_db
+Protein export,-1.7994398748194214,0.1695011822351366,0.00425531914893617,wald_stat,KEGG_2021_Human
+Hematopoietic cell lineage,-1.7572207947785095,0.1296185511209868,0.001,wald_stat,KEGG_2021_Human
+Viral protein interaction with cytokine and cytokine receptor,-1.74774549202961,0.09040063052540619,0.001,wald_stat,KEGG_2021_Human
+Spliceosome,-1.7317321465014015,0.07627553200581148,0.001,wald_stat,KEGG_2021_Human
+Legionellosis,-1.603433538857271,0.1687035296128536,0.001,wald_stat,KEGG_2021_Human
+Antigen processing and presentation,-1.579573185804439,0.16152465601230664,0.001,wald_stat,KEGG_2021_Human
+Graft-versus-host disease,-1.5165853040142867,0.21622083582599777,0.015306122448979591,wald_stat,KEGG_2021_Human
+Oxidative phosphorylation,-1.4845349636036633,0.23580605646241062,0.014492753623188406,wald_stat,KEGG_2021_Human
+Viral protein interaction with cytokine and cytokine receptor,-1.8696560714460362,0.044045853976060464,0.001,combined_metric,KEGG_2021_Human
+Hematopoietic cell lineage,-1.819665922261216,0.04176762014971251,0.001,combined_metric,KEGG_2021_Human
+Antigen processing and presentation,-1.7384859960835182,0.06429682132137562,0.001,combined_metric,KEGG_2021_Human
+Cytokine-cytokine receptor interaction,-1.731368192099055,0.049361732904205695,0.001,combined_metric,KEGG_2021_Human
+Graft-versus-host disease,-1.64206828862754,0.0844465338299642,0.006097560975609756,combined_metric,KEGG_2021_Human
+Systemic lupus erythematosus,-1.5539944085057766,0.13568148121361157,0.001,combined_metric,KEGG_2021_Human
+Protein export,-1.5081830324132035,0.15687267204281635,0.03684210526315789,combined_metric,KEGG_2021_Human
+Legionellosis,-1.4651167523445594,0.17561385744765487,0.001,combined_metric,KEGG_2021_Human

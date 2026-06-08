@@ -1,0 +1,7 @@
+Term,NES,FDR,pval,metric,gene_set_db
+"Positive Regulation Of mRNA Splicing, Via Spliceosome (GO:0048026)",-2.147557849220667,0.06516678515173059,0.003787878787878788,wald_stat,GO_Biological_Process_2023
+"Regulation Of mRNA Splicing, Via Spliceosome (GO:0048024)",-1.9492358315444716,0.24763378357657623,0.001,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of RNA Splicing (GO:0033120),-1.9235928890874796,0.19984480779864042,0.001,wald_stat,GO_Biological_Process_2023
+Protein Secretion (GO:0009306),1.8805557328336628,0.18193856764501687,0.001,wald_stat,GO_Biological_Process_2023
+Regulation Of Necroptotic Process (GO:0060544),-1.8643785287487304,0.245027112170507,0.013043478260869565,wald_stat,GO_Biological_Process_2023
+"Positive Regulation Of mRNA Splicing, Via Spliceosome (GO:0048026)",-1.95777097637275,0.1216563688910701,0.001,combined_metric,GO_Biological_Process_2023

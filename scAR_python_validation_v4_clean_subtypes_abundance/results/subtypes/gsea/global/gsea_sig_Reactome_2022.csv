@@ -1,0 +1,8 @@
+Term,NES,FDR,pval,metric,gene_set_db
+Immunoregulatory Interactions Between A Lymphoid And A non-Lymphoid Cell R-HSA-198933,-1.9944483019219028,0.16254362327163493,0.001,wald_stat,Reactome_2022
+DNA Methylation R-HSA-5334118,-1.8398250683931616,0.23150152405354066,0.004830917874396135,wald_stat,Reactome_2022
+Chemokine Receptors Bind Chemokines R-HSA-380108,-1.9483530511823437,0.08316760079551619,0.001,combined_metric,Reactome_2022
+Peptide Ligand-Binding Receptors R-HSA-375276,-1.9214116173197935,0.07651419273187489,0.001,combined_metric,Reactome_2022
+DNA Methylation R-HSA-5334118,-1.8185864891671064,0.16633520159103238,0.005154639175257732,combined_metric,Reactome_2022
+Activated PKN1 Stimulates Transcription Of Androgen Receptor Regulated KLK2 And KLK3 R-HSA-5625886,-1.7621029249451607,0.20791900198879046,0.001,combined_metric,Reactome_2022
+Defective Pyroptosis R-HSA-9710421,-1.7283017637160487,0.22421985174471162,0.001,combined_metric,Reactome_2022

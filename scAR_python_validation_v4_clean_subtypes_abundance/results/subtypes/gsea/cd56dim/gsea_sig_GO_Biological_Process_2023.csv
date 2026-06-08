@@ -1,0 +1,21 @@
+Term,NES,FDR,pval,metric,gene_set_db
+Regulation Of Lymphocyte Differentiation (GO:0045619),2.1310355017703264,0.03640321800625315,0.001,wald_stat,GO_Biological_Process_2023
+Regulation Of Peptidyl-Threonine Phosphorylation (GO:0010799),-2.0282326132979738,0.12801525629066196,0.0018181818181818182,wald_stat,GO_Biological_Process_2023
+Regulation Of Vasculature Development (GO:1901342),1.9448706181024769,0.21608576842173347,0.0021929824561403508,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of Telomere Maintenance Via Telomerase (GO:0032212),1.9231484185755456,0.18326064449301802,0.001,wald_stat,GO_Biological_Process_2023
+Regulation Of Cardiac Muscle Contraction (GO:0055117),-1.9001110793805516,0.24483792186738626,0.0037243947858473,wald_stat,GO_Biological_Process_2023
+Aerobic Electron Transport Chain (GO:0019646),-1.890497515504256,0.20802479147232567,0.001,wald_stat,GO_Biological_Process_2023
+"Regulation Of mRNA Splicing, Via Spliceosome (GO:0048024)",-1.875714884159633,0.1978989945608102,0.001,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of Establishment Of Protein Localization (GO:1904951),1.874210378037955,0.2377876868485382,0.0021645021645021645,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of DNA Biosynthetic Process (GO:2000573),1.871544229517582,0.1950839118796643,0.001,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of Telomere Maintenance Via Telomere Lengthening (GO:1904358),1.8678186956361396,0.16941497610602427,0.001,wald_stat,GO_Biological_Process_2023
+Cellular Respiration (GO:0045333),-1.860321570907142,0.195870337493909,0.001,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of Erythrocyte Differentiation (GO:0045648),1.8385594281948014,0.19988433623213725,0.002188183807439825,wald_stat,GO_Biological_Process_2023
+"Regulation Of Nuclear-Transcribed mRNA Catabolic Process, Deadenylation-Dependent Decay (GO:1900151)",1.7908984997729132,0.24310297152893842,0.0022522522522522522,wald_stat,GO_Biological_Process_2023
+Regulation Of Organelle Organization (GO:0033043),1.7901502797878879,0.22028613973014727,0.0024691358024691358,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of Transcription By RNA Polymerase III (GO:0045945),1.7748225101205883,0.2309779939697461,0.0066815144766146995,wald_stat,GO_Biological_Process_2023
+Receptor Signaling Pathway Via STAT (GO:0097696),1.7628217833052555,0.2356875011943313,0.004424778761061947,wald_stat,GO_Biological_Process_2023
+Establishment Of Protein Localization To Extracellular Region (GO:0035592),1.7511701300840505,0.2392416615322199,0.0066815144766146995,wald_stat,GO_Biological_Process_2023
+Receptor Signaling Pathway Via JAK-STAT (GO:0007259),1.749013611431837,0.2253532543244243,0.00211864406779661,wald_stat,GO_Biological_Process_2023
+Positive Regulation Of Myeloid Cell Differentiation (GO:0045639),1.7357216305143954,0.2371498526868902,0.0022371364653243847,wald_stat,GO_Biological_Process_2023
+Regulation Of Telomerase RNA Localization To Cajal Body (GO:1904872),1.7272814686171578,0.24023790344511295,0.006369426751592357,wald_stat,GO_Biological_Process_2023
