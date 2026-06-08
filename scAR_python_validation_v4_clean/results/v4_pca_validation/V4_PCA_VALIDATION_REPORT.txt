@@ -1,0 +1,28 @@
+
+    # 📊 Reporte de Validación PCA V4-Clean
+    
+    ## 1. Estado del Filtrado
+    - Genes eliminados: RPS/RPL, IGH, TRA/TRB/TRG/TRD.
+    - Genes remanentes: 3000
+    
+    ## 2. Impacto en la Estructura de Varianza (PC1)
+    - Varianza explicada por Assay (Técnico): 69.4420% (Antes: ~65%)
+    - Varianza explicada por Age Group (Biológico): 15.5286% (Antes: ~22%)
+    
+    ## 3. Top 10 Drivers de PC1
+                       PC1
+feature_name          
+MALAT1        0.233042
+NKG7          0.227737
+KLRB1         0.185518
+MT-ND4        0.180884
+EEF1A1        0.164685
+TYROBP        0.163776
+MT-ND2        0.142708
+S100A4        0.133267
+FCER1G        0.123309
+ID2           0.121636
+    
+    ## 4. Conclusión Preliminar
+    Este análisis permite verificar si la eliminación de genes ribosomales "liberó" la señal biológica o si el sesgo del Assay persiste a través de otros genes.
+    

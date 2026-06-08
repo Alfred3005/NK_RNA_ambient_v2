@@ -46,19 +46,24 @@ def run_visual_validation():
 
     # --- 2. Lineage Purity DotPlot ---
     print("🧬 Generating Lineage Purity DotPlot...")
-    # Canonical markers curated from previous notebooks
+    # Curated high-specificity markers from CellxGene & HuBMAP
     markers = {
-        'NK Cells': ['NKG7', 'GNLY', 'CST7', 'GZMA', 'PRF1', 'KLRD1', 'FCGR3A', 'NCAM1'],
-        'T Cells': ['CD3D', 'CD3E', 'CD3G', 'TRAC', 'CD4', 'CD8A'],
-        'B Cells': ['CD79A', 'MS4A1', 'CD74', 'CD19', 'CD79B']
+        'NK Cells': ['NKG7', 'GNLY', 'CST7', 'GZMA', 'PRF1', 'KLRD1', 'KLRF1'],
+        'T Cells': ['CD3D', 'CD3E', 'CD3G', 'TRAC'],
+        'B Cells': ['CD79A', 'MS4A1', 'CD19']
     }
     
     # Filter markers to those present in dataset
     available_markers = {k: [g for g in v if g in adata.var_names] for k, v in markers.items()}
     
-    sc.pl.dotplot(adata, available_markers, groupby='age_group', 
+    # Normalize and log-transform for visual dotplot to avoid scaling issues
+    adata_vis = adata.copy()
+    sc.pp.normalize_total(adata_vis, target_sum=1e4)
+    sc.pp.log1p(adata_vis)
+    
+    sc.pl.dotplot(adata_vis, available_markers, groupby='age_group', 
                   title='Lineage Purity Validation (Gold Standard NKs)',
-                  standard_scale='var', cmap='Blues', show=False)
+                  cmap='Blues', show=False)
     plt.savefig(f"{output_dir}/02_Lineage_Purity_DotPlot.png", bbox_inches='tight')
     plt.close()
     

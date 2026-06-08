@@ -1,0 +1,21 @@
+
+    # 📊 Reporte de Validación PCA V4-Clean + Regresión
+    
+    ## 1. Impacto en la Estructura de Varianza (PC1) tras regresar 'total_counts'
+    - Varianza explicada por Assay (Técnico): 32.4919% (Antes de regresión: ~69%)
+    - Varianza explicada por Age Group (Biológico): 9.5079% (Antes de regresión: ~15%)
+    
+    ## 2. Top 10 Drivers de PC1
+                       PC1
+feature_name          
+FCER1G        0.170502
+CCL3          0.153806
+S100A4        0.151758
+CCL4          0.145724
+TYROBP        0.142109
+PLAC8         0.136461
+FTL           0.135873
+NEAT1         0.134193
+OAZ1          0.131776
+PTGDS         0.128887
+    

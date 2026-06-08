@@ -1,7 +1,7 @@
 Final Gold Standard Summary:
-Total Cells: 191903
-Total Donors: 547
+Total Cells: 143991
+Total Donors: 423
 
 By Age Group:
-  adult: 254 donors, 96013 cells
-  old: 293 donors, 95890 cells
+  adult: 197 donors, 73434 cells
+  old: 226 donors, 70557 cells

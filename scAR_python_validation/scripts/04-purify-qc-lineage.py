@@ -96,7 +96,9 @@ def run_purify_qc():
 
     # 2. Adaptive QC (Nuestra versión manual estable)
     try:
-        adata = robust_adaptive_qc(adata, threshold=2.5, res=0.5)
+        adata_qc = adata.copy()
+        adata_qc = robust_adaptive_qc(adata_qc, threshold=2.5, res=0.5)
+        adata.obs['passed_qc'] = adata_qc.obs['passed_qc']
         n_before = adata.n_obs
         adata = adata[adata.obs['passed_qc']].copy()
         logger.info(f"QC completado: {n_before:,} -> {adata.n_obs:,} células.")

@@ -7,6 +7,7 @@ Bienvenido al Cerebro Técnico de la Tesis NK (Protocolo Fénix V20).
 
 ## 🗂️ Secciones Principales
 - [[wiki/WALKTHROUGH_MASTER|🏆 Master Walkthrough]]: El camino del éxito de la V20.
+- [[wiki/REVISION_COMPARATIVA_DE|🔍 Revisión Comparativa DE]]: Log-Normal vs Cuentas Crudas (¡NUEVO!).
 - [[wiki/MEMO_DESCUBRIMIENTO|📝 Memorándum de Descubrimiento]]: La nueva narrativa biológica.
 - [[wiki/CHECKPOINT_FASE07|🏁 Checkpoint Final]]: Estado de los datasets y scripts.
 - [[wiki/REPORTE_GENES_COMPLETO|🔬 Lista de Genes (DESeq2)]]: Firma molecular verificada.

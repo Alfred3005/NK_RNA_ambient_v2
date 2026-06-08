@@ -23,7 +23,7 @@ def run_de_visualizations_v4():
     figures_dir = f"{root_dir}/results/figures"
     os.makedirs(figures_dir, exist_ok=True)
     
-    de_results_path = f"{results_dir}/deseq2_results_all.csv"
+    de_results_path = f"{results_dir}/deseq2_results_v4_final.csv"
     input_h5ad = 'scAR_python_validation/data/v20_python_gold_standard.h5ad'
     
     print("⏳ Cargando resultados de DESeq2 y datos base...")

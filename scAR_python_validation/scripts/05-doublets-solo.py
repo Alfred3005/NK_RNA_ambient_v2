@@ -51,14 +51,20 @@ def run_final_cleaning():
     logger.info("Preparando scVI para remoción de dobletes...")
     adata_raw = adata.copy()
     
-    # HVG Selection para el modelo
+    # HVG Selection para el modelo (usando transformacion temporal)
+    adata_hvg = adata.copy()
+    sc.pp.normalize_total(adata_hvg, target_sum=1e4)
+    sc.pp.log1p(adata_hvg)
     sc.pp.highly_variable_genes(
-        adata,
+        adata_hvg,
         n_top_genes=5000,
         flavor='seurat',
-        batch_key='donor_id' if 'donor_id' in adata.obs.columns else None,
-        subset=True
+        batch_key='donor_id' if 'donor_id' in adata_hvg.obs.columns else None
     )
+    adata.var['highly_variable'] = adata_hvg.var['highly_variable']
+    adata = adata[:, adata.var['highly_variable']].copy()
+    del adata_hvg
+    gc.collect()
     
     scvi.model.SCVI.setup_anndata(adata, batch_key='donor_id')
     vae = scvi.model.SCVI(adata, n_layers=2, n_latent=30, gene_likelihood="nb")

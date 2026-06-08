@@ -34,16 +34,21 @@ def run_hvg_selection():
     # Guardar counts en layer explícito por seguridad
     adata.layers['counts'] = adata.X.copy()
 
-    # Calcular HVG usando flavor 'seurat_v3' que opera directamente sobre conteos CRUDOS
-    # Esto es ideal porque no requiere normalización previa.
-    logger.info("Calculando Top 3,000 HVGs usando conteos crudos (seurat_v3)...")
+    # Calcular HVG usando una transformacion temporal para evitar fallos de LOESS (seurat_v3)
+    logger.info("Calculando Top 3,000 HVGs usando log1p temporal...")
+    import gc
+    adata_hvg = adata.copy()
+    sc.pp.normalize_total(adata_hvg, target_sum=1e4)
+    sc.pp.log1p(adata_hvg)
     sc.pp.highly_variable_genes(
-        adata,
-        flavor='seurat_v3',
+        adata_hvg,
+        flavor='seurat',
         n_top_genes=3000,
-        layer='counts',
-        subset=False # MANTENEMOS TODOS LOS GENES para pseudobulk diferencial
+        subset=False
     )
+    adata.var['highly_variable'] = adata_hvg.var['highly_variable']
+    del adata_hvg
+    gc.collect()
 
     # Limpiar ruido biológico del pool de HVGs (similar al script 3.5Normalization de referencia)
     logger.info("Filtrando genes mitocondriales, ribosomales, IG y TCR del pool HVG...")

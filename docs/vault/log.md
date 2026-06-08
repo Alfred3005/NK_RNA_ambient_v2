@@ -2,6 +2,40 @@
 
 Todas las decisiones y cambios significativos del proyecto se registran aquí.
 
+## 2026-05-29
+- **03:42 PM**: 🧬 **Validación de LFC Shrinkage en Nueva Rama Aislada (`v4_shrinkage`)**.
+    - **Aislamiento de la Rama:** Se creó la nueva estructura de directorios `scAR_python_validation_v4_shrinkage/` para documentar de forma independiente este análisis comparativo.
+    - **Benchmark de Shrinkage:** Implementado y ejecutado `22_pydeseq2_shrinkage_benchmark.py` en WSL. Se extrajeron LFCs Raw y Shrunken (apeGLM) para el Modelo Conjunto (`~ assay + age_group`) y Modelos Divididos (`~ age_group` en 3' y 5').
+    - **Auditoría de Genes de Interés:** Se analizaron en detalle marcadores clave como `KIR3DL1/2` (estables, apenas cambian LFC), falsos positivos mieloides (`LYZ`, colapsado) y genes de bajo conteo solicitados (`SERPINA1`, `DUOX1`, `CST3`), validando que su aparente significancia o alto LFC en crudo se debía a variabilidad estadística y bajo conteo.
+    - **Reporte Comparativo HTML:** Implementado `convert_shrinkage_report_to_html.py`, compilando un reporte interactivo final y auto-contenido con las 4 figuras complejas embebidas en Base64 en `scAR_python_validation_v4_shrinkage/docs/Reporte_Comparativo_Shrinkage.html`.
+
+## 2026-05-28
+- **01:15 AM**: 🧬 **Comparativa de Modelos (Opción A vs Opción B) y Depuración del Reporte de Tesis (V4-Clean)**.
+    - **Evaluación Comparativa:** Se ejecutó una re-evaluación sistemática de los datos purificados bajo la Opción A (Modelo Conjunto aditivo `~ assay + age_group`) y la Opción B (Modelos aislados por lote `~ age_group`) en carpetas exploratorias independientes. Se clasificaron los genes significativos en umbrales escalonados de LFC (0.25, 0.50, 1.00).
+    - **Trazabilidad en Heatmap:** Se corrigió la generación de conteos normalizados en [17_differential_expression_figures.py](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean/scripts/17_differential_expression_figures.py) para utilizar los resultados de 10,230 genes de DESeq2 en lugar del subset de 5,000 HVGs. Se re-ejecutó el clustering visual en [17b_pydeseq2_visualizations.py](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean/scripts/17b_pydeseq2_visualizations.py) logrando que el heatmap `Heatmap_sig_genes.png` muestre los **12 genes** de la firma completa en vez de 4.
+    - **Depuración de Formatos:** Se eliminaron los caracteres de math-blocks crudos (`$`) de los p-valores/LFC en el reporte y se escaparon los caracteres de valor absoluto en las cabeceras de las tablas (`\|LFC\|`), logrando un renderizado web de tablas nativas sin errores. Se re-compiló el reporte final a HTML auto-contenido en [Reporte_Integral_PyDESeq2_V4.html](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean/docs/Reporte_Integral_PyDESeq2_V4.html).
+    - **Documentación de Cierre:** Se integraron todos los hallazgos comparativos de kits (Opción A vs B) como una nueva Sección 4 oficial en el reporte integral de tesis.
+
+## 2026-05-26
+- **09:15 PM**: 🔄 **Ajuste de Umbrales en Visualizaciones y Reporte (Firma Completa)**.
+    - **Volcano Plot:** Se ajustó el umbral biológico a $|LFC| > 0.5$ (en lugar de $1.0$) y $padj < 0.05$, destacando y anotando exactamente a los 10 genes clave.
+    - **Heatmap:** Se expandió el clustered heatmap para mostrar la firma completa de 12 genes (reduciendo el umbral biológico a $|LFC| > 0.25$ y $padj < 0.05$) para asegurar que todos los genes significativos modulados estén representados. Se añadieron los genes `MAP3K8` y `XCL2`.
+    - **Reporte e HTML:** Se actualizaron `Reporte_Integral_PyDESeq2_V4.md` y el HTML compilado para documentar estos nuevos umbrales, incorporar las figuras regeneradas y documentar las funciones de los 12 genes significativos.
+- **07:50 PM**: 📊 **Actualización de Visualizaciones y Reporte Integral (Fase 17)**.
+    - **Gráficos:** Se modificó el MA-plot (`MA_plot_v4_final.png`) para colorear los puntos significativos basándose únicamente en `padj < 0.05` (removiendo el filtro de LFC), permitiendo ver todos los genes estadísticamente significativos.
+    - **Heatmap:** Se implementó la generación de un clustered heatmap (`Heatmap_sig_genes.png`) que representa la expresión Z-score de la firma relajada de 10 genes ($|LFC| > 0.5$, $padj < 0.05$) ordenados por edad.
+    - **Reporte:** Se reescribió y actualizó completamente [[wiki/Reporte_Integral_PyDESeq2_V4.md|📄 Reporte Integral PyDESeq2 V4]] con las cifras corregidas (4 y 10 genes), las tres nuevas figuras y las interpretaciones biológicas de UniProt.
+    - **Compilación:** Se compiló el reporte a un archivo HTML premium auto-contenido con las figuras embebidas en base64 en `scAR_python_validation_v4_clean/docs/Reporte_Integral_PyDESeq2_V4.html`.
+
+## 2026-05-25
+- **03:45 PM**: 🧬 **Corrección de Entrada PyDESeq2 y Firma Molecular**.
+    - **Diagnóstico:** La Fase 04 (`04-purify-qc-lineage.py`) guardaba valores log-normalizados flotantes en `adata.X` en lugar de cuentas enteras discretas, lo que invalidaba el modelo binomial negativo de DESeq2 y producía falsos significativos (como genes con LFC = 0.0000 y padj < 0.05).
+    - **Corrección:** Se modificó la Fase 04 para mantener conteos discretos de scAR en `adata.X` y se resolvieron singularidades de LOESS en la selección de HVGs.
+    - **Impacto:** Firma depurada de 86 supuestos genes a **4 genes de alta confianza ($|LFC| > 1$)** y **10 genes de firma relajada ($|LFC| > 0.5$)**.
+    - **Gráficos:** Corregida lógica en `17b_pydeseq2_visualizations.py` para requerir simultáneamente `padj < 0.05` y `|LFC| > 1` en el Volcano Plot, añadiendo líneas límite.
+    - **Wiki:** Destilado conocimiento en [[wiki/REVISION_COMPARATIVA_DE|🔍 Revisión Comparativa DE]].
+    - **DotPlot de Pureza:** Se corrigió el error visual en `11_visual_validation.py` donde `standard_scale='var'` sobre solo 2 grupos (Adult vs Old) distorsionaba la escala y hacía que los adultos parecieran tener expresión nula de marcadores NK y expresión espuria de T-cell (como CD8A). Se eliminó el escalamiento variable, se normalizaron y log-transformaron los datos del plot, y se regeneró el reporte HTML auto-contenido `VISUAL_VALIDATION_AUDIT.html`.
+
 ## 2026-04-23
 - **02:55 AM**: 🚀 **Éxito en Prueba Piloto scAR (Donante IGTB469)**.
     - Instalación de `scar` (Novartis) en `.v20_venv` vía GitHub.
@@ -23,7 +57,7 @@ Todas las decisiones y cambios significativos del proyecto se registran aquí.
 
 ---
 *Fin del Registro Actual*
- - 2026-04-23: �xito total en el Benchmark de scAR. Se demostr� superioridad t�cnica (3-4 min/donante en GPU) y biol�gica (reducci�n de contaminantes >50% vs flujo anterior). Se establece el plan para el procesamiento masivo del dataset V20.
+ - 2026-04-23: �xito total en el Benchmark de scAR. Se demostr� superioridad t�cnica (3-4 min/donante en GPU) y biol�gica (reducci�n de contaminantes >50% vs flujo anterior). Se establece el plan para el procesamiento masivo del dataset V20.
 
 ## 2026-04-28
 - **01:15 AM**: 🛡️ **Creación del Dataset Gold Standard (Pure Python)**.
