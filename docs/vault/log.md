@@ -2,6 +2,13 @@
 
 Todas las decisiones y cambios significativos del proyecto se registran aquí.
 
+## 2026-06-10
+- **01:35 AM**: 🧬 **Análisis de Modelos Mixtos y scVI en Célula Única (NK CD56bright)**.
+    - **Pipeline scVI:** Ejecución de `26_run_single_cell_scvi.py` en WSL con la RTX 4060, modelando counts crudos y controlando por donante/lote. Identificó **413 genes significativos** con Bayes Factor > 3.0.
+    - **Pipeline MixedLM Paralelizado:** Implementación y ejecución de `27_run_single_cell_mixedlm.py` gen por gen en paralelo (joblib, n_jobs=-2), normalizando a 10,000 counts + log1p. Se identificaron **0 genes significativos con padj < 0.05** tras FDR (BH), evidenciando la pérdida de poder del LMM tradicional a nivel de célula única en poblaciones escasas.
+    - **GSEA Preranked Comparativo:** Ejecución de `28_subtypes_mixed_gsea.py` para Hallmark, KEGG, Reactome y GO:BP. Logró "rescatar" 31 vías en MixedLM y 143 en scVI, revelando consistencia molecular en la firma pro-inflamatoria (TNF-alpha/NF-kB, IL-17) y el declive bioenergético mitocondrial de las CD56bright viejas.
+    - **Reporte Interactivo y Tablas:** Generación de `Reporte_Comparativo_Modelos_Mixtos.html` incorporando tablas interactivas con el Top 100 de genes y las perspectivas de investigación futuras recomendadas por el Consejo Académico Titan.
+
 ## 2026-05-29
 - **03:42 PM**: 🧬 **Validación de LFC Shrinkage en Nueva Rama Aislada (`v4_shrinkage`)**.
     - **Aislamiento de la Rama:** Se creó la nueva estructura de directorios `scAR_python_validation_v4_shrinkage/` para documentar de forma independiente este análisis comparativo.
