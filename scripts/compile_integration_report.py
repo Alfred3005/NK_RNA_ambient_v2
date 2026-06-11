@@ -36,10 +36,24 @@ def parse_markdown_to_html(md_content):
     in_table = False
     table_html = ""
     in_list = False
+    in_mermaid = False
+    mermaid_content = ""
     
     for line in lines:
         line_strip = line.strip()
         
+        if line_strip.startswith("```mermaid"):
+            in_mermaid = True
+            continue
+        elif in_mermaid and line_strip.startswith("```"):
+            in_mermaid = False
+            html += f"<pre class='mermaid'>\n{mermaid_content}</pre>\n"
+            mermaid_content = ""
+            continue
+        elif in_mermaid:
+            mermaid_content += line + "\n"
+            continue
+
         # Manejo de listas
         if line_strip.startswith("* ") or line_strip.startswith("- "):
             if not in_list:
@@ -195,6 +209,10 @@ def main():
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte Integrativo: CD56dim vs CD56bright y Abundancia NK</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({{ startOnLoad: true, theme: 'dark' }});
+    </script>
     <style>
         :root {{
             --primary: #4f46e5;

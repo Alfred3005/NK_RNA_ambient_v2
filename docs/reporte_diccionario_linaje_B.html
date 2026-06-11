@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Pureza de Linaje: Exclusión de Células B</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --primary-border: #3b82f6;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --accent: #2563eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        /* Encabezados */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 2.5rem;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #334155;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #334155;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+            font-size: 1.05rem;
+            color: #334155;
+        }
+
+        /* Código y pre */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #f1f5f9;
+            padding: 3px 6px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #ef4444;
+            word-break: break-word;
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        .codehilite {
+            background: #1e293b;
+            padding: 20px 24px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 25px 0;
+            border: 1px solid #0f172a;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .codehilite pre {
+            margin: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #f8fafc;
+        }
+
+        /* Enlaces */
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed var(--accent);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+            border-bottom-style: solid;
+        }
+
+        /* Líneas horizontales */
+        hr {
+            border: 0;
+            border-top: 2px solid var(--border);
+            margin: 40px 0;
+        }
+
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #1e293b;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Admonitions / Alertas */
+        .admonition {
+            padding: 18px 24px;
+            margin: 25px 0;
+            border-radius: 10px;
+            border-left: 6px solid #94a3b8;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .admonition p:last-child {
+            margin-bottom: 0;
+        }
+
+        .admonition.note {
+            background-color: #eff6ff;
+            border-color: #3b82f6;
+            color: #1e40af;
+        }
+        
+        .admonition.note::before {
+            content: "💡 NOTA";
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .admonition.important {
+            background-color: #fffbeb;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        
+        .admonition.important::before {
+            content: "⚠️ IMPORTANTE";
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .admonition.warning {
+            background-color: #fff5f5;
+            border-color: #ef4444;
+            color: #991b1b;
+        }
+        
+        .admonition.warning::before {
+            content: "🚨 ADVERTENCIA";
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .admonition.tip {
+            background-color: #f5f3ff;
+            border-color: #8b5cf6;
+            color: #5b21b6;
+        }
+
+        .admonition.tip::before {
+            content: "✨ CONSEJO";
+            font-weight: 700;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Botón flotante para impresión rápida */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+
+        .print-btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Estilos de Impresión */
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            .print-btn {
+                display: none; /* Ocultar botón al imprimir */
+            }
+
+            h1, h2, h3, table, tr, img, .admonition {
+                page-break-inside: avoid;
+            }
+
+            h2 {
+                border-left-width: 4px;
+                background-color: transparent !important;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .codehilite {
+                background-color: #f8fafc;
+                border: 1px solid #cbd5e1;
+                box-shadow: none;
+            }
+
+            .codehilite pre {
+                color: #0f172a;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+
+            .admonition {
+                border-left-width: 4px;
+                box-shadow: none;
+            }
+
+            a {
+                color: #000000;
+                border-bottom: none;
+            }
+            
+            /* Mostrar URL al lado del enlace en formato impreso */
+            a::after {
+                content: " (" attr(href) ")";
+                font-size: 0.85em;
+                color: var(--text-muted);
+            }
+            
+            /* Exclusión de rutas locales del formateo para evitar URLs muy largas y feas en papel */
+            a[href^="file://"]::after {
+                content: "";
+            }
+        }
+
+        pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #49483e }
+.codehilite { background: #272822; color: #F8F8F2 }
+.codehilite .c { color: #959077 } /* Comment */
+.codehilite .err { color: #ED007E; background-color: #1E0010 } /* Error */
+.codehilite .esc { color: #F8F8F2 } /* Escape */
+.codehilite .g { color: #F8F8F2 } /* Generic */
+.codehilite .k { color: #66D9EF } /* Keyword */
+.codehilite .l { color: #AE81FF } /* Literal */
+.codehilite .n { color: #F8F8F2 } /* Name */
+.codehilite .o { color: #FF4689 } /* Operator */
+.codehilite .x { color: #F8F8F2 } /* Other */
+.codehilite .p { color: #F8F8F2 } /* Punctuation */
+.codehilite .ch { color: #959077 } /* Comment.Hashbang */
+.codehilite .cm { color: #959077 } /* Comment.Multiline */
+.codehilite .cp { color: #959077 } /* Comment.Preproc */
+.codehilite .cpf { color: #959077 } /* Comment.PreprocFile */
+.codehilite .c1 { color: #959077 } /* Comment.Single */
+.codehilite .cs { color: #959077 } /* Comment.Special */
+.codehilite .gd { color: #FF4689 } /* Generic.Deleted */
+.codehilite .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+.codehilite .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.codehilite .gr { color: #F8F8F2 } /* Generic.Error */
+.codehilite .gh { color: #F8F8F2 } /* Generic.Heading */
+.codehilite .gi { color: #A6E22E } /* Generic.Inserted */
+.codehilite .go { color: #66D9EF } /* Generic.Output */
+.codehilite .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #959077 } /* Generic.Subheading */
+.codehilite .gt { color: #F8F8F2 } /* Generic.Traceback */
+.codehilite .kc { color: #66D9EF } /* Keyword.Constant */
+.codehilite .kd { color: #66D9EF } /* Keyword.Declaration */
+.codehilite .kn { color: #FF4689 } /* Keyword.Namespace */
+.codehilite .kp { color: #66D9EF } /* Keyword.Pseudo */
+.codehilite .kr { color: #66D9EF } /* Keyword.Reserved */
+.codehilite .kt { color: #66D9EF } /* Keyword.Type */
+.codehilite .ld { color: #E6DB74 } /* Literal.Date */
+.codehilite .m { color: #AE81FF } /* Literal.Number */
+.codehilite .s { color: #E6DB74 } /* Literal.String */
+.codehilite .na { color: #A6E22E } /* Name.Attribute */
+.codehilite .nb { color: #F8F8F2 } /* Name.Builtin */
+.codehilite .nc { color: #A6E22E } /* Name.Class */
+.codehilite .no { color: #66D9EF } /* Name.Constant */
+.codehilite .nd { color: #A6E22E } /* Name.Decorator */
+.codehilite .ni { color: #F8F8F2 } /* Name.Entity */
+.codehilite .ne { color: #A6E22E } /* Name.Exception */
+.codehilite .nf { color: #A6E22E } /* Name.Function */
+.codehilite .nl { color: #F8F8F2 } /* Name.Label */
+.codehilite .nn { color: #F8F8F2 } /* Name.Namespace */
+.codehilite .nx { color: #A6E22E } /* Name.Other */
+.codehilite .py { color: #F8F8F2 } /* Name.Property */
+.codehilite .nt { color: #FF4689 } /* Name.Tag */
+.codehilite .nv { color: #F8F8F2 } /* Name.Variable */
+.codehilite .ow { color: #FF4689 } /* Operator.Word */
+.codehilite .pm { color: #F8F8F2 } /* Punctuation.Marker */
+.codehilite .w { color: #F8F8F2 } /* Text.Whitespace */
+.codehilite .mb { color: #AE81FF } /* Literal.Number.Bin */
+.codehilite .mf { color: #AE81FF } /* Literal.Number.Float */
+.codehilite .mh { color: #AE81FF } /* Literal.Number.Hex */
+.codehilite .mi { color: #AE81FF } /* Literal.Number.Integer */
+.codehilite .mo { color: #AE81FF } /* Literal.Number.Oct */
+.codehilite .sa { color: #E6DB74 } /* Literal.String.Affix */
+.codehilite .sb { color: #E6DB74 } /* Literal.String.Backtick */
+.codehilite .sc { color: #E6DB74 } /* Literal.String.Char */
+.codehilite .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #E6DB74 } /* Literal.String.Doc */
+.codehilite .s2 { color: #E6DB74 } /* Literal.String.Double */
+.codehilite .se { color: #AE81FF } /* Literal.String.Escape */
+.codehilite .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+.codehilite .si { color: #E6DB74 } /* Literal.String.Interpol */
+.codehilite .sx { color: #E6DB74 } /* Literal.String.Other */
+.codehilite .sr { color: #E6DB74 } /* Literal.String.Regex */
+.codehilite .s1 { color: #E6DB74 } /* Literal.String.Single */
+.codehilite .ss { color: #E6DB74 } /* Literal.String.Symbol */
+.codehilite .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #A6E22E } /* Name.Function.Magic */
+.codehilite .vc { color: #F8F8F2 } /* Name.Variable.Class */
+.codehilite .vg { color: #F8F8F2 } /* Name.Variable.Global */
+.codehilite .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+.codehilite .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+.codehilite .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">
+        🖨️ Imprimir Reporte
+    </button>
+    <div class="container">
+        <h1>Reporte de Pureza de Linaje: Enfoque en la Exclusión de Células B</h1>
+<p>Este documento describe detalladamente la estrategia biológica y computacional utilizada en nuestra tubería de análisis de secuenciación de ARN de célula única (scRNA-seq) para identificar, evaluar y excluir células pertenecientes al linaje de células B. Esta depuración es fundamental para garantizar que los análisis transcriptómicos posteriores (como los de expresión diferencial y abundancia de subtipos de células NK) se realicen sobre una población celular pura y libre de contaminación heterotípica.</p>
+<hr />
+<h2>1. El Linaje de Células B (Biología y Ontogenia)</h2>
+<p>Las <strong>células B (linocitos B)</strong> constituyen uno de los pilares de la inmunidad adaptativa humoral, cuya función principal es la producción de anticuerpos específicos de antígeno (inmunoglobulinas) y la presentación de antígenos a las células T colaboradoras.</p>
+<h3>Ontogenia y Maduración</h3>
+<ul>
+<li><strong>Origen:</strong> Se originan a partir de células madre hematopoyéticas (HSC) en la médula ósea.</li>
+<li><strong>Compromiso de Linaje:</strong> El factor de transcripción maestro <strong>PAX5</strong> es el regulador crítico que induce el programa transcripcional de células B (activando genes como <code>CD19</code>, <code>CD79A</code> y <code>CD79B</code>) mientras reprime activamente otros linajes (como Notch1 para células T o receptores mieloides).</li>
+<li><strong>Fases de Desarrollo:</strong> Pasan por fases ordenadas de reordenamiento de los genes de inmunoglobulinas:</li>
+<li><strong>Pro-B:</strong> Estadio inicial, inicio de recombinación de cadena pesada.</li>
+<li><strong>Pre-B:</strong> Expresión del receptor de células B pre-inmaduro.</li>
+<li><strong>Célula B Inmadura:</strong> Expresión de IgM en superficie. Migran de la médula ósea al bazo y nódulos linfáticos.</li>
+<li><strong>Célula B Madura (Naive):</strong> Expresan IgM e IgD en superficie. Listas para reconocer antígenos.</li>
+<li><strong>Fase Efectora (Célula Plasmática):</strong> Tras la activación antigénica y la cooperación con células T, las células B proliferan en los centros germinales (donde sufren hipermutación somática y cambio de isotipo) y se diferencian en:</li>
+<li><strong>Células B de Memoria:</strong> Células de vida larga listas para una respuesta secundaria rápida.</li>
+<li><strong>Células Plasmáticas:</strong> Fábricas de anticuerpos terminalmente diferenciadas. Durante este proceso, las células plasmáticas pierden la expresión de marcadores clásicos de superficie (como CD19 y CD20) y regulan fuertemente al alza la maquinaria de secreción proteica (genes como <code>MZB1</code>, <code>JCHAIN</code> y <code>SDC1</code> / CD138).</li>
+</ul>
+<hr />
+<h2>2. Estrategia de Purificación y Exclusión de Células B en el Pipeline NK</h2>
+<p>En proyectos de transcriptómica de células NK, la contaminación por células B es un desafío técnico relevante. Las células B abundan en sangre periférica (PBMC) y tejidos linfoides, y los métodos de aislamiento físico (como la selección magnética o FACS) pueden arrastrar células contaminantes o fragmentos celulares ("ambient RNA").</p>
+<p>Para solucionar esto, nuestro pipeline implementa una <strong>estrategia de purificación en dos pasos</strong> a nivel bioinformático:</p>
+<h3>Paso A: Puntuación de Linaje (Lineage Scoring)</h3>
+<p>Utilizando la biblioteca <code>Scanpy</code> (<code>sc.tl.score_genes</code>), calculamos puntuaciones específicas para cada célula basadas en un panel de genes de alta confianza para cada linaje principal (NK, Células T y Células B):</p>
+<ul>
+<li><strong>Marcadores de Células B utilizados para la puntuación (<code>B_CELL_score</code>):</strong></li>
+<li><code>CD19</code>: Marcador pan-B por excelencia, expresado desde Pro-B hasta antes de la célula plasmática.</li>
+<li><code>MS4A1</code> (CD20): Expresado en células B maduras, regulado a la baja en células plasmáticas.</li>
+<li><code>MZB1</code>: Proteína específica de células B de zona marginal y células plasmáticas. <strong>Este marcador es clave</strong> porque permite detectar células plasmáticas secretoras de anticuerpos que ya no expresan CD19 ni CD20.</li>
+</ul>
+<h3>Paso B: Umbral de Exclusión Estricto</h3>
+<p>Para depurar el dataset maestro de células NK y obtener el "Gold Standard", aplicamos una máscara booleana estricta:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 1. B-Cell Purge (Eliminación de cualquier residuo del linaje B)</span>
+<span class="n">mask_b</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;B_CELL_score&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.1</span>
+
+<span class="c1"># 2. Dominancia de Identidad (Asegurar que sea NK y no T)</span>
+<span class="n">mask_nk</span> <span class="o">=</span> <span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;NK_score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">adata</span><span class="o">.</span><span class="n">obs</span><span class="p">[</span><span class="s1">&#39;T_CELL_score&#39;</span><span class="p">]</span>
+
+<span class="c1"># Filtrado final</span>
+<span class="n">adata_clean</span> <span class="o">=</span> <span class="n">adata</span><span class="p">[</span><span class="n">mask_b</span> <span class="o">&amp;</span> <span class="n">mask_nk</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</code></pre></div>
+
+<p>Cualquier célula con un <code>B_CELL_score &gt;= 0.1</code> es descartada inmediatamente. Este umbral es extremadamente sensible y elimina no solo células B intactas, sino también dobletes celulares (p. ej., NK-B) y células NK con altos niveles de ruido transcriptómico de fondo (ambient RNA) procedente de células B lisadas durante el ensayo.</p>
+<hr />
+<h2>3. Diccionario de Marcadores de Linaje B</h2>
+<p>A continuación, se detalla la función fisiológica y el rol analítico de los marcadores clave del linaje B evaluados en la fase de control de calidad y validación de pureza:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Símbolo del Gen</th>
+<th style="text-align: left;">Nombre Común</th>
+<th style="text-align: left;">Función Fisiológica</th>
+<th style="text-align: left;">Rol en el Pipeline de Exclusión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>CD19</code></strong></td>
+<td style="text-align: left;">CD19</td>
+<td style="text-align: left;">Glicoproteína transmembrana correceptora del receptor de células B (BCR). Facilita la transducción de señales de activación.</td>
+<td style="text-align: left;"><strong>Marcador Core.</strong> Utilizado en el cálculo del <code>B_CELL_score</code> para identificar células B maduras y de memoria.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>MS4A1</code></strong></td>
+<td style="text-align: left;">CD20</td>
+<td style="text-align: left;">Canal de calcio de membrana activado por ligando, crucial para la diferenciación y activación celular.</td>
+<td style="text-align: left;"><strong>Marcador Core.</strong> Utilizado en el cálculo del <code>B_CELL_score</code> para identificar linfocitos B en fases maduras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>MZB1</code></strong></td>
+<td style="text-align: left;">MZB1</td>
+<td style="text-align: left;">Chaperona del retículo endoplásmico que ayuda al ensamblaje y secreción de anticuerpos (IgM).</td>
+<td style="text-align: left;"><strong>Marcador Core.</strong> Indispensable para detectar células plasmáticas que carecen de marcadores de superficie tradicionales (<code>CD19</code>/<code>CD20</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>CD79A</code></strong></td>
+<td style="text-align: left;">Ig-alpha (CD79a)</td>
+<td style="text-align: left;">Componente heterodimérico de señalización unido de forma no covalente a la inmunoglobulina de superficie.</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Evaluado en el control post-limpieza (<code>validation_B_2.ipynb</code>) para confirmar expresión nula en el dataset purificado.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>CD79B</code></strong></td>
+<td style="text-align: left;">Ig-beta (CD79b)</td>
+<td style="text-align: left;">Segundo componente del heterodímero de señalización del BCR (junto con CD79A).</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Evaluado para asegurar que no hay remanentes del complejo BCR activo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>IGHM</code></strong></td>
+<td style="text-align: left;">Cadena Mu de Ig</td>
+<td style="text-align: left;">Región constante de la cadena pesada de la inmunoglobulina M (IgM), primera clase de anticuerpo expresada.</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Detecta contaminación por células B naive e inmaduras y anticuerpos libres solubles.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>CD74</code></strong></td>
+<td style="text-align: left;">Cadena gamma de MHC-II</td>
+<td style="text-align: left;">Chaperona implicada en el plegamiento y transporte de moléculas del Complejo Mayor de Histocompatibilidad Clase II.</td>
+<td style="text-align: left;"><strong>Marcador de Validación / APC.</strong> Las células B, como células presentadoras de antígenos, lo expresan densamente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>HLA-DRA</code></strong> / <strong><code>HLA-DRB1</code></strong></td>
+<td style="text-align: left;">MHC Clase II HLA-DR</td>
+<td style="text-align: left;">Moléculas heterodiméricas de superficie encargadas de presentar antígenos peptídicos exógenos a linfocitos T CD4+.</td>
+<td style="text-align: left;"><strong>Marcadores de Validación / APC.</strong> Controlados para evitar contaminación por células inmunológicas presentadoras profesionales.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>PAX5</code></strong></td>
+<td style="text-align: left;">PAX5 / BSAP</td>
+<td style="text-align: left;">Factor de transcripción master comprometedor del linaje B. Regula epigenética y transcripcionalmente la identidad B.</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Su ausencia confirma la nula diferenciación o desdiferenciación hacia el linaje B en nuestras células NK.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>JCHAIN</code></strong></td>
+<td style="text-align: left;">Cadena de Unión (J Chain)</td>
+<td style="text-align: left;">Glicoproteína ácida indispensable para la polimerización de inmunoglobulinas secretadas (IgA dimérica e IgM pentamérica).</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Altamente específico de células plasmáticas secretoras maduras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>CD22</code></strong></td>
+<td style="text-align: left;">CD22 / Siglec-2</td>
+<td style="text-align: left;">Receptor de adhesión celular que se une a ácidos siálicos y actúa como regulador negativo de la señalización del BCR.</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Específico de células B maduras.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>TCL1A</code></strong></td>
+<td style="text-align: left;">TCL1A</td>
+<td style="text-align: left;">Coactivador de la ruta AKT implicado en la supervivencia y proliferación linfocitaria temprana.</td>
+<td style="text-align: left;"><strong>Marcador de Validación.</strong> Específico de precursores y células B naive.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>4. Validación de Pureza y Resultados Obtenidos</h2>
+<p>La eficacia de esta metodología de exclusión se verificó visualmente mediante dotplots y estadísticos de distribución detallados en el script <code>scAR_python_validation/scripts/purify_and_audit.py</code> y el notebook de validación <code>validation_B_2.ipynb</code>:</p>
+<ol>
+<li><strong>Expresión Residual Prácticamente Nula:</strong> Tras aplicar el filtro <code>B_CELL_score &lt; 0.1</code>, los marcadores canónicos como <code>CD19</code>, <code>MS4A1</code> (CD20) y <code>CD79A</code> alcanzaron valores medios de expresión cercanos a <strong>0.00</strong> en el dataset "Gold Standard".</li>
+<li><strong>Depuración de Dobletes y Ambient RNA:</strong> Se redujo drásticamente el ruido de fondo provocado por la lisis de células B durante el procesamiento de muestras, el cual suele adherirse a las membranas de las células NK (falsa expresión debida a ARN libre o "ambient RNA" capturado en las gotitas de microfluídica).</li>
+<li><strong>Consolidación del Dataset Gold Standard:</strong> El dataset consolidado resultante consta de <strong>191,903 células de alta pureza</strong> provenientes de <strong>547 donantes</strong> inmunológicamente bien definidos. La exclusión del linaje B nos permitió aislar la señal transcriptómica pura de envejecimiento inmunológico (adulto vs viejo) en células NK de forma limpia, libre del sesgo que causa la mezcla celular de PBMC.</li>
+</ol>
+    </div>
+</body>
+</html>

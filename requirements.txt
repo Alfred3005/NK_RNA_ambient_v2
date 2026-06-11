@@ -1,7 +1,12 @@
-# Core Bioinformatics
+# Core Single-Cell & Bioinformatics
 scanpy>=1.10.0
 anndata>=0.10.0
 scvi-tools>=1.1.0
+pydeseq2>=0.4.4
+gseapy>=1.1.2
+
+# Statistical Modeling
+statsmodels>=0.14.0
 
 # ddqc Dependencies
 pegasusio
@@ -16,5 +21,10 @@ matplotlib>=3.4.0
 seaborn>=0.11.0
 tqdm
 psutil
+
+# R integration (For Milo abundance modeling)
 rpy2
-python-dotenv
+
+# HTML Report Compilation
+markdown
+pygments

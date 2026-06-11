@@ -25,7 +25,7 @@ def image_to_base64(path):
 
 def convert_to_html():
     # Paths
-    md_path = '/mnt/c/Users/PREDATOR/.gemini/antigravity/brain/6020230e-b638-44a6-829c-36118895bdfe/VISUAL_VALIDATION_AUDIT.md'
+    md_path = 'scAR_python_validation_v4_clean/docs/VISUAL_VALIDATION_AUDIT.md'
     output_path = 'scAR_python_validation_v4_clean/docs/VISUAL_VALIDATION_AUDIT.html'
     
     # Read Markdown

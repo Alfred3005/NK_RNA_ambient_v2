@@ -1,0 +1,5141 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "01-segmentation-rapids.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/01-segmentation-rapids.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_01_segmentation_rapids_py",
+      "community": 19,
+      "norm_label": "01-segmentation-rapids.py"
+    },
+    {
+      "label": "check_memory()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/01-segmentation-rapids.py",
+      "source_location": "L21",
+      "id": "legacy_scripts_01_segmentation_rapids_check_memory",
+      "community": 19,
+      "norm_label": "check_memory()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/01-segmentation-rapids.py",
+      "source_location": "L25",
+      "id": "legacy_scripts_01_segmentation_rapids_main",
+      "community": 19,
+      "norm_label": "main()"
+    },
+    {
+      "label": "01b-recovery-segmentation.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/01b-recovery-segmentation.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_01b_recovery_segmentation_py",
+      "community": 32,
+      "norm_label": "01b-recovery-segmentation.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/01b-recovery-segmentation.py",
+      "source_location": "L8",
+      "id": "legacy_scripts_01b_recovery_segmentation_main",
+      "community": 32,
+      "norm_label": "main()"
+    },
+    {
+      "label": "01c-monster-rescue.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/01c-monster-rescue.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_01c_monster_rescue_py",
+      "community": 78,
+      "norm_label": "01c-monster-rescue.py"
+    },
+    {
+      "label": "02b-parallel-orchestrator.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/02b-parallel-orchestrator.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_02b_parallel_orchestrator_py",
+      "community": 20,
+      "norm_label": "02b-parallel-orchestrator.py"
+    },
+    {
+      "label": "process_segment()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/02b-parallel-orchestrator.py",
+      "source_location": "L7",
+      "id": "legacy_scripts_02b_parallel_orchestrator_process_segment",
+      "community": 20,
+      "norm_label": "process_segment()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/02b-parallel-orchestrator.py",
+      "source_location": "L30",
+      "id": "legacy_scripts_02b_parallel_orchestrator_main",
+      "community": 20,
+      "norm_label": "main()"
+    },
+    {
+      "label": "03-custom-labeling.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03-custom-labeling.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_03_custom_labeling_py",
+      "community": 33,
+      "norm_label": "03-custom-labeling.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03-custom-labeling.py",
+      "source_location": "L7",
+      "id": "legacy_scripts_03_custom_labeling_main",
+      "community": 33,
+      "norm_label": "main()"
+    },
+    {
+      "label": "03b-local-consolidate.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_03b_local_consolidate_py",
+      "community": 10,
+      "norm_label": "03b-local-consolidate.py"
+    },
+    {
+      "label": "is_valid_gene_symbol()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L39",
+      "id": "legacy_scripts_03b_local_consolidate_is_valid_gene_symbol",
+      "community": 10,
+      "norm_label": "is_valid_gene_symbol()"
+    },
+    {
+      "label": "map_age_yrs()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L46",
+      "id": "legacy_scripts_03b_local_consolidate_map_age_yrs",
+      "community": 10,
+      "norm_label": "map_age_yrs()"
+    },
+    {
+      "label": "process_worker()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L51",
+      "id": "legacy_scripts_03b_local_consolidate_process_worker",
+      "community": 10,
+      "norm_label": "process_worker()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L97",
+      "id": "legacy_scripts_03b_local_consolidate_main",
+      "community": 10,
+      "norm_label": "main()"
+    },
+    {
+      "label": "04-final-analysis.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/04-final-analysis.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_04_final_analysis_py",
+      "community": 34,
+      "norm_label": "04-final-analysis.py"
+    },
+    {
+      "label": "generate_analysis()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/04-final-analysis.py",
+      "source_location": "L5",
+      "id": "legacy_scripts_04_final_analysis_generate_analysis",
+      "community": 34,
+      "norm_label": "generate_analysis()"
+    },
+    {
+      "label": "analyze_monster.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/analyze_monster.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_analyze_monster_py",
+      "community": 35,
+      "norm_label": "analyze_monster.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/analyze_monster.py",
+      "source_location": "L5",
+      "id": "legacy_scripts_analyze_monster_main",
+      "community": 35,
+      "norm_label": "main()"
+    },
+    {
+      "label": "check_clusters.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/check_clusters.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_check_clusters_py",
+      "community": 36,
+      "norm_label": "check_clusters.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/check_clusters.py",
+      "source_location": "L4",
+      "id": "legacy_scripts_check_clusters_main",
+      "community": 36,
+      "norm_label": "main()"
+    },
+    {
+      "label": "check_columns.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/check_columns.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_check_columns_py",
+      "community": 79,
+      "norm_label": "check_columns.py"
+    },
+    {
+      "label": "check_sizes.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/check_sizes.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_check_sizes_py",
+      "community": 37,
+      "norm_label": "check_sizes.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/check_sizes.py",
+      "source_location": "L6",
+      "id": "legacy_scripts_check_sizes_main",
+      "community": 37,
+      "norm_label": "main()"
+    },
+    {
+      "label": "detect_monsters_age.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/detect_monsters_age.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_detect_monsters_age_py",
+      "community": 38,
+      "norm_label": "detect_monsters_age.py"
+    },
+    {
+      "label": "inspect_monsters()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/detect_monsters_age.py",
+      "source_location": "L7",
+      "id": "legacy_scripts_detect_monsters_age_inspect_monsters",
+      "community": 38,
+      "norm_label": "inspect_monsters()"
+    },
+    {
+      "label": "detect_monsters_metadata.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/detect_monsters_metadata.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_detect_monsters_metadata_py",
+      "community": 39,
+      "norm_label": "detect_monsters_metadata.py"
+    },
+    {
+      "label": "deep_inspect_monsters()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/detect_monsters_metadata.py",
+      "source_location": "L7",
+      "id": "legacy_scripts_detect_monsters_metadata_deep_inspect_monsters",
+      "community": 39,
+      "norm_label": "deep_inspect_monsters()"
+    },
+    {
+      "label": "orchestrate-pipeline.sh",
+      "file_type": "code",
+      "source_file": "legacy_scripts/orchestrate-pipeline.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "legacy_scripts_orchestrate_pipeline_sh",
+      "community": 40,
+      "norm_label": "orchestrate-pipeline.sh"
+    },
+    {
+      "label": "orchestrate-pipeline.sh script",
+      "file_type": "code",
+      "source_file": "legacy_scripts/orchestrate-pipeline.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "c_users_predator_documents_antigravity_workspaces_nk_pipeline_rna_ambient_legacy_scripts_orchestrate_pipeline_sh__entry",
+      "community": 40,
+      "norm_label": "orchestrate-pipeline.sh script"
+    },
+    {
+      "label": "quantify_missing.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/quantify_missing.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_quantify_missing_py",
+      "community": 41,
+      "norm_label": "quantify_missing.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/quantify_missing.py",
+      "source_location": "L6",
+      "id": "legacy_scripts_quantify_missing_main",
+      "community": 41,
+      "norm_label": "main()"
+    },
+    {
+      "label": "setup_env_wsl.sh",
+      "file_type": "code",
+      "source_file": "legacy_scripts/setup_env_wsl.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "legacy_scripts_setup_env_wsl_sh",
+      "community": 29,
+      "norm_label": "setup_env_wsl.sh"
+    },
+    {
+      "label": "setup_env_wsl.sh script",
+      "file_type": "code",
+      "source_file": "legacy_scripts/setup_env_wsl.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "c_users_predator_documents_antigravity_workspaces_nk_pipeline_rna_ambient_legacy_scripts_setup_env_wsl_sh__entry",
+      "community": 29,
+      "norm_label": "setup_env_wsl.sh script"
+    },
+    {
+      "label": "logger.py",
+      "file_type": "code",
+      "source_file": "legacy_scripts/utils/logger.py",
+      "source_location": "L1",
+      "id": "legacy_scripts_utils_logger_py",
+      "community": 28,
+      "norm_label": "logger.py"
+    },
+    {
+      "label": "setup_logger()",
+      "file_type": "code",
+      "source_file": "legacy_scripts/utils/logger.py",
+      "source_location": "L6",
+      "id": "utils_logger_setup_logger",
+      "community": 28,
+      "norm_label": "setup_logger()"
+    },
+    {
+      "label": "Sets up a professional logging infrastructure that outputs to both     the conso",
+      "file_type": "rationale",
+      "source_file": "legacy_scripts/utils/logger.py",
+      "source_location": "L7",
+      "id": "utils_logger_rationale_7",
+      "community": 28,
+      "norm_label": "sets up a professional logging infrastructure that outputs to both     the conso"
+    },
+    {
+      "label": "run_server_pipeline.sh",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/run_server_pipeline.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      },
+      "id": "phoenix_server_deploy_run_server_pipeline_sh",
+      "community": 21,
+      "norm_label": "run_server_pipeline.sh"
+    },
+    {
+      "label": "run_server_pipeline.sh script",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/run_server_pipeline.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "id": "c_users_predator_documents_antigravity_workspaces_nk_pipeline_rna_ambient_phoenix_server_deploy_run_server_pipeline_sh__entry",
+      "community": 21,
+      "norm_label": "run_server_pipeline.sh script"
+    },
+    {
+      "label": "RAW_FILE",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/run_server_pipeline.sh",
+      "source_location": "L58",
+      "metadata": {
+        "language": "bash",
+        "kind": "code"
+      },
+      "id": "phoenix_server_deploy_run_server_pipeline_raw_file",
+      "community": 21,
+      "norm_label": "raw_file"
+    },
+    {
+      "label": "01_segment_ram.py",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/01_segment_ram.py",
+      "source_location": "L1",
+      "id": "phoenix_server_deploy_src_01_segment_ram_py",
+      "community": 72,
+      "norm_label": "01_segment_ram.py"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/01_segment_ram.py",
+      "source_location": "L7",
+      "id": "src_01_segment_ram_main",
+      "community": 72,
+      "norm_label": "main()"
+    },
+    {
+      "label": "03_consolidate.py",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L1",
+      "id": "phoenix_server_deploy_src_03_consolidate_py",
+      "community": 11,
+      "norm_label": "03_consolidate.py"
+    },
+    {
+      "label": "is_valid_gene_symbol()",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L38",
+      "id": "src_03_consolidate_is_valid_gene_symbol",
+      "community": 11,
+      "norm_label": "is_valid_gene_symbol()"
+    },
+    {
+      "label": "map_age_yrs()",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L45",
+      "id": "src_03_consolidate_map_age_yrs",
+      "community": 11,
+      "norm_label": "map_age_yrs()"
+    },
+    {
+      "label": "process_worker()",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L50",
+      "id": "src_03_consolidate_process_worker",
+      "community": 11,
+      "norm_label": "process_worker()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L94",
+      "id": "src_03_consolidate_main",
+      "community": 11,
+      "norm_label": "main()"
+    },
+    {
+      "label": "00-run-pipeline.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/00-run-pipeline.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_00_run_pipeline_py",
+      "community": 26,
+      "norm_label": "00-run-pipeline.py"
+    },
+    {
+      "label": "run_script()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/00-run-pipeline.py",
+      "source_location": "L28",
+      "id": "scripts_00_run_pipeline_run_script",
+      "community": 26,
+      "norm_label": "run_script()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/00-run-pipeline.py",
+      "source_location": "L51",
+      "id": "scripts_00_run_pipeline_main",
+      "community": 26,
+      "norm_label": "main()"
+    },
+    {
+      "label": "03-consolidate-scar.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/03-consolidate-scar.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_03_consolidate_scar_py",
+      "community": 45,
+      "norm_label": "03-consolidate-scar.py"
+    },
+    {
+      "label": "run_consolidation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/03-consolidate-scar.py",
+      "source_location": "L32",
+      "id": "scripts_03_consolidate_scar_run_consolidation",
+      "community": 45,
+      "norm_label": "run_consolidation()"
+    },
+    {
+      "label": "04-adaptive-qc.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_04_adaptive_qc_py",
+      "community": 7,
+      "norm_label": "04-adaptive-qc.py"
+    },
+    {
+      "label": "validate_nk_identity()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L22",
+      "id": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "community": 7,
+      "norm_label": "validate_nk_identity()"
+    },
+    {
+      "label": "run_adaptive_qc()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L29",
+      "id": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_run_adaptive_qc",
+      "community": 7,
+      "norm_label": "run_adaptive_qc()"
+    },
+    {
+      "label": "Verifica marcadores cl\u00e1sicos para asegurar integridad del dataset.",
+      "file_type": "rationale",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L23",
+      "id": "scripts_04_adaptive_qc_rationale_23",
+      "community": 7,
+      "norm_label": "verifica marcadores clasicos para asegurar integridad del dataset."
+    },
+    {
+      "label": "04-purify-qc-lineage.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_04_purify_qc_lineage_py",
+      "community": 15,
+      "norm_label": "04-purify-qc-lineage.py"
+    },
+    {
+      "label": "robust_adaptive_qc()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L29",
+      "id": "scripts_04_purify_qc_lineage_robust_adaptive_qc",
+      "community": 15,
+      "norm_label": "robust_adaptive_qc()"
+    },
+    {
+      "label": "run_purify_qc()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L81",
+      "id": "scripts_04_purify_qc_lineage_run_purify_qc",
+      "community": 15,
+      "norm_label": "run_purify_qc()"
+    },
+    {
+      "label": "Implementaci\u00f3n manual robusta de ddqc para evitar errores de divisi\u00f3n por cero.",
+      "file_type": "rationale",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L30",
+      "id": "scripts_04_purify_qc_lineage_rationale_30",
+      "community": 15,
+      "norm_label": "implementacion manual robusta de ddqc para evitar errores de division por cero."
+    },
+    {
+      "label": "05-doublets-solo.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/05-doublets-solo.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_05_doublets_solo_py",
+      "community": 46,
+      "norm_label": "05-doublets-solo.py"
+    },
+    {
+      "label": "run_final_cleaning()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/05-doublets-solo.py",
+      "source_location": "L22",
+      "id": "scripts_05_doublets_solo_run_final_cleaning",
+      "community": 46,
+      "norm_label": "run_final_cleaning()"
+    },
+    {
+      "label": "05-preprocessing-metadata.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/05-preprocessing-metadata.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_05_preprocessing_metadata_py",
+      "community": 47,
+      "norm_label": "05-preprocessing-metadata.py"
+    },
+    {
+      "label": "clean_metadata()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/05-preprocessing-metadata.py",
+      "source_location": "L18",
+      "id": "scar_python_validation_scripts_05_preprocessing_metadata_py_scripts_05_preprocessing_metadata_clean_metadata",
+      "community": 47,
+      "norm_label": "clean_metadata()"
+    },
+    {
+      "label": "06-hvg-selection.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/06-hvg-selection.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_06_hvg_selection_py",
+      "community": 48,
+      "norm_label": "06-hvg-selection.py"
+    },
+    {
+      "label": "run_hvg_selection()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/06-hvg-selection.py",
+      "source_location": "L20",
+      "id": "scripts_06_hvg_selection_run_hvg_selection",
+      "community": 48,
+      "norm_label": "run_hvg_selection()"
+    },
+    {
+      "label": "run_pseudobulk_pydeseq2()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/10-pydeseq2-pseudobulk.py",
+      "source_location": "L9",
+      "id": "scripts_10_pydeseq2_pseudobulk_run_pseudobulk_pydeseq2",
+      "community": 16,
+      "norm_label": "run_pseudobulk_pydeseq2()"
+    },
+    {
+      "label": "apply_mass_critical_filter.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/apply_mass_critical_filter.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_apply_mass_critical_filter_py",
+      "community": 49,
+      "norm_label": "apply_mass_critical_filter.py"
+    },
+    {
+      "label": "apply_donor_threshold()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/apply_mass_critical_filter.py",
+      "source_location": "L5",
+      "id": "scripts_apply_mass_critical_filter_apply_donor_threshold",
+      "community": 49,
+      "norm_label": "apply_donor_threshold()"
+    },
+    {
+      "label": "compare_de.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/compare_de.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_compare_de_py",
+      "community": 80,
+      "norm_label": "compare_de.py"
+    },
+    {
+      "label": "detailed_stats.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/detailed_stats.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_detailed_stats_py",
+      "community": 81,
+      "norm_label": "detailed_stats.py"
+    },
+    {
+      "label": "donor_audit.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/donor_audit.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_donor_audit_py",
+      "community": 82,
+      "norm_label": "donor_audit.py"
+    },
+    {
+      "label": "extract_gene_lists.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/extract_gene_lists.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_extract_gene_lists_py",
+      "community": 83,
+      "norm_label": "extract_gene_lists.py"
+    },
+    {
+      "label": "final_stats.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/final_stats.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_final_stats_py",
+      "community": 84,
+      "norm_label": "final_stats.py"
+    },
+    {
+      "label": "plot_venn.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/plot_venn.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_plot_venn_py",
+      "community": 85,
+      "norm_label": "plot_venn.py"
+    },
+    {
+      "label": "purify_and_audit.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/purify_and_audit.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_purify_and_audit_py",
+      "community": 27,
+      "norm_label": "purify_and_audit.py"
+    },
+    {
+      "label": "apply_strict_filter()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/purify_and_audit.py",
+      "source_location": "L6",
+      "id": "scripts_purify_and_audit_apply_strict_filter",
+      "community": 27,
+      "norm_label": "apply_strict_filter()"
+    },
+    {
+      "label": "audit_donors()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/purify_and_audit.py",
+      "source_location": "L32",
+      "id": "scripts_purify_and_audit_audit_donors",
+      "community": 27,
+      "norm_label": "audit_donors()"
+    },
+    {
+      "label": "update_log.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation/scripts/update_log.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_scripts_update_log_py",
+      "community": 86,
+      "norm_label": "update_log.py"
+    },
+    {
+      "label": "10-pydeseq2-pseudobulk-clean.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v2_clean/scripts/10-pydeseq2-pseudobulk-clean.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v2_clean_scripts_10_pydeseq2_pseudobulk_clean_py",
+      "community": 16,
+      "norm_label": "10-pydeseq2-pseudobulk-clean.py"
+    },
+    {
+      "label": "compare_v1_v2.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v2_clean/scripts/compare_v1_v2.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v2_clean_scripts_compare_v1_v2_py",
+      "community": 87,
+      "norm_label": "compare_v1_v2.py"
+    },
+    {
+      "label": "extract_gene_lists_v2.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v2_clean/scripts/extract_gene_lists_v2.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v2_clean_scripts_extract_gene_lists_v2_py",
+      "community": 88,
+      "norm_label": "extract_gene_lists_v2.py"
+    },
+    {
+      "label": "10-pydeseq2-pseudobulk-perfect.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v3_perfect/scripts/10-pydeseq2-pseudobulk-perfect.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v3_perfect_scripts_10_pydeseq2_pseudobulk_perfect_py",
+      "community": 63,
+      "norm_label": "10-pydeseq2-pseudobulk-perfect.py"
+    },
+    {
+      "label": "run_pseudobulk_pydeseq2_perfect()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v3_perfect/scripts/10-pydeseq2-pseudobulk-perfect.py",
+      "source_location": "L9",
+      "id": "scripts_10_pydeseq2_pseudobulk_perfect_run_pseudobulk_pydeseq2_perfect",
+      "community": 63,
+      "norm_label": "run_pseudobulk_pydeseq2_perfect()"
+    },
+    {
+      "label": "compare_v2_v3()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v3_perfect/scripts/compare_v2_v3.py",
+      "source_location": "L4",
+      "id": "scripts_compare_v2_v3_compare_v2_v3",
+      "community": 89,
+      "norm_label": "compare_v2_v3()"
+    },
+    {
+      "label": "10-pydeseq2-pseudobulk-clean.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/10-pydeseq2-pseudobulk-clean.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_10_pydeseq2_pseudobulk_clean_py",
+      "community": 52,
+      "norm_label": "10-pydeseq2-pseudobulk-clean.py"
+    },
+    {
+      "label": "run_pseudobulk_pydeseq2_v4_final()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/10-pydeseq2-pseudobulk-clean.py",
+      "source_location": "L9",
+      "id": "scripts_10_pydeseq2_pseudobulk_clean_run_pseudobulk_pydeseq2_v4_final",
+      "community": 52,
+      "norm_label": "run_pseudobulk_pydeseq2_v4_final()"
+    },
+    {
+      "label": "11_visual_validation.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/11_visual_validation.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_11_visual_validation_py",
+      "community": 53,
+      "norm_label": "11_visual_validation.py"
+    },
+    {
+      "label": "run_visual_validation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/11_visual_validation.py",
+      "source_location": "L8",
+      "id": "scripts_11_visual_validation_run_visual_validation",
+      "community": 53,
+      "norm_label": "run_visual_validation()"
+    },
+    {
+      "label": "12_scar_ambient_validation.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/12_scar_ambient_validation.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_12_scar_ambient_validation_py",
+      "community": 54,
+      "norm_label": "12_scar_ambient_validation.py"
+    },
+    {
+      "label": "run_scar_validation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/12_scar_ambient_validation.py",
+      "source_location": "L8",
+      "id": "scripts_12_scar_ambient_validation_run_scar_validation",
+      "community": 54,
+      "norm_label": "run_scar_validation()"
+    },
+    {
+      "label": "13_solo_doublet_validation.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/13_solo_doublet_validation.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_13_solo_doublet_validation_py",
+      "community": 64,
+      "norm_label": "13_solo_doublet_validation.py"
+    },
+    {
+      "label": "run_solo_validation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/13_solo_doublet_validation.py",
+      "source_location": "L6",
+      "id": "scripts_13_solo_doublet_validation_run_solo_validation",
+      "community": 64,
+      "norm_label": "run_solo_validation()"
+    },
+    {
+      "label": "14_bimodality_diagnostics.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/14_bimodality_diagnostics.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_14_bimodality_diagnostics_py",
+      "community": 55,
+      "norm_label": "14_bimodality_diagnostics.py"
+    },
+    {
+      "label": "run_bimodality_diagnostics()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/14_bimodality_diagnostics.py",
+      "source_location": "L8",
+      "id": "scripts_14_bimodality_diagnostics_run_bimodality_diagnostics",
+      "community": 55,
+      "norm_label": "run_bimodality_diagnostics()"
+    },
+    {
+      "label": "15_pca_variance_audit.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/15_pca_variance_audit.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_15_pca_variance_audit_py",
+      "community": 65,
+      "norm_label": "15_pca_variance_audit.py"
+    },
+    {
+      "label": "run_pca_variance_audit()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/15_pca_variance_audit.py",
+      "source_location": "L10",
+      "id": "scripts_15_pca_variance_audit_run_pca_variance_audit",
+      "community": 65,
+      "norm_label": "run_pca_variance_audit()"
+    },
+    {
+      "label": "16_pca_summary_figure.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/16_pca_summary_figure.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_16_pca_summary_figure_py",
+      "community": 66,
+      "norm_label": "16_pca_summary_figure.py"
+    },
+    {
+      "label": "create_summary_figure()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/16_pca_summary_figure.py",
+      "source_location": "L7",
+      "id": "scripts_16_pca_summary_figure_create_summary_figure",
+      "community": 66,
+      "norm_label": "create_summary_figure()"
+    },
+    {
+      "label": "17b_pydeseq2_visualizations.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17b_pydeseq2_visualizations.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_17b_pydeseq2_visualizations_py",
+      "community": 57,
+      "norm_label": "17b_pydeseq2_visualizations.py"
+    },
+    {
+      "label": "create_visualizations()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17b_pydeseq2_visualizations.py",
+      "source_location": "L7",
+      "id": "scripts_17b_pydeseq2_visualizations_create_visualizations",
+      "community": 57,
+      "norm_label": "create_visualizations()"
+    },
+    {
+      "label": "17c_pydeseq2_qc_validation.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17c_pydeseq2_qc_validation.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_17c_pydeseq2_qc_validation_py",
+      "community": 67,
+      "norm_label": "17c_pydeseq2_qc_validation.py"
+    },
+    {
+      "label": "run_qc_validation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17c_pydeseq2_qc_validation.py",
+      "source_location": "L10",
+      "id": "scripts_17c_pydeseq2_qc_validation_run_qc_validation",
+      "community": 67,
+      "norm_label": "run_qc_validation()"
+    },
+    {
+      "label": "17_differential_expression_figures.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17_differential_expression_figures.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_17_differential_expression_figures_py",
+      "community": 56,
+      "norm_label": "17_differential_expression_figures.py"
+    },
+    {
+      "label": "run_de_visualizations_v4()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17_differential_expression_figures.py",
+      "source_location": "L19",
+      "id": "scripts_17_differential_expression_figures_run_de_visualizations_v4",
+      "community": 56,
+      "norm_label": "run_de_visualizations_v4()"
+    },
+    {
+      "label": "18_pca_v4_clean_validation.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/18_pca_v4_clean_validation.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_18_pca_v4_clean_validation_py",
+      "community": 58,
+      "norm_label": "18_pca_v4_clean_validation.py"
+    },
+    {
+      "label": "run_v4_clean_pca_validation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/18_pca_v4_clean_validation.py",
+      "source_location": "L10",
+      "id": "scripts_18_pca_v4_clean_validation_run_v4_clean_pca_validation",
+      "community": 58,
+      "norm_label": "run_v4_clean_pca_validation()"
+    },
+    {
+      "label": "19_pca_v4_regression_validation.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/19_pca_v4_regression_validation.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_19_pca_v4_regression_validation_py",
+      "community": 59,
+      "norm_label": "19_pca_v4_regression_validation.py"
+    },
+    {
+      "label": "run_v4_regression_pca_validation()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/19_pca_v4_regression_validation.py",
+      "source_location": "L9",
+      "id": "scripts_19_pca_v4_regression_validation_run_v4_regression_pca_validation",
+      "community": 59,
+      "norm_label": "run_v4_regression_pca_validation()"
+    },
+    {
+      "label": "20_functional_enrichment.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/20_functional_enrichment.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_20_functional_enrichment_py",
+      "community": 68,
+      "norm_label": "20_functional_enrichment.py"
+    },
+    {
+      "label": "run_functional_enrichment()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/20_functional_enrichment.py",
+      "source_location": "L9",
+      "id": "scripts_20_functional_enrichment_run_functional_enrichment",
+      "community": 68,
+      "norm_label": "run_functional_enrichment()"
+    },
+    {
+      "label": "21_generate_thesis_figures.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/21_generate_thesis_figures.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_21_generate_thesis_figures_py",
+      "community": 69,
+      "norm_label": "21_generate_thesis_figures.py"
+    },
+    {
+      "label": "generate_thesis_figures()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/21_generate_thesis_figures.py",
+      "source_location": "L8",
+      "id": "scripts_21_generate_thesis_figures_generate_thesis_figures",
+      "community": 69,
+      "norm_label": "generate_thesis_figures()"
+    },
+    {
+      "label": "check_bimodal_markers.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/check_bimodal_markers.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_check_bimodal_markers_py",
+      "community": 90,
+      "norm_label": "check_bimodal_markers.py"
+    },
+    {
+      "label": "check_layers.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/check_layers.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_check_layers_py",
+      "community": 91,
+      "norm_label": "check_layers.py"
+    },
+    {
+      "label": "check_metadata.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/check_metadata.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_check_metadata_py",
+      "community": 92,
+      "norm_label": "check_metadata.py"
+    },
+    {
+      "label": "compare_v3_v4()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/compare_v3_v4.py",
+      "source_location": "L5",
+      "id": "scripts_compare_v3_v4_compare_v3_v4",
+      "community": 93,
+      "norm_label": "compare_v3_v4()"
+    },
+    {
+      "label": "convert_audit_to_html.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_audit_to_html.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_convert_audit_to_html_py",
+      "community": 24,
+      "norm_label": "convert_audit_to_html.py"
+    },
+    {
+      "label": "image_to_base64()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_audit_to_html.py",
+      "source_location": "L7",
+      "id": "scripts_convert_audit_to_html_image_to_base64",
+      "community": 24,
+      "norm_label": "image_to_base64()"
+    },
+    {
+      "label": "convert_to_html()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_audit_to_html.py",
+      "source_location": "L26",
+      "id": "scripts_convert_audit_to_html_convert_to_html",
+      "community": 24,
+      "norm_label": "convert_to_html()"
+    },
+    {
+      "label": "convert_report_to_html.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_report_to_html.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_convert_report_to_html_py",
+      "community": 25,
+      "norm_label": "convert_report_to_html.py"
+    },
+    {
+      "label": "image_to_base64()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_report_to_html.py",
+      "source_location": "L7",
+      "id": "scripts_convert_report_to_html_image_to_base64",
+      "community": 25,
+      "norm_label": "image_to_base64()"
+    },
+    {
+      "label": "convert_to_html()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_report_to_html.py",
+      "source_location": "L30",
+      "id": "scripts_convert_report_to_html_convert_to_html",
+      "community": 25,
+      "norm_label": "convert_to_html()"
+    },
+    {
+      "label": "create_audit_notebook.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/create_audit_notebook.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_create_audit_notebook_py",
+      "community": 70,
+      "norm_label": "create_audit_notebook.py"
+    },
+    {
+      "label": "create_notebook()",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/create_audit_notebook.py",
+      "source_location": "L4",
+      "id": "scripts_create_audit_notebook_create_notebook",
+      "community": 70,
+      "norm_label": "create_notebook()"
+    },
+    {
+      "label": "debug_counts_scale.py",
+      "file_type": "code",
+      "source_file": "scAR_python_validation_v4_clean/scripts/debug_counts_scale.py",
+      "source_location": "L1",
+      "id": "scar_python_validation_v4_clean_scripts_debug_counts_scale_py",
+      "community": 94,
+      "norm_label": "debug_counts_scale.py"
+    },
+    {
+      "label": "5.2Abundancia_difrencial_code.py",
+      "file_type": "code",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L1",
+      "id": "scratch_5_2abundancia_difrencial_code_py",
+      "community": 8,
+      "norm_label": "5.2abundancia_difrencial_code.py"
+    },
+    {
+      "label": "calculate_nk_ratio()",
+      "file_type": "code",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L173",
+      "id": "scratch_5_2abundancia_difrencial_code_calculate_nk_ratio",
+      "community": 8,
+      "norm_label": "calculate_nk_ratio()"
+    },
+    {
+      "label": "plot_nk_ratios()",
+      "file_type": "code",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L229",
+      "id": "scratch_5_2abundancia_difrencial_code_plot_nk_ratios",
+      "community": 8,
+      "norm_label": "plot_nk_ratios()"
+    },
+    {
+      "label": "print_nk_analysis()",
+      "file_type": "code",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L287",
+      "id": "scratch_5_2abundancia_difrencial_code_print_nk_analysis",
+      "community": 8,
+      "norm_label": "print_nk_analysis()"
+    },
+    {
+      "label": "Calcula el ratio CD56bright/CD56dim para cada grupo de edad.          Par\u00e1metros",
+      "file_type": "rationale",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L176",
+      "id": "scratch_5_2abundancia_difrencial_code_rationale_176",
+      "community": 8,
+      "norm_label": "calcula el ratio cd56bright/cd56dim para cada grupo de edad.          parametros"
+    },
+    {
+      "label": "Visualiza los resultados del an\u00e1lisis de ratio NK.          Par\u00e1metros:     ----",
+      "file_type": "rationale",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L230",
+      "id": "scratch_5_2abundancia_difrencial_code_rationale_230",
+      "community": 8,
+      "norm_label": "visualiza los resultados del analisis de ratio nk.          parametros:     ----"
+    },
+    {
+      "label": "Imprime un resumen del an\u00e1lisis de ratio NK.",
+      "file_type": "rationale",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L288",
+      "id": "scratch_5_2abundancia_difrencial_code_rationale_288",
+      "community": 8,
+      "norm_label": "imprime un resumen del analisis de ratio nk."
+    },
+    {
+      "label": "5.2_pseudobulk_subtipos_NK_code.py",
+      "file_type": "code",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L1",
+      "id": "scratch_5_2_pseudobulk_subtipos_nk_code_py",
+      "community": 12,
+      "norm_label": "5.2_pseudobulk_subtipos_nk_code.py"
+    },
+    {
+      "label": "create_pseudobulk()",
+      "file_type": "code",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L51",
+      "id": "scratch_5_2_pseudobulk_subtipos_nk_code_create_pseudobulk",
+      "community": 12,
+      "norm_label": "create_pseudobulk()"
+    },
+    {
+      "label": "plot_volcano()",
+      "file_type": "code",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L134",
+      "id": "scratch_5_2_pseudobulk_subtipos_nk_code_plot_volcano",
+      "community": 12,
+      "norm_label": "plot_volcano()"
+    },
+    {
+      "label": "run_pseudobulk_subtype()",
+      "file_type": "code",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L184",
+      "id": "scratch_5_2_pseudobulk_subtipos_nk_code_run_pseudobulk_subtype",
+      "community": 12,
+      "norm_label": "run_pseudobulk_subtype()"
+    },
+    {
+      "label": "generate_adaptive_report()",
+      "file_type": "code",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L224",
+      "id": "scratch_5_2_pseudobulk_subtipos_nk_code_generate_adaptive_report",
+      "community": 12,
+      "norm_label": "generate_adaptive_report()"
+    },
+    {
+      "label": "check_confounding.py",
+      "file_type": "code",
+      "source_file": "scratch/check_confounding.py",
+      "source_location": "L1",
+      "id": "scratch_check_confounding_py",
+      "community": 95,
+      "norm_label": "check_confounding.py"
+    },
+    {
+      "label": "check_donor_confounding.py",
+      "file_type": "code",
+      "source_file": "scratch/check_donor_confounding.py",
+      "source_location": "L1",
+      "id": "scratch_check_donor_confounding_py",
+      "community": 96,
+      "norm_label": "check_donor_confounding.py"
+    },
+    {
+      "label": "check_donor_mapping.py",
+      "file_type": "code",
+      "source_file": "scratch/check_donor_mapping.py",
+      "source_location": "L1",
+      "id": "scratch_check_donor_mapping_py",
+      "community": 97,
+      "norm_label": "check_donor_mapping.py"
+    },
+    {
+      "label": "check_results.py",
+      "file_type": "code",
+      "source_file": "scratch/check_results.py",
+      "source_location": "L1",
+      "id": "scratch_check_results_py",
+      "community": 98,
+      "norm_label": "check_results.py"
+    },
+    {
+      "label": "check_specific_genes.py",
+      "file_type": "code",
+      "source_file": "scratch/check_specific_genes.py",
+      "source_location": "L1",
+      "id": "scratch_check_specific_genes_py",
+      "community": 99,
+      "norm_label": "check_specific_genes.py"
+    },
+    {
+      "label": "debug_pydeseq2.py",
+      "file_type": "code",
+      "source_file": "scratch/debug_pydeseq2.py",
+      "source_location": "L1",
+      "id": "scratch_debug_pydeseq2_py",
+      "community": 100,
+      "norm_label": "debug_pydeseq2.py"
+    },
+    {
+      "label": "generate_sig_table.py",
+      "file_type": "code",
+      "source_file": "scratch/generate_sig_table.py",
+      "source_location": "L1",
+      "id": "scratch_generate_sig_table_py",
+      "community": 101,
+      "norm_label": "generate_sig_table.py"
+    },
+    {
+      "label": "md_to_html.py",
+      "file_type": "code",
+      "source_file": "scratch/md_to_html.py",
+      "source_location": "L1",
+      "id": "scratch_md_to_html_py",
+      "community": 102,
+      "norm_label": "md_to_html.py"
+    },
+    {
+      "label": "print_ora_details.py",
+      "file_type": "code",
+      "source_file": "scratch/print_ora_details.py",
+      "source_location": "L1",
+      "id": "scratch_print_ora_details_py",
+      "community": 103,
+      "norm_label": "print_ora_details.py"
+    },
+    {
+      "label": "test_enrichr.py",
+      "file_type": "code",
+      "source_file": "scratch/test_enrichr.py",
+      "source_location": "L1",
+      "id": "scratch_test_enrichr_py",
+      "community": 104,
+      "norm_label": "test_enrichr.py"
+    },
+    {
+      "label": "test_ora.py",
+      "file_type": "code",
+      "source_file": "scratch/test_ora.py",
+      "source_location": "L1",
+      "id": "scratch_test_ora_py",
+      "community": 60,
+      "norm_label": "test_ora.py"
+    },
+    {
+      "label": "test_ora()",
+      "file_type": "code",
+      "source_file": "scratch/test_ora.py",
+      "source_location": "L6",
+      "id": "scratch_test_ora_test_ora",
+      "community": 60,
+      "norm_label": "test_ora()"
+    },
+    {
+      "label": "0.00_data_download_census.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.00_data_download_census.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_0_00_data_download_census_py",
+      "community": 105,
+      "norm_label": "0.00_data_download_census.py"
+    },
+    {
+      "label": "0.5_scCDC_correction.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.5_scCDC_correction.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_0_5_sccdc_correction_py",
+      "community": 22,
+      "norm_label": "0.5_sccdc_correction.py"
+    },
+    {
+      "label": "run_sccdc_pipeline()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.5_scCDC_correction.py",
+      "source_location": "L7",
+      "id": "py_versions_0_5_sccdc_correction_run_sccdc_pipeline",
+      "community": 22,
+      "norm_label": "run_sccdc_pipeline()"
+    },
+    {
+      "label": "Wrapper function to execute the scCDC R pipeline from Python.     It writes raw",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.5_scCDC_correction.py",
+      "source_location": "L8",
+      "id": "py_versions_0_5_sccdc_correction_rationale_8",
+      "community": 22,
+      "norm_label": "wrapper function to execute the sccdc r pipeline from python.     it writes raw"
+    },
+    {
+      "label": "0.prepro_indices.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.prepro_indices.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_0_prepro_indices_py",
+      "community": 23,
+      "norm_label": "0.prepro_indices.py"
+    },
+    {
+      "label": "homogenize_gene_symbols()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.prepro_indices.py",
+      "source_location": "L48",
+      "id": "py_versions_0_prepro_indices_homogenize_gene_symbols",
+      "community": 23,
+      "norm_label": "homogenize_gene_symbols()"
+    },
+    {
+      "label": "Homogeniza los s\u00edmbolos de genes en un objeto AnnData, convirtiendo IDs Ensembl",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.prepro_indices.py",
+      "source_location": "L49",
+      "id": "py_versions_0_prepro_indices_rationale_49",
+      "community": 23,
+      "norm_label": "homogeniza los simbolos de genes en un objeto anndata, convirtiendo ids ensembl"
+    },
+    {
+      "label": "1.0preprocesamiento.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "community": 0,
+      "norm_label": "1.0preprocesamiento.py"
+    },
+    {
+      "label": "assign_cell_group()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L191",
+      "id": "py_versions_1_0preprocesamiento_assign_cell_group",
+      "community": 0,
+      "norm_label": "assign_cell_group()"
+    },
+    {
+      "label": "filtrar_muestra()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L199",
+      "id": "py_versions_1_0preprocesamiento_filtrar_muestra",
+      "community": 0,
+      "norm_label": "filtrar_muestra()"
+    },
+    {
+      "label": "map_age_stage()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L211",
+      "id": "py_versions_1_0preprocesamiento_map_age_stage",
+      "community": 0,
+      "norm_label": "map_age_stage()"
+    },
+    {
+      "label": "procesar_edades()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L246",
+      "id": "py_versions_1_0preprocesamiento_procesar_edades",
+      "community": 0,
+      "norm_label": "procesar_edades()"
+    },
+    {
+      "label": "process_and_save_files()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L256",
+      "id": "py_versions_1_0preprocesamiento_process_and_save_files",
+      "community": 0,
+      "norm_label": "process_and_save_files()"
+    },
+    {
+      "label": "is_valid_gene_symbol()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L393",
+      "id": "py_versions_1_0preprocesamiento_is_valid_gene_symbol",
+      "community": 0,
+      "norm_label": "is_valid_gene_symbol()"
+    },
+    {
+      "label": "load_common_gene_symbols()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L435",
+      "id": "py_versions_1_0preprocesamiento_load_common_gene_symbols",
+      "community": 0,
+      "norm_label": "load_common_gene_symbols()"
+    },
+    {
+      "label": "standardize_gene_symbols()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L445",
+      "id": "py_versions_1_0preprocesamiento_standardize_gene_symbols",
+      "community": 0,
+      "norm_label": "standardize_gene_symbols()"
+    },
+    {
+      "label": "fix_integrated_gene_symbols()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L506",
+      "id": "py_versions_1_0preprocesamiento_fix_integrated_gene_symbols",
+      "community": 0,
+      "norm_label": "fix_integrated_gene_symbols()"
+    },
+    {
+      "label": "process_and_save_data()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L522",
+      "id": "py_versions_1_0preprocesamiento_process_and_save_data",
+      "community": 0,
+      "norm_label": "process_and_save_data()"
+    },
+    {
+      "label": "verificar_patrones_genes()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L560",
+      "id": "py_versions_1_0preprocesamiento_verificar_patrones_genes",
+      "community": 0,
+      "norm_label": "verificar_patrones_genes()"
+    },
+    {
+      "label": "Verificaci\u00f3n m\u00e1s estricta de s\u00edmbolos de genes.",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L394",
+      "id": "py_versions_1_0preprocesamiento_rationale_394",
+      "community": 0,
+      "norm_label": "verificacion mas estricta de simbolos de genes."
+    },
+    {
+      "label": "Carga un conjunto de s\u00edmbolos de genes conocidos desde HGNC.     En tu caso, po",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L436",
+      "id": "py_versions_1_0preprocesamiento_rationale_436",
+      "community": 0,
+      "norm_label": "carga un conjunto de simbolos de genes conocidos desde hgnc.     en tu caso, po"
+    },
+    {
+      "label": "Estandariza los s\u00edmbolos de genes en el objeto AnnData, manteniendo la consisten",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L446",
+      "id": "py_versions_1_0preprocesamiento_rationale_446",
+      "community": 0,
+      "norm_label": "estandariza los simbolos de genes en el objeto anndata, manteniendo la consisten"
+    },
+    {
+      "label": "Corrige los s\u00edmbolos de genes en un dataset ya integrado.",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L507",
+      "id": "py_versions_1_0preprocesamiento_rationale_507",
+      "community": 0,
+      "norm_label": "corrige los simbolos de genes en un dataset ya integrado."
+    },
+    {
+      "label": "Procesa y guarda los datos con manejo de errores.",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L523",
+      "id": "py_versions_1_0preprocesamiento_rationale_523",
+      "community": 0,
+      "norm_label": "procesa y guarda los datos con manejo de errores."
+    },
+    {
+      "label": "1.5integration_and_group_filtering.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "community": 1,
+      "norm_label": "1.5integration_and_group_filtering.py"
+    },
+    {
+      "label": "convert_to_string()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L150",
+      "id": "py_versions_1_5integration_and_group_filtering_convert_to_string",
+      "community": 1,
+      "norm_label": "convert_to_string()"
+    },
+    {
+      "label": "assign_title()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L158",
+      "id": "py_versions_1_5integration_and_group_filtering_assign_title",
+      "community": 1,
+      "norm_label": "assign_title()"
+    },
+    {
+      "label": "title_to_id()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L167",
+      "id": "py_versions_1_5integration_and_group_filtering_title_to_id",
+      "community": 1,
+      "norm_label": "title_to_id()"
+    },
+    {
+      "label": "integrate_h5ad_files()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L173",
+      "id": "py_versions_1_5integration_and_group_filtering_integrate_h5ad_files",
+      "community": 1,
+      "norm_label": "integrate_h5ad_files()"
+    },
+    {
+      "label": "convertir_tipos_compatibles_mejorado()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L272",
+      "id": "py_versions_1_5integration_and_group_filtering_convertir_tipos_compatibles_mejorado",
+      "community": 1,
+      "norm_label": "convertir_tipos_compatibles_mejorado()"
+    },
+    {
+      "label": "print_dataset_info()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L359",
+      "id": "py_versions_1_5integration_and_group_filtering_print_dataset_info",
+      "community": 1,
+      "norm_label": "print_dataset_info()"
+    },
+    {
+      "label": "filter_cells_and_genes()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L384",
+      "id": "py_versions_1_5integration_and_group_filtering_filter_cells_and_genes",
+      "community": 1,
+      "norm_label": "filter_cells_and_genes()"
+    },
+    {
+      "label": "segment_integrated_h5ad()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L429",
+      "id": "py_versions_1_5integration_and_group_filtering_segment_integrated_h5ad",
+      "community": 1,
+      "norm_label": "segment_integrated_h5ad()"
+    },
+    {
+      "label": "Versi\u00f3n mejorada con mejor manejo de tipos de datos",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L273",
+      "id": "py_versions_1_5integration_and_group_filtering_rationale_273",
+      "community": 1,
+      "norm_label": "version mejorada con mejor manejo de tipos de datos"
+    },
+    {
+      "label": "Imprime informaci\u00f3n relevante del dataset",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L360",
+      "id": "py_versions_1_5integration_and_group_filtering_rationale_360",
+      "community": 1,
+      "norm_label": "imprime informacion relevante del dataset"
+    },
+    {
+      "label": "Filtra c\u00e9lulas y genes seg\u00fan criterios espec\u00edficos",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L385",
+      "id": "py_versions_1_5integration_and_group_filtering_rationale_385",
+      "community": 1,
+      "norm_label": "filtra celulas y genes segun criterios especificos"
+    },
+    {
+      "label": "Segmenta y filtra el archivo h5ad por grupos celulares",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L430",
+      "id": "py_versions_1_5integration_and_group_filtering_rationale_430",
+      "community": 1,
+      "norm_label": "segmenta y filtra el archivo h5ad por grupos celulares"
+    },
+    {
+      "label": "2.0QC.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_2_0qc_py",
+      "community": 6,
+      "norm_label": "2.0qc.py"
+    },
+    {
+      "label": "plot_qc_metrics()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L19",
+      "id": "py_versions_2_0qc_plot_qc_metrics",
+      "community": 6,
+      "norm_label": "plot_qc_metrics()"
+    },
+    {
+      "label": "validate_nk_data()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L64",
+      "id": "py_versions_2_0qc_validate_nk_data",
+      "community": 6,
+      "norm_label": "validate_nk_data()"
+    },
+    {
+      "label": "process_quality_control()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L75",
+      "id": "py_versions_2_0qc_process_quality_control",
+      "community": 6,
+      "norm_label": "process_quality_control()"
+    },
+    {
+      "label": "Genera visualizaciones mejoradas para m\u00e9tricas de QC de c\u00e9lulas NK.          P",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L20",
+      "id": "py_versions_2_0qc_rationale_20",
+      "community": 6,
+      "norm_label": "genera visualizaciones mejoradas para metricas de qc de celulas nk.          p"
+    },
+    {
+      "label": "Valida la presencia de marcadores NK en los datos",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L65",
+      "id": "py_versions_2_0qc_rationale_65",
+      "community": 6,
+      "norm_label": "valida la presencia de marcadores nk en los datos"
+    },
+    {
+      "label": "Ejecuta control de calidad espec\u00edfico para c\u00e9lulas NK",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L76",
+      "id": "py_versions_2_0qc_rationale_76",
+      "community": 6,
+      "norm_label": "ejecuta control de calidad especifico para celulas nk"
+    },
+    {
+      "label": "3.0doublet_removal.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_0doublet_removal_py",
+      "community": 9,
+      "norm_label": "3.0doublet_removal.py"
+    },
+    {
+      "label": "setup_logger()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L31",
+      "id": "py_versions_3_0doublet_removal_setup_logger",
+      "community": 9,
+      "norm_label": "setup_logger()"
+    },
+    {
+      "label": "plot_doublet_scores()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L41",
+      "id": "py_versions_3_0doublet_removal_plot_doublet_scores",
+      "community": 9,
+      "norm_label": "plot_doublet_scores()"
+    },
+    {
+      "label": "remove_doublets()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L50",
+      "id": "py_versions_3_0doublet_removal_remove_doublets",
+      "community": 9,
+      "norm_label": "remove_doublets()"
+    },
+    {
+      "label": "process_samples()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L138",
+      "id": "py_versions_3_0doublet_removal_process_samples",
+      "community": 9,
+      "norm_label": "process_samples()"
+    },
+    {
+      "label": "Mejorada detecci\u00f3n de dobletes usando m\u00faltiples criterios",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L51",
+      "id": "py_versions_3_0doublet_removal_rationale_51",
+      "community": 9,
+      "norm_label": "mejorada deteccion de dobletes usando multiples criterios"
+    },
+    {
+      "label": "3.5Normalization.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "community": 4,
+      "norm_label": "3.5normalization.py"
+    },
+    {
+      "label": "plot_count_distribution()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L15",
+      "id": "py_versions_3_5normalization_plot_count_distribution",
+      "community": 4,
+      "norm_label": "plot_count_distribution()"
+    },
+    {
+      "label": "plot_hvg()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L23",
+      "id": "py_versions_3_5normalization_plot_hvg",
+      "community": 4,
+      "norm_label": "plot_hvg()"
+    },
+    {
+      "label": "plot_hvg_heatmap()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L30",
+      "id": "py_versions_3_5normalization_plot_hvg_heatmap",
+      "community": 4,
+      "norm_label": "plot_hvg_heatmap()"
+    },
+    {
+      "label": "plot_pca()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L39",
+      "id": "py_versions_3_5normalization_plot_pca",
+      "community": 4,
+      "norm_label": "plot_pca()"
+    },
+    {
+      "label": "process_data()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L58",
+      "id": "py_versions_3_5normalization_process_data",
+      "community": 4,
+      "norm_label": "process_data()"
+    },
+    {
+      "label": "evaluate_preprocessing()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L190",
+      "id": "py_versions_3_5normalization_evaluate_preprocessing",
+      "community": 4,
+      "norm_label": "evaluate_preprocessing()"
+    },
+    {
+      "label": "Eval\u00faa comprensivamente el preprocesamiento de datos.          Parameters:",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L191",
+      "id": "py_versions_3_5normalization_rationale_191",
+      "community": 4,
+      "norm_label": "evalua comprensivamente el preprocesamiento de datos.          parameters:"
+    },
+    {
+      "label": "4.1integration_scvi.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/4.1integration_scvi.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_4_1integration_scvi_py",
+      "community": 43,
+      "norm_label": "4.1integration_scvi.py"
+    },
+    {
+      "label": "read_and_combine_h5ad()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/4.1integration_scvi.py",
+      "source_location": "L18",
+      "id": "py_versions_4_1integration_scvi_read_and_combine_h5ad",
+      "community": 43,
+      "norm_label": "read_and_combine_h5ad()"
+    },
+    {
+      "label": "4.2integration_scanvi.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/4.2integration_scanvi.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_4_2integration_scanvi_py",
+      "community": 106,
+      "norm_label": "4.2integration_scanvi.py"
+    },
+    {
+      "label": "Copy_of_Workshop_day1_esp.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_copy_of_workshop_day1_esp_py",
+      "community": 2,
+      "norm_label": "copy_of_workshop_day1_esp.py"
+    },
+    {
+      "label": "download()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L232",
+      "id": "py_versions_copy_of_workshop_day1_esp_download",
+      "community": 2,
+      "norm_label": "download()"
+    },
+    {
+      "label": "download_gse292810()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L269",
+      "id": "py_versions_copy_of_workshop_day1_esp_download_gse292810",
+      "community": 2,
+      "norm_label": "download_gse292810()"
+    },
+    {
+      "label": "load_gse292810()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L296",
+      "id": "py_versions_copy_of_workshop_day1_esp_load_gse292810",
+      "community": 2,
+      "norm_label": "load_gse292810()"
+    },
+    {
+      "label": "download_gse254435()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L407",
+      "id": "py_versions_copy_of_workshop_day1_esp_download_gse254435",
+      "community": 2,
+      "norm_label": "download_gse254435()"
+    },
+    {
+      "label": "load_gse254435()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L453",
+      "id": "py_versions_copy_of_workshop_day1_esp_load_gse254435",
+      "community": 2,
+      "norm_label": "load_gse254435()"
+    },
+    {
+      "label": "Descarga un \u00fanico archivo desde una URL usando wget.      Si el archivo de des",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L233",
+      "id": "py_versions_copy_of_workshop_day1_esp_rationale_233",
+      "community": 2,
+      "norm_label": "descarga un unico archivo desde una url usando wget.      si el archivo de des"
+    },
+    {
+      "label": "Descarga la count matrix agregada de GSE292810 desde el servidor FTP de GEO.",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L270",
+      "id": "py_versions_copy_of_workshop_day1_esp_rationale_270",
+      "community": 2,
+      "norm_label": "descarga la count matrix agregada de gse292810 desde el servidor ftp de geo."
+    },
+    {
+      "label": "Carga GSE292810 en AnnData y adjunta metadatos de muestra por c\u00e9lula.      Com",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L297",
+      "id": "py_versions_copy_of_workshop_day1_esp_rationale_297",
+      "community": 2,
+      "norm_label": "carga gse292810 en anndata y adjunta metadatos de muestra por celula.      com"
+    },
+    {
+      "label": "Descarga y extrae el archivo tar RAW de GSE254435.      Tras la extracci\u00f3n, lo",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L408",
+      "id": "py_versions_copy_of_workshop_day1_esp_rationale_408",
+      "community": 2,
+      "norm_label": "descarga y extrae el archivo tar raw de gse254435.      tras la extraccion, lo"
+    },
+    {
+      "label": "Carga las ocho muestras de GSE254435 en un \u00fanico AnnData concatenado.      Cad",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L454",
+      "id": "py_versions_copy_of_workshop_day1_esp_rationale_454",
+      "community": 2,
+      "norm_label": "carga las ocho muestras de gse254435 en un unico anndata concatenado.      cad"
+    },
+    {
+      "label": "01-diagnostic-report.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/01-diagnostic-report.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_01_diagnostic_report_py",
+      "community": 73,
+      "norm_label": "01-diagnostic-report.py"
+    },
+    {
+      "label": "generate_analysis()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/01-diagnostic-report.py",
+      "source_location": "L5",
+      "id": "scripts_01_diagnostic_report_generate_analysis",
+      "community": 73,
+      "norm_label": "generate_analysis()"
+    },
+    {
+      "label": "02-scar-massive-orchestrator.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_02_scar_massive_orchestrator_py",
+      "community": 5,
+      "norm_label": "02-scar-massive-orchestrator.py"
+    },
+    {
+      "label": "get_age_metadata()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L36",
+      "id": "scripts_02_scar_massive_orchestrator_get_age_metadata",
+      "community": 5,
+      "norm_label": "get_age_metadata()"
+    },
+    {
+      "label": "is_hgnc_compliant()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L64",
+      "id": "scripts_02_scar_massive_orchestrator_is_hgnc_compliant",
+      "community": 5,
+      "norm_label": "is_hgnc_compliant()"
+    },
+    {
+      "label": "aggregate_duplicate_genes()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L82",
+      "id": "scripts_02_scar_massive_orchestrator_aggregate_duplicate_genes",
+      "community": 5,
+      "norm_label": "aggregate_duplicate_genes()"
+    },
+    {
+      "label": "run_denoising()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L126",
+      "id": "scripts_02_scar_massive_orchestrator_run_denoising",
+      "community": 5,
+      "norm_label": "run_denoising()"
+    },
+    {
+      "label": "L\u00f3gica H\u00edbrida: Extrae edad num\u00e9rica y mapea etiquetas cualitativas",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L37",
+      "id": "scripts_02_scar_massive_orchestrator_rationale_37",
+      "community": 5,
+      "norm_label": "logica hibrida: extrae edad numerica y mapea etiquetas cualitativas"
+    },
+    {
+      "label": "Validaci\u00f3n Estricta de S\u00edmbolos (Protocolo 1.0)",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L65",
+      "id": "scripts_02_scar_massive_orchestrator_rationale_65",
+      "community": 5,
+      "norm_label": "validacion estricta de simbolos (protocolo 1.0)"
+    },
+    {
+      "label": "Suma los counts de genes que tienen el mismo nombre (Deduplicaci\u00f3n Inteligente)",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L83",
+      "id": "scripts_02_scar_massive_orchestrator_rationale_83",
+      "community": 5,
+      "norm_label": "suma los counts de genes que tienen el mismo nombre (deduplicacion inteligente)"
+    },
+    {
+      "label": "04-adaptive-qc.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_04_adaptive_qc_py",
+      "community": 7,
+      "norm_label": "04-adaptive-qc.py"
+    },
+    {
+      "label": "validate_nk_identity()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L21",
+      "id": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "community": 7,
+      "norm_label": "validate_nk_identity()"
+    },
+    {
+      "label": "run_adaptive_qc()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L28",
+      "id": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_run_adaptive_qc",
+      "community": 7,
+      "norm_label": "run_adaptive_qc()"
+    },
+    {
+      "label": "05-preprocessing-metadata.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/05-preprocessing-metadata.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_05_preprocessing_metadata_py",
+      "community": 74,
+      "norm_label": "05-preprocessing-metadata.py"
+    },
+    {
+      "label": "clean_metadata()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/05-preprocessing-metadata.py",
+      "source_location": "L13",
+      "id": "v20_clean_analysis_scripts_05_preprocessing_metadata_py_scripts_05_preprocessing_metadata_clean_metadata",
+      "community": 74,
+      "norm_label": "clean_metadata()"
+    },
+    {
+      "label": "06-doublet-removal-solo.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/06-doublet-removal-solo.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_06_doublet_removal_solo_py",
+      "community": 75,
+      "norm_label": "06-doublet-removal-solo.py"
+    },
+    {
+      "label": "run_solo_doublet_removal()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/06-doublet-removal-solo.py",
+      "source_location": "L25",
+      "id": "scripts_06_doublet_removal_solo_run_solo_doublet_removal",
+      "community": 75,
+      "norm_label": "run_solo_doublet_removal()"
+    },
+    {
+      "label": "07-evaluate-ambient-rna.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/07-evaluate-ambient-rna.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_07_evaluate_ambient_rna_py",
+      "community": 61,
+      "norm_label": "07-evaluate-ambient-rna.py"
+    },
+    {
+      "label": "get_dense()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/07-evaluate-ambient-rna.py",
+      "source_location": "L82",
+      "id": "scripts_07_evaluate_ambient_rna_get_dense",
+      "community": 61,
+      "norm_label": "get_dense()"
+    },
+    {
+      "label": "08-explore-legacy.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/08-explore-legacy.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_08_explore_legacy_py",
+      "community": 107,
+      "norm_label": "08-explore-legacy.py"
+    },
+    {
+      "label": "08b-quick-h5py.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/08b-quick-h5py.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_08b_quick_h5py_py",
+      "community": 108,
+      "norm_label": "08b-quick-h5py.py"
+    },
+    {
+      "label": "09-comparative-de-analysis.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/09-comparative-de-analysis.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_09_comparative_de_analysis_py",
+      "community": 109,
+      "norm_label": "09-comparative-de-analysis.py"
+    },
+    {
+      "label": "09-comparative-de-fast.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/09-comparative-de-fast.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_09_comparative_de_fast_py",
+      "community": 110,
+      "norm_label": "09-comparative-de-fast.py"
+    },
+    {
+      "label": "09-scar-pilot-donante01.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/09-scar-pilot-donante01.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_09_scar_pilot_donante01_py",
+      "community": 62,
+      "norm_label": "09-scar-pilot-donante01.py"
+    },
+    {
+      "label": "optimize_adata()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/09-scar-pilot-donante01.py",
+      "source_location": "L9",
+      "id": "scripts_09_scar_pilot_donante01_optimize_adata",
+      "community": 62,
+      "norm_label": "optimize_adata()"
+    },
+    {
+      "label": "10-comparison-scAR-ref.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/10-comparison-scAR-ref.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_10_comparison_scar_ref_py",
+      "community": 111,
+      "norm_label": "10-comparison-scar-ref.py"
+    },
+    {
+      "label": "10-pseudobulk-pydeseq2.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/10-pseudobulk-pydeseq2.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_10_pseudobulk_pydeseq2_py",
+      "community": 16,
+      "norm_label": "10-pseudobulk-pydeseq2.py"
+    },
+    {
+      "label": "PROYECTO: NK Cell Aging Transcriptomics (V20 Protocol) FASE: 07.2 - An\u00e1lisis Pse",
+      "file_type": "rationale",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/10-pseudobulk-pydeseq2.py",
+      "source_location": "L1",
+      "id": "scripts_10_pseudobulk_pydeseq2_rationale_1",
+      "community": 16,
+      "norm_label": "proyecto: nk cell aging transcriptomics (v20 protocol) fase: 07.2 - analisis pse"
+    },
+    {
+      "label": "11-stats-comparison.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/11-stats-comparison.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_11_stats_comparison_py",
+      "community": 112,
+      "norm_label": "11-stats-comparison.py"
+    },
+    {
+      "label": "12-evaluate-ig-tcr-cleaning.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/12-evaluate-ig-tcr-cleaning.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_12_evaluate_ig_tcr_cleaning_py",
+      "community": 113,
+      "norm_label": "12-evaluate-ig-tcr-cleaning.py"
+    },
+    {
+      "label": "13-find-all-contaminants.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/13-find-all-contaminants.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_13_find_all_contaminants_py",
+      "community": 114,
+      "norm_label": "13-find-all-contaminants.py"
+    },
+    {
+      "label": "14-find-real-contaminants.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/14-find-real-contaminants.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_14_find_real_contaminants_py",
+      "community": 115,
+      "norm_label": "14-find-real-contaminants.py"
+    },
+    {
+      "label": "15-validation-3way.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/15-validation-3way.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_15_validation_3way_py",
+      "community": 116,
+      "norm_label": "15-validation-3way.py"
+    },
+    {
+      "label": "append_genes_artifact.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/append_genes_artifact.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_append_genes_artifact_py",
+      "community": 117,
+      "norm_label": "append_genes_artifact.py"
+    },
+    {
+      "label": "append_genes_flat.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/append_genes_flat.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_append_genes_flat_py",
+      "community": 118,
+      "norm_label": "append_genes_flat.py"
+    },
+    {
+      "label": "audit_cell_types.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/audit_cell_types.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_audit_cell_types_py",
+      "community": 119,
+      "norm_label": "audit_cell_types.py"
+    },
+    {
+      "label": "audit_data_status.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/audit_data_status.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_audit_data_status_py",
+      "community": 120,
+      "norm_label": "audit_data_status.py"
+    },
+    {
+      "label": "check_reqs_pb.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/check_reqs_pb.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_check_reqs_pb_py",
+      "community": 3,
+      "norm_label": "check_reqs_pb.py"
+    },
+    {
+      "label": "debug_ddqc.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/debug_ddqc.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_debug_ddqc_py",
+      "community": 121,
+      "norm_label": "debug_ddqc.py"
+    },
+    {
+      "label": "debug_obs.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/debug_obs.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_debug_obs_py",
+      "community": 122,
+      "norm_label": "debug_obs.py"
+    },
+    {
+      "label": "explore_datasets.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/explore_datasets.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_explore_datasets_py",
+      "community": 123,
+      "norm_label": "explore_datasets.py"
+    },
+    {
+      "label": "extract_nb_code.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/extract_nb_code.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_extract_nb_code_py",
+      "community": 124,
+      "norm_label": "extract_nb_code.py"
+    },
+    {
+      "label": "final_audit_summary.py",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/final_audit_summary.py",
+      "source_location": "L1",
+      "id": "v20_clean_analysis_scripts_final_audit_summary_py",
+      "community": 71,
+      "norm_label": "final_audit_summary.py"
+    },
+    {
+      "label": "get_age()",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/final_audit_summary.py",
+      "source_location": "L9",
+      "id": "scripts_final_audit_summary_get_age",
+      "community": 71,
+      "norm_label": "get_age()"
+    },
+    {
+      "label": "V20 Pseudobulk Volcano Plot",
+      "file_type": "image",
+      "source_file": "docs/vault/wiki/figures/v20_pseudobulk_volcano.png",
+      "id": "v20_pseudobulk_volcano",
+      "community": 3,
+      "norm_label": "v20 pseudobulk volcano plot"
+    },
+    {
+      "label": "Violin Plot Ambient RNA",
+      "file_type": "image",
+      "source_file": "docs/vault/wiki/figures/violin_ambient_rna.png",
+      "id": "violin_ambient_rna",
+      "community": 125,
+      "norm_label": "violin plot ambient rna"
+    },
+    {
+      "label": "Sesi\u00f3n del Consejo: An\u00e1lisis Interpretativo de la Firma DE",
+      "file_type": "document",
+      "source_file": "scAR_python_validation/docs/COUNCIL_BIOLOGICAL_REVIEW.md",
+      "id": "council_biological_review",
+      "community": 3,
+      "norm_label": "sesion del consejo: analisis interpretativo de la firma de"
+    },
+    {
+      "label": "Pipeline Memory: scAR Python Validation (V20-Native)",
+      "file_type": "document",
+      "source_file": "scAR_python_validation/docs/PIPELINE_PURE_PYTHON.md",
+      "id": "pipeline_pure_python",
+      "community": 17,
+      "norm_label": "pipeline memory: scar python validation (v20-native)"
+    },
+    {
+      "label": "scAR Pipeline DE Genes Lists",
+      "file_type": "document",
+      "source_file": "scAR_python_validation/docs/scAR_DE_GENES_LISTS.md",
+      "id": "scar_de_genes_lists",
+      "community": 3,
+      "norm_label": "scar pipeline de genes lists"
+    },
+    {
+      "label": "Walkthrough: Pseudobulk DE Analysis (V20-Native Python)",
+      "file_type": "document",
+      "source_file": "scAR_python_validation/docs/WALKTHROUGH_DE_ANALYSIS.md",
+      "id": "walkthrough_de_analysis",
+      "community": 3,
+      "norm_label": "walkthrough: pseudobulk de analysis (v20-native python)"
+    },
+    {
+      "label": "Evaluaci\u00f3n Especial: El Colapso del Modelo de Secuestro de Zinc",
+      "file_type": "document",
+      "source_file": "scAR_python_validation/docs/ZINC_MODEL_EVALUATION.md",
+      "id": "zinc_model_evaluation",
+      "community": 17,
+      "norm_label": "evaluacion especial: el colapso del modelo de secuestro de zinc"
+    },
+    {
+      "label": "Arquitectura Ribosomal y la Decadencia Funcional de las C\u00e9lulas NK",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v2_clean/docs/Genes Ribosomales NK.txt",
+      "id": "genes_ribosomales_nk",
+      "community": 18,
+      "norm_label": "arquitectura ribosomal y la decadencia funcional de las celulas nk"
+    },
+    {
+      "label": "MISSION CONTROL: Checkpoint V2-CLEAN",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v2_clean/docs/MISSION_CONTROL_CHECKPOINT_V2_CLEAN.md",
+      "id": "mission_control_checkpoint_v2_clean",
+      "community": 18,
+      "norm_label": "mission control: checkpoint v2-clean"
+    },
+    {
+      "label": "An\u00e1lisis de Enriquecimiento de V\u00edas Gen\u00e9ticas",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v2_clean/docs/An\u00e1lisis de Enriquecimiento de V\u00edas Gen\u00e9ticas.pdf",
+      "id": "analisis_enriquecimiento_vias",
+      "community": 126,
+      "norm_label": "analisis de enriquecimiento de vias geneticas"
+    },
+    {
+      "label": "Informe T\u00e9cnico: Refinamiento de la Firma Transcript\u00f3mica NK (V3-Perfect)",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v3_perfect/docs/REPORT_V3_PERFECT_DE_ANALYSIS.md",
+      "id": "report_v3_perfect_de_analysis",
+      "community": 3,
+      "norm_label": "informe tecnico: refinamiento de la firma transcriptomica nk (v3-perfect)"
+    },
+    {
+      "label": "Reporte Integral: An\u00e1lisis de Expresi\u00f3n Diferencial (V4-Clean)",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v4_clean/docs/Reporte_Integral_PyDESeq2_V4.md",
+      "id": "reporte_integral_pydeseq2_v4",
+      "community": 3,
+      "norm_label": "reporte integral: analisis de expresion diferencial (v4-clean)"
+    },
+    {
+      "label": "Reporte de Auditor\u00eda y Correcci\u00f3n de Sesgo T\u00e9cnico",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v4_clean/docs/Reporte_Validacion_Sesgo_Tecnico.md",
+      "id": "reporte_validacion_sesgo_tecnico",
+      "community": 3,
+      "norm_label": "reporte de auditoria y correccion de sesgo tecnico"
+    },
+    {
+      "label": "scAR Denoising Algorithm",
+      "file_type": "concept",
+      "id": "scar_denoising",
+      "community": 17,
+      "norm_label": "scar denoising algorithm"
+    },
+    {
+      "label": "PyDESeq2 Library",
+      "file_type": "code",
+      "id": "pydeseq2",
+      "community": 3,
+      "norm_label": "pydeseq2 library"
+    },
+    {
+      "label": "NK Aging Signature",
+      "file_type": "concept",
+      "id": "nk_aging_signature",
+      "community": 3,
+      "norm_label": "nk aging signature"
+    },
+    {
+      "label": "Zinc Sequestration Model",
+      "file_type": "concept",
+      "id": "zinc_sequestration_model",
+      "community": 17,
+      "norm_label": "zinc sequestration model"
+    },
+    {
+      "label": "Ribosomal Anemia in NK Cells",
+      "file_type": "concept",
+      "id": "ribosomal_anemia",
+      "community": 18,
+      "norm_label": "ribosomal anemia in nk cells"
+    },
+    {
+      "label": "Diagnostic: Number of Genes by Counts by Sex",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/diagnostics/diag_n_genes_by_counts_by_sex.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "diag_n_genes_by_counts_by_sex",
+      "community": 31,
+      "norm_label": "diagnostic: number of genes by counts by sex"
+    },
+    {
+      "label": "Diagnostic: Number of Genes by Sex",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/diagnostics/diag_n_genes_by_sex.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "diag_n_genes_by_sex",
+      "community": 127,
+      "norm_label": "diagnostic: number of genes by sex"
+    },
+    {
+      "label": "Diagnostic: Total Counts by Assay",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/diagnostics/diag_total_counts_by_assay.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "diag_total_counts_by_assay",
+      "community": 31,
+      "norm_label": "diagnostic: total counts by assay"
+    },
+    {
+      "label": "Volcano Plot V4",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/figures/10_Volcano_Plot_V4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_volcano_plot_v4",
+      "community": 128,
+      "norm_label": "volcano plot v4"
+    },
+    {
+      "label": "MA Plot V4",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/figures/11_MA_Plot_V4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_ma_plot_v4",
+      "community": 51,
+      "norm_label": "ma plot v4"
+    },
+    {
+      "label": "Heatmap Top 50 V4",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/figures/12_Heatmap_Top50_V4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_heatmap_top50_v4",
+      "community": 50,
+      "norm_label": "heatmap top 50 v4"
+    },
+    {
+      "label": "Heatmap Top 100 V4",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/figures/13_Heatmap_Top100_V4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_heatmap_top100_v4",
+      "community": 50,
+      "norm_label": "heatmap top 100 v4"
+    },
+    {
+      "label": "PCA Variance Report",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v4_clean/results/pca_audit/PCA_VARIANCE_REPORT.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_pca_variance_report",
+      "community": 14,
+      "norm_label": "pca variance report"
+    },
+    {
+      "label": "PCA Technical Bias Summary",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/pca_audit/09_PCA_Technical_Bias_Summary.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_pca_technical_bias_summary",
+      "community": 14,
+      "norm_label": "pca technical bias summary"
+    },
+    {
+      "label": "PCA Covariates",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/pca_audit/pca_covariates.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_pca_covariates",
+      "community": 129,
+      "norm_label": "pca covariates"
+    },
+    {
+      "label": "PCA Variance Ratio",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/pca_audit/pca_variance_ratio.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_pca_variance_ratio",
+      "community": 14,
+      "norm_label": "pca variance ratio"
+    },
+    {
+      "label": "Dispersion Plot V4",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/pydeseq2/figures/Dispersion_plot_v4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_dispersion_plot_v4",
+      "community": 130,
+      "norm_label": "dispersion plot v4"
+    },
+    {
+      "label": "MA Plot V4 Final",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/pydeseq2/figures/MA_plot_v4_final.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_ma_plot_v4_final",
+      "community": 51,
+      "norm_label": "ma plot v4 final"
+    },
+    {
+      "label": "PCA VST V4",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/pydeseq2/figures/PCA_VST_v4.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_python_validation_v4_clean_pca_vst_v4",
+      "community": 14,
+      "norm_label": "pca vst v4"
+    },
+    {
+      "label": "Final Methodology Validation Plot",
+      "file_type": "image",
+      "source_file": "scAR_python_validation_v4_clean/results/v4_pca_final_comparison/Final_Methodology_Validation.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "final_methodology_validation_png",
+      "community": 131,
+      "norm_label": "final methodology validation plot"
+    },
+    {
+      "label": "V4 PCA Regression Report",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v4_clean/results/v4_pca_regression/V4_PCA_REGRESSION_REPORT.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "v4_pca_regression_report_txt",
+      "community": 76,
+      "norm_label": "v4 pca regression report"
+    },
+    {
+      "label": "V4 PCA Validation Report",
+      "file_type": "document",
+      "source_file": "scAR_python_validation_v4_clean/results/v4_pca_validation/V4_PCA_VALIDATION_REPORT.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "v4_pca_validation_report_txt",
+      "community": 76,
+      "norm_label": "v4 pca validation report"
+    },
+    {
+      "label": "Significant Genes Table",
+      "file_type": "document",
+      "source_file": "scratch/sig_genes_table.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sig_genes_table_md",
+      "community": 132,
+      "norm_label": "significant genes table"
+    },
+    {
+      "label": "Comparative DE Report (V20)",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/COMPARATIVE_DE_REPORT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "comparative_de_report_md",
+      "community": 30,
+      "norm_label": "comparative de report (v20)"
+    },
+    {
+      "label": "V20 scAR Conclusions",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/CONCLUSIONES_V20_SCAR.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "conclusiones_v20_scar_md",
+      "community": 44,
+      "norm_label": "v20 scar conclusions"
+    },
+    {
+      "label": "Phoenix Protocol Master Guide",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/PHOENIX_MASTER_GUIDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "phoenix_master_guide_md",
+      "community": 42,
+      "norm_label": "phoenix protocol master guide"
+    },
+    {
+      "label": "V20 Clean Analysis README",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "v20_clean_analysis_readme_md",
+      "community": 13,
+      "norm_label": "v20 clean analysis readme"
+    },
+    {
+      "label": "V20 Analysis Requirements",
+      "file_type": "code",
+      "source_file": "V20_CLEAN_ANALYSIS/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "v20_clean_analysis_requirements_txt",
+      "community": 133,
+      "norm_label": "v20 analysis requirements"
+    },
+    {
+      "label": "Fase 03 Walkthrough: Ambient RNA Removal",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/WALKTHROUGH_FASE03_AMBIENT_RNA_REMOVAL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "walkthrough_fase03_ambient_rna_removal_md",
+      "community": 77,
+      "norm_label": "fase 03 walkthrough: ambient rna removal"
+    },
+    {
+      "label": "Fase 04-05 Walkthrough: QC & Doublets",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/walkthrough_Fase04_05_QC_Dobletes.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "walkthrough_fase04_05_qc_dobletes_md",
+      "community": 13,
+      "norm_label": "fase 04-05 walkthrough: qc & doublets"
+    },
+    {
+      "label": "V20 Final Walkthrough Report",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/WALKTHROUGH_V20_FINAL_REPORT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "walkthrough_v20_final_report_md",
+      "community": 13,
+      "norm_label": "v20 final walkthrough report"
+    },
+    {
+      "label": "Chronos Memory: V20 Transition",
+      "file_type": "document",
+      "source_file": "V20_CLEAN_ANALYSIS/docs/CHRONOS_MEMORY.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "chronos_memory_md",
+      "community": 42,
+      "norm_label": "chronos memory: v20 transition"
+    },
+    {
+      "label": "scAR (single-cell Ambient RNA removal)",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "scar_algorithm",
+      "community": 44,
+      "norm_label": "scar (single-cell ambient rna removal)"
+    },
+    {
+      "label": "scCDC (Single-cell Contamination Detector and Cleaner)",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "sccdc_algorithm",
+      "community": 77,
+      "norm_label": "sccdc (single-cell contamination detector and cleaner)"
+    },
+    {
+      "label": "ddqc (data-driven Quality Control)",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ddqc_method",
+      "community": 13,
+      "norm_label": "ddqc (data-driven quality control)"
+    },
+    {
+      "label": "SOLO (Doublet Detection)",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "solo_algorithm",
+      "community": 13,
+      "norm_label": "solo (doublet detection)"
+    },
+    {
+      "label": "DESeq2",
+      "file_type": "concept",
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "deseq2_tool",
+      "community": 30,
+      "norm_label": "deseq2"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/01-segmentation-rapids.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "legacy_scripts_01_segmentation_rapids_py",
+      "target": "legacy_scripts_01_segmentation_rapids_check_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/01-segmentation-rapids.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "legacy_scripts_01_segmentation_rapids_py",
+      "target": "legacy_scripts_01_segmentation_rapids_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/01-segmentation-rapids.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "legacy_scripts_01_segmentation_rapids_main",
+      "target": "legacy_scripts_01_segmentation_rapids_check_memory",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/01b-recovery-segmentation.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "legacy_scripts_01b_recovery_segmentation_py",
+      "target": "legacy_scripts_01b_recovery_segmentation_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/02b-parallel-orchestrator.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "legacy_scripts_02b_parallel_orchestrator_py",
+      "target": "legacy_scripts_02b_parallel_orchestrator_process_segment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/02b-parallel-orchestrator.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "legacy_scripts_02b_parallel_orchestrator_py",
+      "target": "legacy_scripts_02b_parallel_orchestrator_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/03-custom-labeling.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "legacy_scripts_03_custom_labeling_py",
+      "target": "legacy_scripts_03_custom_labeling_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "legacy_scripts_03b_local_consolidate_py",
+      "target": "legacy_scripts_03b_local_consolidate_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "legacy_scripts_03b_local_consolidate_py",
+      "target": "legacy_scripts_03b_local_consolidate_map_age_yrs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "legacy_scripts_03b_local_consolidate_py",
+      "target": "legacy_scripts_03b_local_consolidate_process_worker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "legacy_scripts_03b_local_consolidate_py",
+      "target": "legacy_scripts_03b_local_consolidate_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/03b-local-consolidate.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "legacy_scripts_03b_local_consolidate_process_worker",
+      "target": "legacy_scripts_03b_local_consolidate_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/04-final-analysis.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "legacy_scripts_04_final_analysis_py",
+      "target": "legacy_scripts_04_final_analysis_generate_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/analyze_monster.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "legacy_scripts_analyze_monster_py",
+      "target": "legacy_scripts_analyze_monster_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/check_clusters.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "legacy_scripts_check_clusters_py",
+      "target": "legacy_scripts_check_clusters_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/check_sizes.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "legacy_scripts_check_sizes_py",
+      "target": "legacy_scripts_check_sizes_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/detect_monsters_age.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "legacy_scripts_detect_monsters_age_py",
+      "target": "legacy_scripts_detect_monsters_age_inspect_monsters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/detect_monsters_metadata.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "legacy_scripts_detect_monsters_metadata_py",
+      "target": "legacy_scripts_detect_monsters_metadata_deep_inspect_monsters",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/orchestrate-pipeline.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "legacy_scripts_orchestrate_pipeline_sh",
+      "target": "c_users_predator_documents_antigravity_workspaces_nk_pipeline_rna_ambient_legacy_scripts_orchestrate_pipeline_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/quantify_missing.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "legacy_scripts_quantify_missing_py",
+      "target": "legacy_scripts_quantify_missing_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/setup_env_wsl.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "legacy_scripts_setup_env_wsl_sh",
+      "target": "c_users_predator_documents_antigravity_workspaces_nk_pipeline_rna_ambient_legacy_scripts_setup_env_wsl_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/utils/logger.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "legacy_scripts_utils_logger_py",
+      "target": "utils_logger_setup_logger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "legacy_scripts/utils/logger.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "utils_logger_rationale_7",
+      "target": "utils_logger_setup_logger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/run_server_pipeline.sh",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_run_server_pipeline_sh",
+      "target": "c_users_predator_documents_antigravity_workspaces_nk_pipeline_rna_ambient_phoenix_server_deploy_run_server_pipeline_sh__entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/run_server_pipeline.sh",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_run_server_pipeline_sh",
+      "target": "phoenix_server_deploy_run_server_pipeline_raw_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/01_segment_ram.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_src_01_segment_ram_py",
+      "target": "src_01_segment_ram_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_src_03_consolidate_py",
+      "target": "src_03_consolidate_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_src_03_consolidate_py",
+      "target": "src_03_consolidate_map_age_yrs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_src_03_consolidate_py",
+      "target": "src_03_consolidate_process_worker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "source": "phoenix_server_deploy_src_03_consolidate_py",
+      "target": "src_03_consolidate_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "PHOENIX_SERVER_DEPLOY/src/03_consolidate.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "src_03_consolidate_process_worker",
+      "target": "src_03_consolidate_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/00-run-pipeline.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_00_run_pipeline_py",
+      "target": "scripts_00_run_pipeline_run_script",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/00-run-pipeline.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_00_run_pipeline_py",
+      "target": "scripts_00_run_pipeline_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/00-run-pipeline.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "scripts_00_run_pipeline_main",
+      "target": "scripts_00_run_pipeline_run_script",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/03-consolidate-scar.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_03_consolidate_scar_py",
+      "target": "scripts_03_consolidate_scar_run_consolidation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_04_adaptive_qc_py",
+      "target": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_04_adaptive_qc_py",
+      "target": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_run_adaptive_qc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_run_adaptive_qc",
+      "target": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-adaptive-qc.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "scripts_04_adaptive_qc_rationale_23",
+      "target": "scar_python_validation_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "scripts_04_adaptive_qc_rationale_23",
+      "target": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_04_purify_qc_lineage_py",
+      "target": "scripts_04_purify_qc_lineage_robust_adaptive_qc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_04_purify_qc_lineage_py",
+      "target": "scripts_04_purify_qc_lineage_run_purify_qc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "scripts_04_purify_qc_lineage_run_purify_qc",
+      "target": "scripts_04_purify_qc_lineage_robust_adaptive_qc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/04-purify-qc-lineage.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "scripts_04_purify_qc_lineage_rationale_30",
+      "target": "scripts_04_purify_qc_lineage_robust_adaptive_qc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/05-doublets-solo.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_05_doublets_solo_py",
+      "target": "scripts_05_doublets_solo_run_final_cleaning",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/05-preprocessing-metadata.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_05_preprocessing_metadata_py",
+      "target": "scar_python_validation_scripts_05_preprocessing_metadata_py_scripts_05_preprocessing_metadata_clean_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/06-hvg-selection.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_06_hvg_selection_py",
+      "target": "scripts_06_hvg_selection_run_hvg_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/10-pydeseq2-pseudobulk.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_10_pseudobulk_pydeseq2_py",
+      "target": "scripts_10_pydeseq2_pseudobulk_run_pseudobulk_pydeseq2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v2_clean/scripts/10-pydeseq2-pseudobulk-clean.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scar_python_validation_v2_clean_scripts_10_pydeseq2_pseudobulk_clean_py",
+      "target": "scripts_10_pydeseq2_pseudobulk_run_pseudobulk_pydeseq2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/apply_mass_critical_filter.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_apply_mass_critical_filter_py",
+      "target": "scripts_apply_mass_critical_filter_apply_donor_threshold",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/purify_and_audit.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_purify_and_audit_py",
+      "target": "scripts_purify_and_audit_apply_strict_filter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation/scripts/purify_and_audit.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "scar_python_validation_scripts_purify_and_audit_py",
+      "target": "scripts_purify_and_audit_audit_donors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v3_perfect/scripts/10-pydeseq2-pseudobulk-perfect.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scar_python_validation_v3_perfect_scripts_10_pydeseq2_pseudobulk_perfect_py",
+      "target": "scripts_10_pydeseq2_pseudobulk_perfect_run_pseudobulk_pydeseq2_perfect",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/10-pydeseq2-pseudobulk-clean.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_10_pydeseq2_pseudobulk_clean_py",
+      "target": "scripts_10_pydeseq2_pseudobulk_clean_run_pseudobulk_pydeseq2_v4_final",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/11_visual_validation.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_11_visual_validation_py",
+      "target": "scripts_11_visual_validation_run_visual_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/12_scar_ambient_validation.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_12_scar_ambient_validation_py",
+      "target": "scripts_12_scar_ambient_validation_run_scar_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/13_solo_doublet_validation.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_13_solo_doublet_validation_py",
+      "target": "scripts_13_solo_doublet_validation_run_solo_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/14_bimodality_diagnostics.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_14_bimodality_diagnostics_py",
+      "target": "scripts_14_bimodality_diagnostics_run_bimodality_diagnostics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/15_pca_variance_audit.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_15_pca_variance_audit_py",
+      "target": "scripts_15_pca_variance_audit_run_pca_variance_audit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/16_pca_summary_figure.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_16_pca_summary_figure_py",
+      "target": "scripts_16_pca_summary_figure_create_summary_figure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17b_pydeseq2_visualizations.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_17b_pydeseq2_visualizations_py",
+      "target": "scripts_17b_pydeseq2_visualizations_create_visualizations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17c_pydeseq2_qc_validation.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_17c_pydeseq2_qc_validation_py",
+      "target": "scripts_17c_pydeseq2_qc_validation_run_qc_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/17_differential_expression_figures.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_17_differential_expression_figures_py",
+      "target": "scripts_17_differential_expression_figures_run_de_visualizations_v4",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/18_pca_v4_clean_validation.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_18_pca_v4_clean_validation_py",
+      "target": "scripts_18_pca_v4_clean_validation_run_v4_clean_pca_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/19_pca_v4_regression_validation.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_19_pca_v4_regression_validation_py",
+      "target": "scripts_19_pca_v4_regression_validation_run_v4_regression_pca_validation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/20_functional_enrichment.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_20_functional_enrichment_py",
+      "target": "scripts_20_functional_enrichment_run_functional_enrichment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/21_generate_thesis_figures.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_21_generate_thesis_figures_py",
+      "target": "scripts_21_generate_thesis_figures_generate_thesis_figures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_audit_to_html.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_convert_audit_to_html_py",
+      "target": "scripts_convert_audit_to_html_image_to_base64",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_audit_to_html.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_convert_audit_to_html_py",
+      "target": "scripts_convert_audit_to_html_convert_to_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_report_to_html.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_convert_report_to_html_py",
+      "target": "scripts_convert_report_to_html_image_to_base64",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/convert_report_to_html.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_convert_report_to_html_py",
+      "target": "scripts_convert_report_to_html_convert_to_html",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scAR_python_validation_v4_clean/scripts/create_audit_notebook.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_scripts_create_audit_notebook_py",
+      "target": "scripts_create_audit_notebook_create_notebook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "scratch_5_2abundancia_difrencial_code_py",
+      "target": "scratch_5_2abundancia_difrencial_code_calculate_nk_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L353",
+      "weight": 1.0,
+      "source": "scratch_5_2abundancia_difrencial_code_py",
+      "target": "scratch_5_2abundancia_difrencial_code_plot_nk_ratios",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L411",
+      "weight": 1.0,
+      "source": "scratch_5_2abundancia_difrencial_code_py",
+      "target": "scratch_5_2abundancia_difrencial_code_print_nk_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "scratch_5_2abundancia_difrencial_code_rationale_176",
+      "target": "scratch_5_2abundancia_difrencial_code_calculate_nk_ratio",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "scratch_5_2abundancia_difrencial_code_rationale_230",
+      "target": "scratch_5_2abundancia_difrencial_code_plot_nk_ratios",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2Abundancia_difrencial_code.py",
+      "source_location": "L412",
+      "weight": 1.0,
+      "source": "scratch_5_2abundancia_difrencial_code_rationale_288",
+      "target": "scratch_5_2abundancia_difrencial_code_print_nk_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "scratch_5_2_pseudobulk_subtipos_nk_code_py",
+      "target": "scratch_5_2_pseudobulk_subtipos_nk_code_create_pseudobulk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "scratch_5_2_pseudobulk_subtipos_nk_code_py",
+      "target": "scratch_5_2_pseudobulk_subtipos_nk_code_plot_volcano",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "scratch_5_2_pseudobulk_subtipos_nk_code_py",
+      "target": "scratch_5_2_pseudobulk_subtipos_nk_code_run_pseudobulk_subtype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L224",
+      "weight": 1.0,
+      "source": "scratch_5_2_pseudobulk_subtipos_nk_code_py",
+      "target": "scratch_5_2_pseudobulk_subtipos_nk_code_generate_adaptive_report",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "scratch_5_2_pseudobulk_subtipos_nk_code_run_pseudobulk_subtype",
+      "target": "scratch_5_2_pseudobulk_subtipos_nk_code_create_pseudobulk",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/5.2_pseudobulk_subtipos_NK_code.py",
+      "source_location": "L254",
+      "weight": 1.0,
+      "source": "scratch_5_2_pseudobulk_subtipos_nk_code_generate_adaptive_report",
+      "target": "scratch_5_2_pseudobulk_subtipos_nk_code_plot_volcano",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_ora.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scratch_test_ora_py",
+      "target": "scratch_test_ora_test_ora",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.5_scCDC_correction.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_0_5_sccdc_correction_py",
+      "target": "py_versions_0_5_sccdc_correction_run_sccdc_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.5_scCDC_correction.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "py_versions_0_5_sccdc_correction_rationale_8",
+      "target": "py_versions_0_5_sccdc_correction_run_sccdc_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.prepro_indices.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_0_prepro_indices_py",
+      "target": "py_versions_0_prepro_indices_homogenize_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/0.prepro_indices.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "py_versions_0_prepro_indices_rationale_49",
+      "target": "py_versions_0_prepro_indices_homogenize_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_assign_cell_group",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_filtrar_muestra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_map_age_stage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L246",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_procesar_edades",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L256",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_process_and_save_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L393",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L435",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_load_common_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L445",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_standardize_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L506",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_fix_integrated_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L522",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_process_and_save_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L560",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_0preprocesamiento_py",
+      "target": "py_versions_1_0preprocesamiento_verificar_patrones_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_process_and_save_files",
+      "target": "py_versions_1_0preprocesamiento_filtrar_muestra",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L311",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_process_and_save_files",
+      "target": "py_versions_1_0preprocesamiento_procesar_edades",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L467",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_standardize_gene_symbols",
+      "target": "py_versions_1_0preprocesamiento_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L394",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_rationale_394",
+      "target": "py_versions_1_0preprocesamiento_is_valid_gene_symbol",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L513",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_fix_integrated_gene_symbols",
+      "target": "py_versions_1_0preprocesamiento_load_common_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L436",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_rationale_436",
+      "target": "py_versions_1_0preprocesamiento_load_common_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L516",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_fix_integrated_gene_symbols",
+      "target": "py_versions_1_0preprocesamiento_standardize_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L446",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_rationale_446",
+      "target": "py_versions_1_0preprocesamiento_standardize_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L532",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_process_and_save_data",
+      "target": "py_versions_1_0preprocesamiento_fix_integrated_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L507",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_rationale_507",
+      "target": "py_versions_1_0preprocesamiento_fix_integrated_gene_symbols",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.0preprocesamiento.py",
+      "source_location": "L523",
+      "weight": 1.0,
+      "source": "py_versions_1_0preprocesamiento_rationale_523",
+      "target": "py_versions_1_0preprocesamiento_process_and_save_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_convert_to_string",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_assign_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_title_to_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_integrate_h5ad_files",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L272",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_convertir_tipos_compatibles_mejorado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L359",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_print_dataset_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L384",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_filter_cells_and_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L429",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_1_5integration_and_group_filtering_py",
+      "target": "py_versions_1_5integration_and_group_filtering_segment_integrated_h5ad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_integrate_h5ad_files",
+      "target": "py_versions_1_5integration_and_group_filtering_assign_title",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_integrate_h5ad_files",
+      "target": "py_versions_1_5integration_and_group_filtering_title_to_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L273",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_rationale_273",
+      "target": "py_versions_1_5integration_and_group_filtering_convertir_tipos_compatibles_mejorado",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L436",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_segment_integrated_h5ad",
+      "target": "py_versions_1_5integration_and_group_filtering_print_dataset_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_rationale_360",
+      "target": "py_versions_1_5integration_and_group_filtering_print_dataset_info",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L472",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_segment_integrated_h5ad",
+      "target": "py_versions_1_5integration_and_group_filtering_filter_cells_and_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_rationale_385",
+      "target": "py_versions_1_5integration_and_group_filtering_filter_cells_and_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/1.5integration_and_group_filtering.py",
+      "source_location": "L430",
+      "weight": 1.0,
+      "source": "py_versions_1_5integration_and_group_filtering_rationale_430",
+      "target": "py_versions_1_5integration_and_group_filtering_segment_integrated_h5ad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_2_0qc_py",
+      "target": "py_versions_2_0qc_plot_qc_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_2_0qc_py",
+      "target": "py_versions_2_0qc_validate_nk_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_2_0qc_py",
+      "target": "py_versions_2_0qc_process_quality_control",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "py_versions_2_0qc_process_quality_control",
+      "target": "py_versions_2_0qc_plot_qc_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "py_versions_2_0qc_rationale_20",
+      "target": "py_versions_2_0qc_plot_qc_metrics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "py_versions_2_0qc_process_quality_control",
+      "target": "py_versions_2_0qc_validate_nk_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "py_versions_2_0qc_rationale_65",
+      "target": "py_versions_2_0qc_validate_nk_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/2.0QC.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "py_versions_2_0qc_rationale_76",
+      "target": "py_versions_2_0qc_process_quality_control",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_0doublet_removal_py",
+      "target": "py_versions_3_0doublet_removal_setup_logger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_0doublet_removal_py",
+      "target": "py_versions_3_0doublet_removal_plot_doublet_scores",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_0doublet_removal_py",
+      "target": "py_versions_3_0doublet_removal_remove_doublets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_0doublet_removal_py",
+      "target": "py_versions_3_0doublet_removal_process_samples",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "py_versions_3_0doublet_removal_process_samples",
+      "target": "py_versions_3_0doublet_removal_setup_logger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "py_versions_3_0doublet_removal_process_samples",
+      "target": "py_versions_3_0doublet_removal_plot_doublet_scores",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "py_versions_3_0doublet_removal_process_samples",
+      "target": "py_versions_3_0doublet_removal_remove_doublets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.0doublet_removal.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "py_versions_3_0doublet_removal_rationale_51",
+      "target": "py_versions_3_0doublet_removal_remove_doublets",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "target": "py_versions_3_5normalization_plot_count_distribution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "target": "py_versions_3_5normalization_plot_hvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "target": "py_versions_3_5normalization_plot_hvg_heatmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "target": "py_versions_3_5normalization_plot_pca",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "target": "py_versions_3_5normalization_process_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_3_5normalization_py",
+      "target": "py_versions_3_5normalization_evaluate_preprocessing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "source": "py_versions_3_5normalization_process_data",
+      "target": "py_versions_3_5normalization_plot_hvg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "source": "py_versions_3_5normalization_process_data",
+      "target": "py_versions_3_5normalization_plot_hvg_heatmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L174",
+      "weight": 1.0,
+      "source": "py_versions_3_5normalization_process_data",
+      "target": "py_versions_3_5normalization_plot_pca",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/3.5Normalization.py",
+      "source_location": "L191",
+      "weight": 1.0,
+      "source": "py_versions_3_5normalization_rationale_191",
+      "target": "py_versions_3_5normalization_evaluate_preprocessing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/4.1integration_scvi.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_4_1integration_scvi_py",
+      "target": "py_versions_4_1integration_scvi_read_and_combine_h5ad",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L232",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_copy_of_workshop_day1_esp_py",
+      "target": "py_versions_copy_of_workshop_day1_esp_download",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L269",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_copy_of_workshop_day1_esp_py",
+      "target": "py_versions_copy_of_workshop_day1_esp_download_gse292810",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_copy_of_workshop_day1_esp_py",
+      "target": "py_versions_copy_of_workshop_day1_esp_load_gse292810",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L407",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_copy_of_workshop_day1_esp_py",
+      "target": "py_versions_copy_of_workshop_day1_esp_download_gse254435",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L453",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_referencias_scripts_descarga_qc_py_versions_copy_of_workshop_day1_esp_py",
+      "target": "py_versions_copy_of_workshop_day1_esp_load_gse254435",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L292",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_download_gse292810",
+      "target": "py_versions_copy_of_workshop_day1_esp_download",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L421",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_download_gse254435",
+      "target": "py_versions_copy_of_workshop_day1_esp_download",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L233",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_rationale_233",
+      "target": "py_versions_copy_of_workshop_day1_esp_download",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L270",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_rationale_270",
+      "target": "py_versions_copy_of_workshop_day1_esp_download_gse292810",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L297",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_rationale_297",
+      "target": "py_versions_copy_of_workshop_day1_esp_load_gse292810",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L408",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_rationale_408",
+      "target": "py_versions_copy_of_workshop_day1_esp_download_gse254435",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/referencias/scripts_descarga_QC/py_versions/Copy_of_Workshop_day1_esp.py",
+      "source_location": "L454",
+      "weight": 1.0,
+      "source": "py_versions_copy_of_workshop_day1_esp_rationale_454",
+      "target": "py_versions_copy_of_workshop_day1_esp_load_gse254435",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/01-diagnostic-report.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_01_diagnostic_report_py",
+      "target": "scripts_01_diagnostic_report_generate_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_02_scar_massive_orchestrator_py",
+      "target": "scripts_02_scar_massive_orchestrator_get_age_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_02_scar_massive_orchestrator_py",
+      "target": "scripts_02_scar_massive_orchestrator_is_hgnc_compliant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_02_scar_massive_orchestrator_py",
+      "target": "scripts_02_scar_massive_orchestrator_aggregate_duplicate_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_02_scar_massive_orchestrator_py",
+      "target": "scripts_02_scar_massive_orchestrator_run_denoising",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "scripts_02_scar_massive_orchestrator_run_denoising",
+      "target": "scripts_02_scar_massive_orchestrator_get_age_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "scripts_02_scar_massive_orchestrator_rationale_37",
+      "target": "scripts_02_scar_massive_orchestrator_get_age_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "scripts_02_scar_massive_orchestrator_run_denoising",
+      "target": "scripts_02_scar_massive_orchestrator_is_hgnc_compliant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "scripts_02_scar_massive_orchestrator_rationale_65",
+      "target": "scripts_02_scar_massive_orchestrator_is_hgnc_compliant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "source": "scripts_02_scar_massive_orchestrator_run_denoising",
+      "target": "scripts_02_scar_massive_orchestrator_aggregate_duplicate_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/02-scar-massive-orchestrator.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "scripts_02_scar_massive_orchestrator_rationale_83",
+      "target": "scripts_02_scar_massive_orchestrator_aggregate_duplicate_genes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_04_adaptive_qc_py",
+      "target": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_04_adaptive_qc_py",
+      "target": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_run_adaptive_qc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/04-adaptive-qc.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_run_adaptive_qc",
+      "target": "v20_clean_analysis_scripts_04_adaptive_qc_py_scripts_04_adaptive_qc_validate_nk_identity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/05-preprocessing-metadata.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_05_preprocessing_metadata_py",
+      "target": "v20_clean_analysis_scripts_05_preprocessing_metadata_py_scripts_05_preprocessing_metadata_clean_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/06-doublet-removal-solo.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_06_doublet_removal_solo_py",
+      "target": "scripts_06_doublet_removal_solo_run_solo_doublet_removal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/07-evaluate-ambient-rna.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_07_evaluate_ambient_rna_py",
+      "target": "scripts_07_evaluate_ambient_rna_get_dense",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/09-scar-pilot-donante01.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_09_scar_pilot_donante01_py",
+      "target": "scripts_09_scar_pilot_donante01_optimize_adata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/10-pseudobulk-pydeseq2.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "scripts_10_pseudobulk_pydeseq2_rationale_1",
+      "target": "v20_clean_analysis_scripts_10_pseudobulk_pydeseq2_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/check_reqs_pb.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_check_reqs_pb_py",
+      "target": "pydeseq2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "V20_CLEAN_ANALYSIS/scripts/final_audit_summary.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "v20_clean_analysis_scripts_final_audit_summary_py",
+      "target": "scripts_final_audit_summary_get_age",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "walkthrough_de_analysis",
+      "target": "v20_pseudobulk_volcano"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "council_biological_review",
+      "target": "nk_aging_signature"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "pipeline_pure_python",
+      "target": "scar_denoising"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "walkthrough_de_analysis",
+      "target": "scar_de_genes_lists"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "walkthrough_de_analysis",
+      "target": "pydeseq2"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "zinc_model_evaluation",
+      "target": "zinc_sequestration_model"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source": "zinc_model_evaluation",
+      "target": "scar_denoising"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "genes_ribosomales_nk",
+      "target": "ribosomal_anemia"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "mission_control_checkpoint_v2_clean",
+      "target": "genes_ribosomales_nk"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "report_v3_perfect_de_analysis",
+      "target": "pydeseq2"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "reporte_integral_pydeseq2_v4",
+      "target": "pydeseq2"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source": "reporte_validacion_sesgo_tecnico",
+      "target": "reporte_integral_pydeseq2_v4"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source": "reporte_integral_pydeseq2_v4",
+      "target": "nk_aging_signature"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scAR_python_validation_v4_clean/results/diagnostics/diag_n_genes_by_counts_by_assay_zoom.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "diag_n_genes_by_counts_by_sex",
+      "target": "diag_total_counts_by_assay"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "scAR_python_validation_v4_clean/results/figures/11_MA_Plot_V4.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_ma_plot_v4",
+      "target": "scar_python_validation_v4_clean_ma_plot_v4_final"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scAR_python_validation_v4_clean/results/figures/12_Heatmap_Top50_V4.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_heatmap_top50_v4",
+      "target": "scar_python_validation_v4_clean_heatmap_top100_v4"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scAR_python_validation_v4_clean/results/pca_audit/PCA_VARIANCE_REPORT.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_pca_variance_report",
+      "target": "scar_python_validation_v4_clean_pca_technical_bias_summary"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "scAR_python_validation_v4_clean/results/pca_audit/PCA_VARIANCE_REPORT.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_pca_variance_report",
+      "target": "scar_python_validation_v4_clean_pca_variance_ratio"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "scAR_python_validation_v4_clean/results/pydeseq2/figures/PCA_VST_v4.png",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "scar_python_validation_v4_clean_pca_vst_v4",
+      "target": "scar_python_validation_v4_clean_pca_variance_report"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scAR_python_validation_v4_clean/results/v4_pca_regression/V4_PCA_REGRESSION_REPORT.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "v4_pca_regression_report_txt",
+      "target": "v4_pca_validation_report_txt"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "V20_CLEAN_ANALYSIS/COMPARATIVE_DE_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "comparative_de_report_md",
+      "target": "deseq2_tool"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "V20_CLEAN_ANALYSIS/CONCLUSIONES_V20_SCAR.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "conclusiones_v20_scar_md",
+      "target": "scar_algorithm"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "V20_CLEAN_ANALYSIS/docs/CHRONOS_MEMORY.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "chronos_memory_md",
+      "target": "phoenix_master_guide_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "V20_CLEAN_ANALYSIS/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "v20_clean_analysis_readme_md",
+      "target": "walkthrough_v20_final_report_md"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "V20_CLEAN_ANALYSIS/WALKTHROUGH_FASE03_AMBIENT_RNA_REMOVAL.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "walkthrough_fase03_ambient_rna_removal_md",
+      "target": "sccdc_algorithm"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "V20_CLEAN_ANALYSIS/walkthrough_Fase04_05_QC_Dobletes.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "walkthrough_fase04_05_qc_dobletes_md",
+      "target": "ddqc_method"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "V20_CLEAN_ANALYSIS/walkthrough_Fase04_05_QC_Dobletes.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "walkthrough_fase04_05_qc_dobletes_md",
+      "target": "solo_algorithm"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "V20_CLEAN_ANALYSIS/WALKTHROUGH_V20_FINAL_REPORT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "walkthrough_v20_final_report_md",
+      "target": "walkthrough_fase04_05_qc_dobletes_md"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "c00e8ab42ebcc5e625878bd8220bfa72a1af5668"
+}

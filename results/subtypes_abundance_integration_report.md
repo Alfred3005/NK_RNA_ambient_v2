@@ -4,6 +4,75 @@ Este reporte consolida el análisis comparativo final del proyecto, contrastando
 
 ---
 
+## 🗺️ Mapa Metodológico del Proyecto
+
+A continuación, se detalla el flujo de trabajo computacional (Main Branch) que permitió purificar la señal biológica de inmunosenescencia, superando el ruido técnico (ambient RNA) y estadístico (shot noise):
+
+```mermaid
+flowchart TD
+    %% Obtención de Datos
+    subgraph Data_Procurement ["1. Procuración de Datos (Cellxgene)"]
+        A[Datos de scRNA-seq Primarios] --> B{Criterios de Inclusión}
+        B -->|Tejido| C1[PBMC]
+        B -->|Organismo| C2[Homo sapiens]
+        B -->|Condición| C3[Sanos / Controles]
+        B -->|Metadatos| C4[Edad y Sexo]
+        C1 & C2 & C3 & C4 --> D[Cohorte Inicial de Donantes]
+    end
+
+    %% Corrección Ambiental
+    subgraph Ambient_RNA ["2. Corrección de RNA Ambiental"]
+        D --> E[scAR - Single Cell Ambient RNA removal]
+        E --> F[Inferencia Nativa en Python GPU]
+        F --> G[Matriz de Conteos Purificada]
+    end
+
+    %% Control de Calidad
+    subgraph QC ["3. Control de Calidad Híbrido"]
+        G --> H[Filtro Adaptativo: DDQC]
+        H --> I[Exclusión de outliers vía MAD por clusters]
+        I --> J[Filtro Declarativo Fijo]
+        J --> K[Remoción de Ribosomales RPS/RPL]
+        J --> L[Remoción de Inmunoglobulinas IG]
+        K & L --> M[Filtro de Masa Crítica: >200 cél/donante]
+        M --> N[Dataset Gold Standard V4-Clean]
+    end
+
+    %% Análisis General NK
+    subgraph Global_Analysis ["4. Análisis NK Global (Efecto Cancelación)"]
+        N --> O[Agregación Pseudobulk por Donante]
+        O --> P[PyDESeq2 + apeGLM Shrinkage]
+        P --> Q[Diseño Aditivo: ~ assay + age_group]
+        Q --> R[DEA: Expresión Diferencial]
+        R --> S[GSEA Preranked & ORA]
+    end
+
+    %% Análisis de Subtipos
+    subgraph Subtype_Analysis ["5. Análisis de Subtipos"]
+        N --> U[Anotación Cellxgene]
+        U --> V{Estratificación Celular}
+        
+        V -->|CD56dim Mayoritarios ~95%| W[Pseudobulk + PyDESeq2]
+        W --> X[Diseño: ~ assay + age_group]
+        X --> Y[DEA: 12 Genes Significativos]
+        Y --> Z[GSEA Preranked]
+        
+        V -->|CD56bright Raros ~5%| AA[Modelado Unicelular Paralelizado]
+        AA --> AB[MixedLM Gen por Gen]
+        AB --> AC[Factor Fijo: age_group + assay]
+        AB --> AD[Factor Aleatorio: donante_id]
+        AC & AD --> AE[GSEA Preranked: Rescate de 31 Vías]
+        
+        V -->|Dinámica Poblacional| AF[Abundancia Diferencial]
+        AF --> AG[GLM Binomial: CD56bright/Total_NK]
+        AG --> AH[Contracción Significativa de Bright]
+    end
+    
+    Global_Analysis -.->|Demuestra Sesgo| Subtype_Analysis
+```
+
+---
+
 ## 📊 1. Conclusiones de Expresión Diferencial y GSEA en NK CD56dim
 
 La población **NK CD56dim** es la subpoblación efectora madura y mayoritaria (~90-95% del pool de células NK circulantes). El análisis de expresión diferencial (DE) y enriquecimiento funcional (GSEA Preranked) revela un fenotipo caracterizado por una respuesta adaptativa al envejecimiento marcada por la homeostasis de hierro, la activación de alarminas y un declive funcional atenuado.

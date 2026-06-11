@@ -1,0 +1,652 @@
+{
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\01-segmentation-rapids.py": {
+    "mtime": 1776375639.3500426,
+    "ast_hash": "45f068c7188a320206545d015369a6d6",
+    "semantic_hash": "45f068c7188a320206545d015369a6d6"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\01b-recovery-segmentation.py": {
+    "mtime": 1776123065.618286,
+    "ast_hash": "ec356487e2ae0debe7a016d7a2fa5c6d",
+    "semantic_hash": "ec356487e2ae0debe7a016d7a2fa5c6d"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\01c-monster-rescue.py": {
+    "mtime": 1776296500.8677068,
+    "ast_hash": "a2e4f1c694a621c5c21ccc971f7df5bc",
+    "semantic_hash": "a2e4f1c694a621c5c21ccc971f7df5bc"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\02-ambient-correction.R": {
+    "mtime": 1776374349.720579,
+    "ast_hash": "b328d35771026311a857d69c9b7bfff3",
+    "semantic_hash": "b328d35771026311a857d69c9b7bfff3"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\02b-parallel-orchestrator.py": {
+    "mtime": 1776386457.4925017,
+    "ast_hash": "a2623f46295b7045ba92098cc904e21b",
+    "semantic_hash": "a2623f46295b7045ba92098cc904e21b"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\02c-turbo-orchestrator.R": {
+    "mtime": 1776406029.7881134,
+    "ast_hash": "45945ea8da768c867970f6fae5958446",
+    "semantic_hash": "45945ea8da768c867970f6fae5958446"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\03-custom-labeling.py": {
+    "mtime": 1776031070.7775664,
+    "ast_hash": "f1edc61b747a8a73e2a392133f6c200a",
+    "semantic_hash": "f1edc61b747a8a73e2a392133f6c200a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\03b-local-consolidate.py": {
+    "mtime": 1776374360.830892,
+    "ast_hash": "3f852bfab3de32a066185fad3773fcdb",
+    "semantic_hash": "3f852bfab3de32a066185fad3773fcdb"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\04-fast-summary.R": {
+    "mtime": 1776406235.2272549,
+    "ast_hash": "a6f4ffbffdb3e9789700be84e53ecdec",
+    "semantic_hash": "a6f4ffbffdb3e9789700be84e53ecdec"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\04-final-analysis.py": {
+    "mtime": 1776406188.067536,
+    "ast_hash": "8d856685284eb4bb47212661d9da8eb1",
+    "semantic_hash": "8d856685284eb4bb47212661d9da8eb1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\analyze_monster.py": {
+    "mtime": 1776124966.3317425,
+    "ast_hash": "b7748a3df0c706f2aafba4c24971fffc",
+    "semantic_hash": "b7748a3df0c706f2aafba4c24971fffc"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\check_clusters.py": {
+    "mtime": 1776155147.8164542,
+    "ast_hash": "0214cbe067aef3fbe360f340d2f0a183",
+    "semantic_hash": "0214cbe067aef3fbe360f340d2f0a183"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\check_columns.py": {
+    "mtime": 1776147299.5385654,
+    "ast_hash": "f29c096958e20d76c811fb7d2a988cfd",
+    "semantic_hash": "f29c096958e20d76c811fb7d2a988cfd"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\check_sizes.py": {
+    "mtime": 1776154694.4419725,
+    "ast_hash": "2f4805bcef3283d93a1c05c137923442",
+    "semantic_hash": "2f4805bcef3283d93a1c05c137923442"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\debug_rds.R": {
+    "mtime": 1776328518.9227967,
+    "ast_hash": "abfb3157ebb71f947ff2775193e4a122",
+    "semantic_hash": "abfb3157ebb71f947ff2775193e4a122"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\detect_monsters_age.py": {
+    "mtime": 1776409160.286618,
+    "ast_hash": "388fe5329a541dbc7fe0eb40ee8b437c",
+    "semantic_hash": "388fe5329a541dbc7fe0eb40ee8b437c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\detect_monsters_metadata.py": {
+    "mtime": 1776409361.1050892,
+    "ast_hash": "9f1736c50ad9b87e7654d9739b48f76c",
+    "semantic_hash": "9f1736c50ad9b87e7654d9739b48f76c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\diagnostics.R": {
+    "mtime": 1776114339.5131223,
+    "ast_hash": "20d74698fe0dfe7525eefaf11693c1f4",
+    "semantic_hash": "20d74698fe0dfe7525eefaf11693c1f4"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\install_scCDC.R": {
+    "mtime": 1776066448.4117825,
+    "ast_hash": "23b70d0651d1ee0f6947f1d4106c0cbf",
+    "semantic_hash": "23b70d0651d1ee0f6947f1d4106c0cbf"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\orchestrate-pipeline.ps1": {
+    "mtime": 1776275840.580811,
+    "ast_hash": "2fdbb4c179952f812e333cee7297ed6c",
+    "semantic_hash": "2fdbb4c179952f812e333cee7297ed6c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\orchestrate-pipeline.sh": {
+    "mtime": 1776111172.2116446,
+    "ast_hash": "343b5580562248415a19f58cb87e5904",
+    "semantic_hash": "343b5580562248415a19f58cb87e5904"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\quantify_missing.py": {
+    "mtime": 1776124456.1773179,
+    "ast_hash": "ee8818e5dfb5e603752486b753a434de",
+    "semantic_hash": "ee8818e5dfb5e603752486b753a434de"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\setup_env_wsl.sh": {
+    "mtime": 1776066346.423014,
+    "ast_hash": "0e12fcbf8daa1eedf7ab5da1a1d94472",
+    "semantic_hash": "0e12fcbf8daa1eedf7ab5da1a1d94472"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\setup_r_deps.R": {
+    "mtime": 1776111264.2003913,
+    "ast_hash": "820e6331b98083b5b9e8a683bdb7c66c",
+    "semantic_hash": "820e6331b98083b5b9e8a683bdb7c66c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\temp_convert.R": {
+    "mtime": 1776326641.620096,
+    "ast_hash": "b698e447b1946ca4fea0335c9cdb9a52",
+    "semantic_hash": "b698e447b1946ca4fea0335c9cdb9a52"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\temp_convert_final.R": {
+    "mtime": 1776327985.0116608,
+    "ast_hash": "c27d1ea6eb0d3dee7c1d5ed4805858b2",
+    "semantic_hash": "c27d1ea6eb0d3dee7c1d5ed4805858b2"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\temp_convert_rds.R": {
+    "mtime": 1776321173.638105,
+    "ast_hash": "b4459abe862bba2418972dfe3693a7f1",
+    "semantic_hash": "b4459abe862bba2418972dfe3693a7f1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\temp_convert_robust.R": {
+    "mtime": 1776327847.7696738,
+    "ast_hash": "371a1f5c06484162c61cbf5d4f289bff",
+    "semantic_hash": "371a1f5c06484162c61cbf5d4f289bff"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\legacy_scripts\\utils\\logger.py": {
+    "mtime": 1774854814.0679038,
+    "ast_hash": "e3b4715c4f1ba27cc5e81725b7d49038",
+    "semantic_hash": "e3b4715c4f1ba27cc5e81725b7d49038"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\PHOENIX_SERVER_DEPLOY\\run_server_pipeline.sh": {
+    "mtime": 1776310421.3839571,
+    "ast_hash": "c436470421b1b7a92939d57546b575f4",
+    "semantic_hash": "c436470421b1b7a92939d57546b575f4"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\PHOENIX_SERVER_DEPLOY\\src\\01_segment_ram.py": {
+    "mtime": 1776299240.3501332,
+    "ast_hash": "94b8b59512cb83f90bb2a08ad6461192",
+    "semantic_hash": "94b8b59512cb83f90bb2a08ad6461192"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\PHOENIX_SERVER_DEPLOY\\src\\02_ambient_parallel.R": {
+    "mtime": 1776313614.5972373,
+    "ast_hash": "65a66d1970515529035b298ba324f068",
+    "semantic_hash": "65a66d1970515529035b298ba324f068"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\PHOENIX_SERVER_DEPLOY\\src\\03_consolidate.py": {
+    "mtime": 1776328598.698596,
+    "ast_hash": "4c7f03fae999e76edb900f0c2bac13d6",
+    "semantic_hash": "4c7f03fae999e76edb900f0c2bac13d6"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\00-run-pipeline.py": {
+    "mtime": 1777315670.2711608,
+    "ast_hash": "3a0fba985728ce9fe4e100b360791987",
+    "semantic_hash": "3a0fba985728ce9fe4e100b360791987"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\03-consolidate-scar.py": {
+    "mtime": 1777313465.1502132,
+    "ast_hash": "813ca43f398b96b15f439f940ca731aa",
+    "semantic_hash": "813ca43f398b96b15f439f940ca731aa"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\04-adaptive-qc.py": {
+    "mtime": 1777280571.1635742,
+    "ast_hash": "fdc3a736a03fbc8e954e96db6857c9ab",
+    "semantic_hash": "fdc3a736a03fbc8e954e96db6857c9ab"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\04-purify-qc-lineage.py": {
+    "mtime": 1777318042.1208787,
+    "ast_hash": "1df3f9b096a053f3485bf14df1cadefe",
+    "semantic_hash": "1df3f9b096a053f3485bf14df1cadefe"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\05-doublets-solo.py": {
+    "mtime": 1777315657.546549,
+    "ast_hash": "7b8edbf66904745d0e6b5a68b2498c21",
+    "semantic_hash": "7b8edbf66904745d0e6b5a68b2498c21"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\05-preprocessing-metadata.py": {
+    "mtime": 1777280579.8236744,
+    "ast_hash": "37ebf3c2e00bbc7faea6290aa1aff3f3",
+    "semantic_hash": "37ebf3c2e00bbc7faea6290aa1aff3f3"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\06-hvg-selection.py": {
+    "mtime": 1777330631.2389567,
+    "ast_hash": "fb56fab3dc2a3f2136c6cd0808dc4d15",
+    "semantic_hash": "fb56fab3dc2a3f2136c6cd0808dc4d15"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\10-pydeseq2-pseudobulk.py": {
+    "mtime": 1777364835.0303252,
+    "ast_hash": "d88763a0f660cc5548751bde65da76db",
+    "semantic_hash": "d88763a0f660cc5548751bde65da76db"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\apply_mass_critical_filter.py": {
+    "mtime": 1777360426.9090216,
+    "ast_hash": "933141370ea667d10d8f4e1cdbd2489c",
+    "semantic_hash": "933141370ea667d10d8f4e1cdbd2489c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\compare_de.py": {
+    "mtime": 1777367202.5317843,
+    "ast_hash": "f12071ca7f6a043778f64261e9601d75",
+    "semantic_hash": "f12071ca7f6a043778f64261e9601d75"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\detailed_stats.py": {
+    "mtime": 1777329352.7480311,
+    "ast_hash": "d862a5f4a14866f5733c4d65212ed2fc",
+    "semantic_hash": "d862a5f4a14866f5733c4d65212ed2fc"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\donor_audit.py": {
+    "mtime": 1777358432.2585056,
+    "ast_hash": "ff741d73eee14e02207cacc1908f3a89",
+    "semantic_hash": "ff741d73eee14e02207cacc1908f3a89"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\extract_gene_lists.py": {
+    "mtime": 1777447361.7907085,
+    "ast_hash": "2cd3cac5c7c2e4e9d09600d53372e063",
+    "semantic_hash": "2cd3cac5c7c2e4e9d09600d53372e063"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\final_stats.py": {
+    "mtime": 1777327342.3875682,
+    "ast_hash": "6ea6eaec2d4e4f515430a0caf19dc3a6",
+    "semantic_hash": "6ea6eaec2d4e4f515430a0caf19dc3a6"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\plot_venn.py": {
+    "mtime": 1777368037.3840563,
+    "ast_hash": "7f3fae6e329f7b5f58d8ab529a5a7195",
+    "semantic_hash": "7f3fae6e329f7b5f58d8ab529a5a7195"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\purify_and_audit.py": {
+    "mtime": 1777359174.3833663,
+    "ast_hash": "5c8912a0b56cc0ab33683eddabf5aa42",
+    "semantic_hash": "5c8912a0b56cc0ab33683eddabf5aa42"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation\\scripts\\update_log.py": {
+    "mtime": 1777360629.0362191,
+    "ast_hash": "8d84bcb9a3c65a85699c9244d2759e76",
+    "semantic_hash": "8d84bcb9a3c65a85699c9244d2759e76"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v2_clean\\scripts\\10-pydeseq2-pseudobulk-clean.py": {
+    "mtime": 1777536508.1616344,
+    "ast_hash": "0b45e7d6a51071e7ea87dc1ea05b966d",
+    "semantic_hash": "0b45e7d6a51071e7ea87dc1ea05b966d"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v2_clean\\scripts\\compare_v1_v2.py": {
+    "mtime": 1777536718.8429773,
+    "ast_hash": "917856ce3005b8d30f4779b0961363e5",
+    "semantic_hash": "917856ce3005b8d30f4779b0961363e5"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v2_clean\\scripts\\extract_gene_lists_v2.py": {
+    "mtime": 1777536703.8465757,
+    "ast_hash": "ae6f712312e05f2e25984a5b3541a84a",
+    "semantic_hash": "ae6f712312e05f2e25984a5b3541a84a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v3_perfect\\scripts\\10-pydeseq2-pseudobulk-perfect.py": {
+    "mtime": 1777803107.9751174,
+    "ast_hash": "41b36c39f36a181c9ae361ad6087582b",
+    "semantic_hash": "41b36c39f36a181c9ae361ad6087582b"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v3_perfect\\scripts\\compare_v2_v3.py": {
+    "mtime": 1777802244.5826106,
+    "ast_hash": "ce5984183e291f579f47fac8fd4ab538",
+    "semantic_hash": "ce5984183e291f579f47fac8fd4ab538"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\10-pydeseq2-pseudobulk-clean.py": {
+    "mtime": 1778909920.9659479,
+    "ast_hash": "f5e8b1b6ae6f3a07468b43eca6aab3d8",
+    "semantic_hash": "f5e8b1b6ae6f3a07468b43eca6aab3d8"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\11_visual_validation.py": {
+    "mtime": 1778116830.0109375,
+    "ast_hash": "b2650bc5d293e5efd1d5cf5fdc637851",
+    "semantic_hash": "b2650bc5d293e5efd1d5cf5fdc637851"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\12_scar_ambient_validation.py": {
+    "mtime": 1778122319.9552553,
+    "ast_hash": "b5dba161e341a7afe8a5cacc4e26108f",
+    "semantic_hash": "b5dba161e341a7afe8a5cacc4e26108f"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\13_solo_doublet_validation.py": {
+    "mtime": 1778122920.219591,
+    "ast_hash": "9e7e086bec8c5487e4581b3c5ef22a91",
+    "semantic_hash": "9e7e086bec8c5487e4581b3c5ef22a91"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\14_bimodality_diagnostics.py": {
+    "mtime": 1778288577.4732237,
+    "ast_hash": "8832872f922e28229bc9e61610bd7aee",
+    "semantic_hash": "8832872f922e28229bc9e61610bd7aee"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\15_pca_variance_audit.py": {
+    "mtime": 1778285395.269202,
+    "ast_hash": "0663011537117ca1227aa1fa80427188",
+    "semantic_hash": "0663011537117ca1227aa1fa80427188"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\16_pca_summary_figure.py": {
+    "mtime": 1778286712.164773,
+    "ast_hash": "fcec9f5f0eaebfb79216cd980829f099",
+    "semantic_hash": "fcec9f5f0eaebfb79216cd980829f099"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\17b_pydeseq2_visualizations.py": {
+    "mtime": 1778913308.1139567,
+    "ast_hash": "14dcf9b1a4dfacd956f0c72dd81ebd09",
+    "semantic_hash": "14dcf9b1a4dfacd956f0c72dd81ebd09"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\17c_pydeseq2_qc_validation.py": {
+    "mtime": 1778917827.5731082,
+    "ast_hash": "31662a44285fe0490513cf2f79ca9bc1",
+    "semantic_hash": "31662a44285fe0490513cf2f79ca9bc1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\17_differential_expression_figures.py": {
+    "mtime": 1778541423.7377665,
+    "ast_hash": "38062cd1374297a6ff5287354d1f3763",
+    "semantic_hash": "38062cd1374297a6ff5287354d1f3763"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\18_pca_v4_clean_validation.py": {
+    "mtime": 1778736853.2611296,
+    "ast_hash": "6a6be2e85a30445375fd7148af3efe03",
+    "semantic_hash": "6a6be2e85a30445375fd7148af3efe03"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\19_pca_v4_regression_validation.py": {
+    "mtime": 1778738038.6380491,
+    "ast_hash": "54a03c4e885a5beb8ce9e863f63602f9",
+    "semantic_hash": "54a03c4e885a5beb8ce9e863f63602f9"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\20_functional_enrichment.py": {
+    "mtime": 1779077567.1674395,
+    "ast_hash": "6774c938b411f80e030b3b2b9df70d57",
+    "semantic_hash": "6774c938b411f80e030b3b2b9df70d57"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\21_generate_thesis_figures.py": {
+    "mtime": 1779145043.3612306,
+    "ast_hash": "f82786ed4b153e20a5f3705ca99895e4",
+    "semantic_hash": "f82786ed4b153e20a5f3705ca99895e4"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\check_bimodal_markers.py": {
+    "mtime": 1778277884.6048949,
+    "ast_hash": "c80021913dd0d2fa5527016818b11827",
+    "semantic_hash": "c80021913dd0d2fa5527016818b11827"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\check_layers.py": {
+    "mtime": 1778122220.767693,
+    "ast_hash": "0fe8b00d3a3fdeda4aee0c57688a338c",
+    "semantic_hash": "0fe8b00d3a3fdeda4aee0c57688a338c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\check_metadata.py": {
+    "mtime": 1778278693.1620505,
+    "ast_hash": "90a5dfa6d563f3075cb1985ea96c16f1",
+    "semantic_hash": "90a5dfa6d563f3075cb1985ea96c16f1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\compare_v3_v4.py": {
+    "mtime": 1778020749.2947257,
+    "ast_hash": "027ab7216530e0511d08f87698759c8a",
+    "semantic_hash": "027ab7216530e0511d08f87698759c8a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\convert_audit_to_html.py": {
+    "mtime": 1778459467.5830734,
+    "ast_hash": "fc8a795a74fb971b41eb6e8a54cb8c13",
+    "semantic_hash": "fc8a795a74fb971b41eb6e8a54cb8c13"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\convert_report_to_html.py": {
+    "mtime": 1778742161.1846676,
+    "ast_hash": "9d9dbee37615371ccff93d51fa4bfe2a",
+    "semantic_hash": "9d9dbee37615371ccff93d51fa4bfe2a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\create_audit_notebook.py": {
+    "mtime": 1778367134.605702,
+    "ast_hash": "e4c2cfb749fae7883888e55089628f75",
+    "semantic_hash": "e4c2cfb749fae7883888e55089628f75"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scAR_python_validation_v4_clean\\scripts\\debug_counts_scale.py": {
+    "mtime": 1778282580.3276868,
+    "ast_hash": "bb5721d1b1f3a2a4a4f7c4b3ef080ba7",
+    "semantic_hash": "bb5721d1b1f3a2a4a4f7c4b3ef080ba7"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\5.2Abundancia_difrencial_code.py": {
+    "mtime": 1779181794.110124,
+    "ast_hash": "1c3377ca7d1bb0833ff5585b83a2a6b7",
+    "semantic_hash": "1c3377ca7d1bb0833ff5585b83a2a6b7"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\5.2_pseudobulk_subtipos_NK_code.py": {
+    "mtime": 1779181794.0865624,
+    "ast_hash": "8108cbd4de7f407fed683845c4fb1484",
+    "semantic_hash": "8108cbd4de7f407fed683845c4fb1484"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\check_confounding.py": {
+    "mtime": 1778909817.7011478,
+    "ast_hash": "ae87ad4083eaf6ec7eee2bee2afe16c9",
+    "semantic_hash": "ae87ad4083eaf6ec7eee2bee2afe16c9"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\check_donor_confounding.py": {
+    "mtime": 1778909867.0590422,
+    "ast_hash": "00d813d36f6deb40ce13702a685519b4",
+    "semantic_hash": "00d813d36f6deb40ce13702a685519b4"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\check_donor_mapping.py": {
+    "mtime": 1778908956.7390165,
+    "ast_hash": "dd584eaa0e53cde2e139d4e4d9a537a8",
+    "semantic_hash": "dd584eaa0e53cde2e139d4e4d9a537a8"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\check_results.py": {
+    "mtime": 1778911998.263159,
+    "ast_hash": "11064b582737ea62671d1fd926c089c9",
+    "semantic_hash": "11064b582737ea62671d1fd926c089c9"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\check_specific_genes.py": {
+    "mtime": 1778913237.7983732,
+    "ast_hash": "77df2306ec2261b3ca1ba83b48c629fa",
+    "semantic_hash": "77df2306ec2261b3ca1ba83b48c629fa"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\debug_pydeseq2.py": {
+    "mtime": 1778917753.557717,
+    "ast_hash": "c0697c2db782977128800f588f935318",
+    "semantic_hash": "c0697c2db782977128800f588f935318"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\generate_sig_table.py": {
+    "mtime": 1778913256.1558053,
+    "ast_hash": "a2fa70b9f932b24f427bef8b8dffd4a1",
+    "semantic_hash": "a2fa70b9f932b24f427bef8b8dffd4a1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\md_to_html.py": {
+    "mtime": 1779064678.4712887,
+    "ast_hash": "21c5d80d6019366936cf5117aa5a3244",
+    "semantic_hash": "21c5d80d6019366936cf5117aa5a3244"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\print_ora_details.py": {
+    "mtime": 1779077707.9422083,
+    "ast_hash": "6e713c03de086f1bf9ff315a84b5a6c0",
+    "semantic_hash": "6e713c03de086f1bf9ff315a84b5a6c0"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\test_enrichr.py": {
+    "mtime": 1779077682.7404668,
+    "ast_hash": "668053011c8d80765246477d9c7bcb1d",
+    "semantic_hash": "668053011c8d80765246477d9c7bcb1d"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\scratch\\test_ora.py": {
+    "mtime": 1779077662.5621586,
+    "ast_hash": "124191c224e2b843be82f6039f37ffd3",
+    "semantic_hash": "124191c224e2b843be82f6039f37ffd3"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\0.00_data_download_census.py": {
+    "mtime": 1774937528.134201,
+    "ast_hash": "b86beea2785d1751e2ea983bae8d7b21",
+    "semantic_hash": "b86beea2785d1751e2ea983bae8d7b21"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\0.5_scCDC.R": {
+    "mtime": 1774850518.6086142,
+    "ast_hash": "a2cc8161ee698d913669ea2d5f606547",
+    "semantic_hash": "a2cc8161ee698d913669ea2d5f606547"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\0.5_scCDC_correction.py": {
+    "mtime": 1774850516.5969992,
+    "ast_hash": "2c5ca536fea996dec74d7484a8a156b6",
+    "semantic_hash": "2c5ca536fea996dec74d7484a8a156b6"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\0.prepro_indices.py": {
+    "mtime": 1774845314.702429,
+    "ast_hash": "84568ce476fdc29c45e3988903905913",
+    "semantic_hash": "84568ce476fdc29c45e3988903905913"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\1.0preprocesamiento.py": {
+    "mtime": 1774850550.5310779,
+    "ast_hash": "440bac38b9d67b9ce3e835aa36638611",
+    "semantic_hash": "440bac38b9d67b9ce3e835aa36638611"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\1.5integration_and_group_filtering.py": {
+    "mtime": 1774845314.7034893,
+    "ast_hash": "769f0bc4714ff7d7a0458305cdd70374",
+    "semantic_hash": "769f0bc4714ff7d7a0458305cdd70374"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\2.0QC.py": {
+    "mtime": 1774845314.7069225,
+    "ast_hash": "28d73f31ae50a6e4d630465b70ae3480",
+    "semantic_hash": "28d73f31ae50a6e4d630465b70ae3480"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\3.0doublet_removal.py": {
+    "mtime": 1774845314.7079153,
+    "ast_hash": "065c9d7270f89fa7e7b02b0517f1cfd5",
+    "semantic_hash": "065c9d7270f89fa7e7b02b0517f1cfd5"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\3.5Normalization.py": {
+    "mtime": 1774850552.5540497,
+    "ast_hash": "5ed059d3b008110ef59d51c75ec0a5bb",
+    "semantic_hash": "5ed059d3b008110ef59d51c75ec0a5bb"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\4.1integration_scvi.py": {
+    "mtime": 1774845314.7104397,
+    "ast_hash": "d26fdecc7429c1032c8081453f73b6a4",
+    "semantic_hash": "d26fdecc7429c1032c8081453f73b6a4"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\4.2integration_scanvi.py": {
+    "mtime": 1774845314.7114394,
+    "ast_hash": "8be2c5aca2b66cd5eb8104f4233b0366",
+    "semantic_hash": "8be2c5aca2b66cd5eb8104f4233b0366"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\referencias\\scripts_descarga_QC\\py_versions\\Copy_of_Workshop_day1_esp.py": {
+    "mtime": 1774845314.7293396,
+    "ast_hash": "50b2f8485457a91350a48c17fedab4d2",
+    "semantic_hash": "50b2f8485457a91350a48c17fedab4d2"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\01-diagnostic-report.py": {
+    "mtime": 1776417399.2667491,
+    "ast_hash": "8eb8dda63612f6b31afee694482f0b5a",
+    "semantic_hash": "8eb8dda63612f6b31afee694482f0b5a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\02-scar-massive-orchestrator.py": {
+    "mtime": 1777008173.2750807,
+    "ast_hash": "ba26a4609cff5abce951d5ba729823c5",
+    "semantic_hash": "ba26a4609cff5abce951d5ba729823c5"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\04-adaptive-qc.py": {
+    "mtime": 1776421399.011384,
+    "ast_hash": "b4583bc331fb801426f8fc6d3170ae27",
+    "semantic_hash": "b4583bc331fb801426f8fc6d3170ae27"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\05-preprocessing-metadata.py": {
+    "mtime": 1776421886.300951,
+    "ast_hash": "651e50a56b55afe0ba46c1f1b64e7c6a",
+    "semantic_hash": "651e50a56b55afe0ba46c1f1b64e7c6a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\06-doublet-removal-solo.py": {
+    "mtime": 1776451001.031346,
+    "ast_hash": "55fb4db761b9290a85a95f8c3195546b",
+    "semantic_hash": "55fb4db761b9290a85a95f8c3195546b"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\07-evaluate-ambient-rna.py": {
+    "mtime": 1776465741.1557395,
+    "ast_hash": "e9920182f52cb317352447917fd60210",
+    "semantic_hash": "e9920182f52cb317352447917fd60210"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\08-explore-legacy.py": {
+    "mtime": 1776476729.6626718,
+    "ast_hash": "dd500d7a461fcb95fd8bc2be7f308cee",
+    "semantic_hash": "dd500d7a461fcb95fd8bc2be7f308cee"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\08b-quick-h5py.py": {
+    "mtime": 1776476847.2671733,
+    "ast_hash": "1074073ff31779ea69d4d913d778e6d6",
+    "semantic_hash": "1074073ff31779ea69d4d913d778e6d6"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\09-comparative-de-analysis.py": {
+    "mtime": 1776476993.3495665,
+    "ast_hash": "d32cfffaaaabdb8e2273f06eb2f88339",
+    "semantic_hash": "d32cfffaaaabdb8e2273f06eb2f88339"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\09-comparative-de-fast.py": {
+    "mtime": 1776477543.8605318,
+    "ast_hash": "1127d7ae6c881030ce77d1e962a6c33c",
+    "semantic_hash": "1127d7ae6c881030ce77d1e962a6c33c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\09-scar-pilot-donante01.py": {
+    "mtime": 1776934306.7600622,
+    "ast_hash": "aea68fb276ffda9d33f058a4e7f2398c",
+    "semantic_hash": "aea68fb276ffda9d33f058a4e7f2398c"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\10-comparison-scAR-ref.py": {
+    "mtime": 1776935648.962848,
+    "ast_hash": "d31715bba7c2c926927f1a03f59445e1",
+    "semantic_hash": "d31715bba7c2c926927f1a03f59445e1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\10-pseudobulk-pydeseq2.py": {
+    "mtime": 1776551579.640299,
+    "ast_hash": "956999b3108d10c6aa12ee8efe3a08b2",
+    "semantic_hash": "956999b3108d10c6aa12ee8efe3a08b2"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\11-stats-comparison.py": {
+    "mtime": 1776935762.336641,
+    "ast_hash": "000f503237573d3e6e11c151f7bd314f",
+    "semantic_hash": "000f503237573d3e6e11c151f7bd314f"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\12-evaluate-ig-tcr-cleaning.py": {
+    "mtime": 1776936367.7158446,
+    "ast_hash": "37af2cf9dd5c2bd103de6ef56510a27e",
+    "semantic_hash": "37af2cf9dd5c2bd103de6ef56510a27e"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\13-find-all-contaminants.py": {
+    "mtime": 1776936403.0943372,
+    "ast_hash": "6ac6d06abbc86f96ca5b6f5d9ca1e18a",
+    "semantic_hash": "6ac6d06abbc86f96ca5b6f5d9ca1e18a"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\14-find-real-contaminants.py": {
+    "mtime": 1776936445.0365703,
+    "ast_hash": "1b3e91cd945d743d4a5760c4d87557e1",
+    "semantic_hash": "1b3e91cd945d743d4a5760c4d87557e1"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\15-validation-3way.py": {
+    "mtime": 1776936492.0403452,
+    "ast_hash": "3681c00bb4911a2c53730014e6bb7740",
+    "semantic_hash": "3681c00bb4911a2c53730014e6bb7740"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\append_genes_artifact.py": {
+    "mtime": 1776537534.4999907,
+    "ast_hash": "b1e07c2eb8650401d292a37c7f4711d5",
+    "semantic_hash": "b1e07c2eb8650401d292a37c7f4711d5"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\append_genes_flat.py": {
+    "mtime": 1776537719.6977475,
+    "ast_hash": "8c31576a65e328010cbd8db1bfefdd12",
+    "semantic_hash": "8c31576a65e328010cbd8db1bfefdd12"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\audit_cell_types.py": {
+    "mtime": 1777265444.8244355,
+    "ast_hash": "9d747144ab436ccc77c15528c51205b3",
+    "semantic_hash": "9d747144ab436ccc77c15528c51205b3"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\audit_data_status.py": {
+    "mtime": 1777265355.35789,
+    "ast_hash": "f83049f2b70a602e9a611910f2841bf6",
+    "semantic_hash": "f83049f2b70a602e9a611910f2841bf6"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\check_reqs_pb.py": {
+    "mtime": 1776498664.2206414,
+    "ast_hash": "7aef35d783b00a05afeb12de7a3cc5bd",
+    "semantic_hash": "7aef35d783b00a05afeb12de7a3cc5bd"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\debug_ddqc.py": {
+    "mtime": 1776421356.1958814,
+    "ast_hash": "b15a450ae96eb9d22ff26abb2421719f",
+    "semantic_hash": "b15a450ae96eb9d22ff26abb2421719f"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\debug_obs.py": {
+    "mtime": 1776985401.1679208,
+    "ast_hash": "61962a9e3c7653debfa716d440a57662",
+    "semantic_hash": "61962a9e3c7653debfa716d440a57662"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\explore_datasets.py": {
+    "mtime": 1776464681.1473937,
+    "ast_hash": "b274d81f46fcd2e9f5f1b2e0b000b76f",
+    "semantic_hash": "b274d81f46fcd2e9f5f1b2e0b000b76f"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\extract_nb_code.py": {
+    "mtime": 1776498623.1235056,
+    "ast_hash": "08310e22f03a58608c3f94a92c82b553",
+    "semantic_hash": "08310e22f03a58608c3f94a92c82b553"
+  },
+  "C:\\Users\\PREDATOR\\Documents\\Antigravity_workspaces\\NK_pipeline_RNA_ambient\\V20_CLEAN_ANALYSIS\\scripts\\final_audit_summary.py": {
+    "mtime": 1777265567.4650176,
+    "ast_hash": "a6e75bf7ae84cffe99990fd3d170869b",
+    "semantic_hash": "a6e75bf7ae84cffe99990fd3d170869b"
+  }
+}

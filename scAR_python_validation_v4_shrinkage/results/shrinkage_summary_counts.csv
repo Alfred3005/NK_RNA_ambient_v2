@@ -1,0 +1,4 @@
+Model,Raw_LFC_0.00,Shrun_LFC_0.00,Retention_Pct_0.00,Raw_LFC_0.25,Shrun_LFC_0.25,Retention_Pct_0.25,Raw_LFC_0.50,Shrun_LFC_0.50,Retention_Pct_0.50,Raw_LFC_0.70,Shrun_LFC_0.70,Retention_Pct_0.70,Raw_LFC_1.00,Shrun_LFC_1.00,Retention_Pct_1.00
+Joint,24,24,100.0,22,12,54.55,20,10,50.0,20,6,30.0,11,4,36.36
+Split_3prime,21,21,100.0,13,11,84.62,3,2,66.67,1,1,100.0,1,1,100.0
+Split_5prime,0,0,100.0,0,0,100.0,0,0,100.0,0,0,100.0,0,0,100.0
