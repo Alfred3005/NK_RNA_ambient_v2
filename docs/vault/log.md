@@ -3,6 +3,10 @@
 Todas las decisiones y cambios significativos del proyecto se registran aquí.
 
 ## 2026-06-10
+- **06:30 PM**: 🧬 **Reporte Integrativo y Cierre de Tesis (CD56dim vs CD56bright + Abundancia)**.
+    - **Reporte Científico:** Redactado [subtypes_abundance_integration_report.md](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/results/subtypes_abundance_integration_report.md) contrastando las subpoblaciones NK, la abundancia celular y el efecto cancelación en Global NK.
+    - **Obsidian Wiki:** Creada la nota enciclopédica [[wiki/integracion_subtipos_abundancia.md|integracion_subtipos_abundancia.md]] con mapa conceptual Mermaid, paradoja de TNF-α/NF-κB, mismatch mito-nuclear de CD56bright y la ruta de validaciones futuras (`scVelo`, `AUCell`, `scFEA`).
+    - **Compilador HTML Premium:** Creado y ejecutado [compile_integration_report.py](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scripts/compile_integration_report.py) para ensamblar el reporte interactivo premium auto-contenido en [Reporte_Integrativo_Subtipos_Abundancia.html](file:///c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/results/Reporte_Integrativo_Subtipos_Abundancia.html) con gráficos y tablas embebidos.
 - **01:35 AM**: 🧬 **Análisis de Modelos Mixtos y scVI en Célula Única (NK CD56bright)**.
     - **Pipeline scVI:** Ejecución de `26_run_single_cell_scvi.py` en WSL con la RTX 4060, modelando counts crudos y controlando por donante/lote. Identificó **413 genes significativos** con Bayes Factor > 3.0.
     - **Pipeline MixedLM Paralelizado:** Implementación y ejecución de `27_run_single_cell_mixedlm.py` gen por gen en paralelo (joblib, n_jobs=-2), normalizando a 10,000 counts + log1p. Se identificaron **0 genes significativos con padj < 0.05** tras FDR (BH), evidenciando la pérdida de poder del LMM tradicional a nivel de célula única en poblaciones escasas.
