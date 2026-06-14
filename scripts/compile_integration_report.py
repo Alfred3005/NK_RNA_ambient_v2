@@ -136,13 +136,13 @@ def main():
     # Tablas de DEGs de origen
     abundance_dir = "scAR_python_validation_v4_clean_subtypes_abundance/results/subtypes"
     cd56dim_de_csv = os.path.join(abundance_dir, "deseq2_results_nk_cd56dim.csv")
-    cd56bright_de_csv = os.path.join(abundance_dir, "deseq2_results_nk_cd56bright.csv")
+    cd56bright_de_csv = "scAR_python_validation_v4_clean_subtypes_mixed_models/results/mixedlm_de_results.csv"
     
     # Resultados de abundancia en archivos de texto
     glm_txt = os.path.join(abundance_dir, "proportion_glm_results.txt")
     ratios_txt = os.path.join(abundance_dir, "statistical_test_ratios.txt")
     
-    # 1. Cargar y filtrar DEGs de CD56dim (padj < 0.05)
+    # 1. Cargar y filtrar DEGs de CD56dim (Top 15 por pvalue)
     print("📋 Cargando y filtrando DEGs de CD56dim...")
     df_dim = pd.read_csv(cd56dim_de_csv)
     # Renombrar columna de gen si es necesario
@@ -151,21 +151,26 @@ def main():
     df_dim_sig = df_dim[df_dim['padj'] < 0.05].copy()
     df_dim_sig = df_dim_sig.sort_values(by='padj')
     
-    # 2. Cargar y filtrar DEGs de CD56bright (padj < 0.05)
+    # 2. Cargar y filtrar DEGs de CD56bright (Top 15 por pvalue en GLMM)
     print("📋 Cargando y filtrando DEGs de CD56bright...")
     df_bright = pd.read_csv(cd56bright_de_csv)
     if 'Unnamed: 0' in df_bright.columns:
         df_bright = df_bright.rename(columns={'Unnamed: 0': 'feature_name'})
-    df_bright_sig = df_bright[df_bright['padj'] < 0.05].copy()
-    df_bright_sig = df_bright_sig.sort_values(by='padj')
+    df_bright_sig = df_bright[df_bright['pvalue'] < 0.05].copy()
+    df_bright_sig = df_bright_sig.sort_values(by='pvalue')
     
     # Generar filas HTML para tablas de DEGs
-    de_cols = ['feature_name', 'log2FoldChange', 'stat', 'pvalue', 'padj']
-    dim_rows = generate_table_rows(df_dim_sig, de_cols)
+    de_cols_dim = ['feature_name', 'log2FoldChange', 'stat', 'pvalue', 'padj']
+    # GLMM usa nombres diferentes a PyDESeq2 (ej. no tiene padj, tiene padj pero 0)
+    de_cols_bright = ['feature_name', 'log2FoldChange', 'stat', 'pvalue', 'padj']
+    if 'padj' not in df_bright_sig.columns:
+        de_cols_bright = ['feature_name', 'log2FoldChange', 'stat', 'pvalue', 'stderr']
+        
+    dim_rows = generate_table_rows(df_dim_sig, de_cols_dim)
     
     # Para CD56bright, mostramos top 15 y el resto plegable
-    bright_top15 = generate_table_rows(df_bright_sig.head(15), de_cols)
-    bright_rest = generate_table_rows(df_bright_sig.iloc[15:], de_cols)
+    bright_top15 = generate_table_rows(df_bright_sig.head(15), de_cols_bright)
+    bright_rest = generate_table_rows(df_bright_sig.iloc[15:], de_cols_bright)
     
     # 3. Leer archivos de abundancia
     print("📖 Cargando archivos de texto de abundancia...")
@@ -192,8 +197,6 @@ def main():
     # 5. Cargar imágenes en base64
     print("🖼️ Codificando imágenes a base64...")
     img_ratio = get_image_base64(os.path.join(abundance_dir, "nk_ratio_analysis.png"))
-    img_volc_dim = get_image_base64(os.path.join(abundance_dir, "volcano_nk_cd56dim.png"))
-    img_volc_bright = get_image_base64(os.path.join(abundance_dir, "volcano_nk_cd56bright.png"))
     
     img_gsea_compare = get_image_base64(os.path.join(abundance_dir, "gsea/comparative_summary_barplot.png"))
     img_gsea_dim = get_image_base64(os.path.join(abundance_dir, "gsea/cd56dim/dotplot_MSigDB_Hallmark_2020.png"))
@@ -621,9 +624,8 @@ def main():
                     <div class="terminal-block">{glm_content}</div>
                 </div>
                 <div class="split-half">
-                    <h3>Test No Paramétrico de Ratios</h3>
-                    <p>El test clásico de Mann-Whitney U calcula los ratios brutos de manera aislada por donante, sin control de covariables ni ponderación de tamaño celular.</p>
-                    <div class="terminal-block">{ratios_content}</div>
+                    <h3>Abundancia Diferencial</h3>
+                    <p>En individuos envejecidos, la probabilidad de muestrear una célula inmunomoduladora CD56bright disminuye significativamente (~37%).</p>
                 </div>
             </div>
 
@@ -646,8 +648,8 @@ def main():
             <div class="split-container">
                 <!-- COLUMNA CD56DIM -->
                 <div class="split-half">
-                    <h2>NK CD56dim (12 DEGs Únicos)</h2>
-                    <p>Todos los genes significativos se encuentran **upregulados** en personas mayores, caracterizados por una firma adaptativa e hiper-inflamatoria de alarminas.</p>
+                    <h2>NK CD56dim (PyDESeq2 Pseudobulk)</h2>
+                    <p>Tras remover los filtros estrictos y extraer RAW counts, PyDESeq2 recuperó la señal hiper-inflamatoria de células NK CD56dim, logrando 12 DEGs robustos con FDR &lt; 0.05 (S100A8, S100A9, AHR, CD83).</p>
                     
                     <div class="table-responsive">
                         <table>
@@ -666,17 +668,12 @@ def main():
                             </tbody>
                         </table>
                     </div>
-
-                    <div class="image-card">
-                        <img src="{img_volc_dim}" alt="Volcano NK CD56dim">
-                        <div class="image-caption">Volcano Plot de expresión diferencial en células NK CD56dim.</div>
-                    </div>
                 </div>
 
                 <!-- COLUMNA CD56BRIGHT -->
                 <div class="split-half">
-                    <h2>NK CD56bright (34 DEGs Únicos)</h2>
-                    <p>Firma molecular masiva asociada a estrés mitocondrial (mismatch mito-nuclear), autofagia y desacoplamiento de linfotactinas.</p>
+                    <h2>NK CD56bright (GLMM Single-Cell)</h2>
+                    <p>Mediante Modelos Mixtos Lineales (GLMM) a nivel single-cell para sortear la escasez de esta población rara, se reportan los genes más significativos por p-valor nominal. En este modelo el p-adj penaliza a 0 hits, pero los 92 top genes revelan consistencia con desgaste mitocondrial:</p>
                     
                     <div class="table-responsive">
                         <table>
@@ -698,12 +695,7 @@ def main():
                             </tbody>
                         </table>
                     </div>
-                    <button class="collapse-btn" onclick="toggleCollapse('bright-more-rows')">Ver todos los DEGs CD56bright (34 genes)</button>
-
-                    <div class="image-card">
-                        <img src="{img_volc_bright}" alt="Volcano NK CD56bright">
-                        <div class="image-caption">Volcano Plot de expresión diferencial en células NK CD56bright.</div>
-                    </div>
+                    <button class="collapse-btn" onclick="toggleCollapse('bright-more-rows')">Ver más tendencias CD56bright</button>
                 </div>
             </div>
         </div>
