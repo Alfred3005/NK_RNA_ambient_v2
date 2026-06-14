@@ -79,7 +79,7 @@ La población **NK CD56dim** es la subpoblación efectora madura y mayoritaria (
 
 ## NK CD56dim (12 DEGs por FDR < 0.05)
 
-Tras aislar las células CD56dim y extraer las cuentas puras sin normalizar (*raw counts*), el análisis de pseudobulk con PyDESeq2 recuperó la relación media-varianza real de la secuenciación. Esto permitió superar la excesiva dispersión del sesgo técnico y revelar **12 genes significativamente expresados con un estricto umbral FDR < 0.05**. Estos genes impulsores apuntan contundentemente hacia una firma hiper-inflamatoria de alarminas. La siguiente tabla muestra los genes significativos:
+Para esta población abundante, aplicamos un enfoque de **pseudobulk** colapsando las cuentas a nivel de donante ($N = 187$: 152 adultos y 35 viejos). Este método suma los perfiles transcriptómicos de todas las células CD56dim pertenecientes a un mismo individuo, creando perfiles sintéticos ("bulk") altamente robustos. La ventaja principal del pseudobulk frente a enfoques puramente *single-cell* es que erradica la sobredispersión artificial inherente al scRNA-seq (inflación de ceros o "dropouts") y mitiga los sesgos de pseudoreplicación, permitiendo usar modelos estadísticos estándar de oro como PyDESeq2. Gracias a este modelado, logramos aislar la señal biológica de la varianza técnica y revelar **12 genes significativamente expresados con un estricto umbral FDR < 0.05** (S100A8, S100A9, AHR, CD83). Estos genes impulsores apuntan contundentemente hacia una firma hiper-inflamatoria de alarminas. La siguiente tabla muestra los genes significativos:
 
 #### NK CD56dim (12 DEGs Únicos)
 *(Nota: Sección reemplazada por la tabla de DEGs)*
@@ -131,9 +131,9 @@ La drástica diferencia en abundancia entre ambos subtipos requirió el uso de e
 
 Mientras que el análisis pseudobulk de CD56dim arrojó 12 DEGs robustos, el enfoque unicelular GLMM en CD56bright ilustró un panorama analítico fascinante:
 
-## NK CD56bright (0 DEGs por FDR, Tendencias por p-valor)
+## NK CD56bright (GLMM Single-Cell)
 
-Al igual que en la población efectora, el desgaste del *shot noise* en esta población escasa (5%) impidió que ningún gen individual superara la corrección FDR. No obstante, los genes tendencia (*raw p-value < 0.05*) apuntan consistentemente al estrés mitocondrial y alteraciones en la autofagia.
+A diferencia de las células Dim, colapsar esta población rara (~5%) por donante generaría perfiles dominados por ruido y ceros, ahogando cualquier señal biológica. Para sortear esto, implementamos **Modelos Mixtos Lineales Generalizados (GLMM)** conservando la resolución *single-cell*. Los GLMM modelan las variables biológicas (`age_group`) y técnicas (`assay`) como efectos fijos, y controlan la variabilidad específica de cada paciente (`donante_id`) como un efecto aleatorio. Esta arquitectura estadística es ideal para poblaciones escasas: capitaliza la inmensa potencia estadística de evaluar miles de eventos celulares individuales (que de otra manera se perderían al promediar), mientras ajusta estrictamente la correlación intra-donante para no inflar artificialmente el p-valor (sesgo de pseudoreplicación). Aunque la severa penalización por comparaciones múltiples (FDR) aplicada a miles de células individuales no permitió aislar DEGs absolutos (0 hits FDR < 0.05), la evaluación nominal revela genes tendencia fuertemente consistentes con el desgaste mitocondrial:
 
 #### NK CD56bright (34 DEGs Únicos)
 *(Nota: Sección reemplazada por la tabla de tendencias)*

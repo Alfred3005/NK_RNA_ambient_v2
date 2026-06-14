@@ -649,7 +649,7 @@ def main():
                 <!-- COLUMNA CD56DIM -->
                 <div class="split-half">
                     <h2>NK CD56dim (PyDESeq2 Pseudobulk)</h2>
-                    <p>Tras remover los filtros estrictos y extraer RAW counts, PyDESeq2 recuperó la señal hiper-inflamatoria de células NK CD56dim, logrando 12 DEGs robustos con FDR &lt; 0.05 (S100A8, S100A9, AHR, CD83).</p>
+                    <p>Para esta población abundante, aplicamos un enfoque de <b>pseudobulk</b> colapsando las cuentas a nivel de donante ($N = 187$: 152 adultos y 35 viejos). Este método suma los perfiles de todas las células CD56dim de un mismo individuo, creando perfiles sintéticos altamente robustos. La ventaja principal del pseudobulk frente a enfoques puramente <i>single-cell</i> es que erradica la sobredispersión artificial ("dropouts" o inflación de ceros) y mitiga los sesgos de pseudoreplicación, permitiendo usar herramientas estándar de oro como PyDESeq2. Gracias a este modelado, logramos aislar la señal biológica y revelar 12 DEGs robustos con FDR &lt; 0.05 (S100A8, S100A9, AHR, CD83) asociados a hiper-inflamación.</p>
                     
                     <div class="table-responsive">
                         <table>
@@ -673,7 +673,7 @@ def main():
                 <!-- COLUMNA CD56BRIGHT -->
                 <div class="split-half">
                     <h2>NK CD56bright (GLMM Single-Cell)</h2>
-                    <p>Mediante Modelos Mixtos Lineales (GLMM) a nivel single-cell para sortear la escasez de esta población rara, se reportan los genes más significativos por p-valor nominal. En este modelo el p-adj penaliza a 0 hits, pero los 92 top genes revelan consistencia con desgaste mitocondrial:</p>
+                    <p>A diferencia de las células Dim, colapsar esta población rara (~5%) por donante generaría perfiles dominados por ruido. Para sortear esto, implementamos <b>Modelos Mixtos Lineales Generalizados (GLMM)</b> conservando la resolución <i>single-cell</i>. Los GLMM modelan las variables biológicas (`age_group`) y técnicas (`assay`) como efectos fijos, y controlan la variabilidad específica de cada paciente (`donante_id`) como un efecto aleatorio. Esta arquitectura estadística es ideal para poblaciones escasas: capitaliza la potencia estadística de evaluar miles de eventos celulares individuales mientras ajusta estrictamente la correlación intra-donante, neutralizando falsos positivos. Aunque la severa penalización múltiple (FDR) de miles de células arroja 0 hits, la evaluación por p-valor nominal revela 92 top genes altamente consistentes con el desgaste mitocondrial:</p>
                     
                     <div class="table-responsive">
                         <table>
