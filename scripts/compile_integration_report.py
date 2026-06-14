@@ -673,7 +673,7 @@ def main():
                 <!-- COLUMNA CD56BRIGHT -->
                 <div class="split-half">
                     <h2>NK CD56bright (GLMM Single-Cell)</h2>
-                    <p>A diferencia de las células Dim, colapsar esta población rara (~5%) por donante generaría perfiles dominados por ruido. Para sortear esto, implementamos <b>Modelos Mixtos Lineales Generalizados (GLMM)</b> conservando la resolución <i>single-cell</i>. Los GLMM modelan las variables biológicas (`age_group`) y técnicas (`assay`) como efectos fijos, y controlan la variabilidad específica de cada paciente (`donante_id`) como un efecto aleatorio. Esta arquitectura estadística es ideal para poblaciones escasas: capitaliza la potencia estadística de evaluar miles de eventos celulares individuales mientras ajusta estrictamente la correlación intra-donante, neutralizando falsos positivos. Aunque la severa penalización múltiple (FDR) de miles de células arroja 0 hits, la evaluación por p-valor nominal revela 92 top genes altamente consistentes con el desgaste mitocondrial:</p>
+                    <p>A diferencia de las células Dim, colapsar esta población rara (~5%) por donante generaría perfiles dominados por ruido. Para sortear esto, implementamos <b>Modelos Mixtos Lineales Generalizados (GLMM)</b> conservando la resolución <i>single-cell</i>. Los GLMM modelan las variables biológicas (`age_group`) y técnicas (`assay`) como efectos fijos, y controlan la variabilidad específica de cada paciente (`donante_id`) como un efecto aleatorio. Esta arquitectura estadística es ideal para poblaciones escasas: capitaliza la inmensa potencia estadística de evaluar ~1,870 eventos celulares individuales estructurados jerárquicamente dentro de sus $N = 173$ donantes biológicos (142 adultos y 31 viejos). Mientras el modelo evalúa cada célula para maximizar la sensibilidad, ajusta estrictamente la correlación intra-donante para no inflar artificialmente el p-valor (sesgo de pseudoreplicación). Aunque la severa penalización múltiple (FDR) de miles de células arroja 0 hits, la evaluación por p-valor nominal revela 92 top genes altamente consistentes con el desgaste mitocondrial:</p>
                     
                     <div class="table-responsive">
                         <table>
@@ -704,6 +704,10 @@ def main():
         <div id="gsea-panel" class="panel">
             <h1>Enriquecimiento Funcional GSEA Preranked</h1>
             <p>Dotplots y gráficos de enriquecimiento comparando los análisis funcionales de los subtipos y el pool completo (Global).</p>
+            <div class="methodology-explanation" style="margin-bottom: 20px;">
+                <h3>Metodología GSEA Preranked</h3>
+                <p>En lugar de depender de umbrales estadísticos arbitrarios para seleccionar una lista pequeña de "genes significativos" (Over-Representation Analysis), implementamos el algoritmo de <b>GSEA Preranked</b>. Este método evalúa el espectro continuo completo de los genes expresados, ordenándolos desde los más sobre-expresados hasta los más reprimidos. Esto es sumamente ventajoso para señales de envejecimiento o poblaciones raras (donde el ruido estadístico individual puede ocultar los genes a la penalización múltiple), ya que rescata de manera robusta el movimiento biológicamente coordinado de vías completas, superando el "shot noise" a nivel de gen individual.</p>
+            </div>
             
             <div class="image-card">
                 <h3>Resumen Comparativo de Vías Hallmarks Significativas</h3>
