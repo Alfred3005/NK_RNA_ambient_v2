@@ -1,7 +1,1 @@
 Term,NES,FDR,pval,metric,gene_set_db
-Response To UV (GO:0009411),-1.644504502590625,0.21237189924336752,0.02962962962962963,wald_stat,GO_Biological_Process_2023
-Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775),-1.5211148086389876,0.23079685853845416,0.001,wald_stat,GO_Biological_Process_2023
-Mitochondrial Respiratory Chain Complex I Assembly (GO:0032981),-1.5208664333709891,0.18489608275069438,0.017094017094017096,wald_stat,GO_Biological_Process_2023
-NADH Dehydrogenase Complex Assembly (GO:0010257),-1.5208664333709891,0.18489608275069438,0.017094017094017096,wald_stat,GO_Biological_Process_2023
-Cell-Matrix Adhesion (GO:0007160),-1.5093920707624167,0.17796101035254375,0.06329113924050633,wald_stat,GO_Biological_Process_2023
-Regulation Of Actin Cytoskeleton Organization (GO:0032956),-1.4865763141604367,0.18705104875011974,0.050314465408805034,wald_stat,GO_Biological_Process_2023

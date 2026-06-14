@@ -34,18 +34,20 @@ warnings.filterwarnings("ignore")
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIGURACIÓN GLOBAL
 # ─────────────────────────────────────────────────────────────────────────────
-BASE_RESULTS = '/mnt/c/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean_subtypes_abundance/results/subtypes'
+BASE_RESULTS = 'c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean_subtypes_abundance/results/subtypes'
 GSEA_DIR     = os.path.join(BASE_RESULTS, 'gsea')
 os.makedirs(GSEA_DIR, exist_ok=True)
 
 # Tres análisis: (clave_archivo, nombre_display, subdirectorio_output, ruta_absoluta_opcional)
 # Para el análisis Global se usa el dataset completo V4-clean (todos los NK, sin split por subtipo)
-GLOBAL_DESEQ_PATH = '/mnt/c/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean/results/pydeseq2/deseq2_results_v4_final.csv'
+GLOBAL_DESEQ_PATH = 'c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean/results/pydeseq2/deseq2_results_v4_final.csv'
+
+BRIGHT_GLMM_PATH = 'c:/Users/PREDATOR/Documents/Antigravity_workspaces/NK_pipeline_RNA_ambient/scAR_python_validation_v4_clean_subtypes_mixed_models/results/mixedlm_de_results.csv'
 
 ANALYSES = [
     ('global',       'NK Global (Todos los NK · V4-Clean)', 'global',     GLOBAL_DESEQ_PATH),
     ('nk_cd56dim',   'NK CD56dim',                          'cd56dim',    None),
-    ('nk_cd56bright','NK CD56bright',                        'cd56bright', None),
+    ('nk_cd56bright','NK CD56bright',                        'cd56bright', BRIGHT_GLMM_PATH),
 ]
 
 # Gene sets a usar en GSEA (disponibles offline vía gseapy)

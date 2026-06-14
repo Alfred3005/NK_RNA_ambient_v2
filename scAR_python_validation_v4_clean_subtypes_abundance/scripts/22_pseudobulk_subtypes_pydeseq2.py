@@ -101,6 +101,14 @@ def run_pseudobulk_by_subtype():
     adata = sc.read_h5ad(input_path)
     print(f"   Células totales en dataset: {adata.n_obs}, Genes totales: {adata.n_vars}")
     
+    # 0. Extraer cuentas RAW (CRÍTICO para PyDESeq2)
+    if adata.raw is not None:
+        print("📥 Restaurando RAW counts desde adata.raw para análisis estadístico...")
+        adata = adata.raw.to_adata()
+    elif 'counts' in adata.layers:
+        print("📥 Restaurando RAW counts desde adata.layers['counts']...")
+        adata.X = adata.layers['counts'].copy()
+    
     # Filtrar ensayos con anotaciones incompletas para evitar sesgos de ratio y colinealidad (Comentado para aplicar a nivel de subtipo)
     # adata = filter_valid_assays(adata)
     
@@ -124,8 +132,8 @@ def run_pseudobulk_by_subtype():
         'CD16-negative, CD56-bright natural killer cell, human': 'NK CD56bright'
     })
     
-    subtypes = adata.obs['cell_type_simplified'].unique()
-    print(f"\nSubtipos celulares detectados: {list(subtypes)}")
+    subtypes = ['NK CD56dim', 'NK cell general']
+    print(f"\nSubtipos celulares seleccionados para Pseudobulk (Aislado de GLMM): {subtypes}")
     
     # Mapeo de metadatos de donantes a nivel global
     donor_meta_global = adata.obs.groupby(['donor_id', 'age_group', 'assay']).size().reset_index(name='cell_count')
@@ -154,23 +162,19 @@ def run_pseudobulk_by_subtype():
             print(f"⚠️ Omitiendo {ct}: Insuficientes células (< 150).")
             continue
             
-        # 3. Filtrar lotes (assays) para evitar colinealidad (requerimos al menos 1 adulto y 1 viejo por lote en este subtipo)
+        # 3. Lotes (assays) para el diseño
         sub_donor_meta = donor_meta_global[donor_meta_global.index.isin(valid_donors)].copy()
         cross_tab = pd.crosstab(sub_donor_meta['assay'], sub_donor_meta['age_group'])
+        print(f" - Tabla de contingencia inicial para {ct}:\n{cross_tab}")
         
-        valid_assays = []
-        for assay in cross_tab.index:
-            n_adult = cross_tab.loc[assay, 'adult'] if 'adult' in cross_tab.columns else 0
-            n_old = cross_tab.loc[assay, 'old'] if 'old' in cross_tab.columns else 0
-            if n_adult >= 1 and n_old >= 1:
-                valid_assays.append(assay)
-                
-        print(f" - Ensayos válidos para {ct} (al menos 1 donante Adulto y 1 Viejo): {valid_assays}")
+        # Omitimos el filtro estricto de requerir 1 viejo y 1 adulto por lote para no perder poder estadístico.
+        # PyDESeq2 puede estimar efectos principales siempre que la matriz global no sea perfectamente colineal.
+        valid_assays = sub_donor_meta['assay'].unique().tolist()
         
         # Quedarse solo con células de ensayos válidos
         adata_sub = adata_sub[adata_sub.obs['assay'].isin(valid_assays)].copy()
         unique_donors = adata_sub.obs['donor_id'].unique()
-        print(f" - Donantes con representación robusta: {len(unique_donors)}")
+        print(f" - Donantes con representación robusta recuperados: {len(unique_donors)}")
         
         # Control 2: Umbral mínimo de donantes
         if len(unique_donors) < 3:

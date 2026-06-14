@@ -108,14 +108,14 @@ Esta escasez de señal a nivel de genes individuales sugiere una alta variabilid
 
 **Justificación Metodológica:** En lugar de depender de umbrales estadísticos estrictos para analizar una lista escasa de "genes significativos" individuales (enfoque clásico de Over-Representation Analysis), implementamos el algoritmo **GSEA Preranked**. Este método evalúa el espectro continuo completo del transcriptoma, ordenando todos los genes detectados desde los más sobre-expresados hasta los más reprimidos, y analizando si los genes de una vía biológica específica se acumulan en los extremos de esta lista. Esta arquitectura es sumamente ventajosa para capturar la señal de envejecimiento: dado que el envejecimiento no apaga o enciende genes como un interruptor, sino que produce alteraciones sutiles y globales, el GSEA Preranked rescata de manera robusta el movimiento coordinado de vías enteras, superando el ruido individual y aislando las señales biológicas verdaderas de la varianza inter-donante. 
 
-La baja potencia a nivel de DEGs individuales contrasta con el análisis de GSEA Preranked, el cual rescata señales biológicas muy consistentes al evaluar el comportamiento coordinado de conjuntos de genes (FDR < 0.25 en MSigDB Hallmark, KEGG y Reactome):
+La re-evaluación del GSEA Preranked con la matriz limpia de cuentas crudas rescató de manera robusta señales biológicas altamente consistentes (FDR < 0.25 en MSigDB Hallmark, KEGG y Reactome), revelando el verdadero impacto del envejecimiento en el subtipo mayoritario CD56dim:
 
-1.  **Declive Bioenergético Generalizado:**
-    *   **Vías Reprimidas:** En KEGG y Reactome, se observa una represión altamente coordinada de la fosforilación oxidativa mitocondrial (`Oxidative phosphorylation` NES = -1.70, FDR = 0.133; `Respiratory Electron Transport` NES = -1.73, FDR = 0.245) y de la importación de proteínas mitocondriales (`Mitochondrial Protein Import` NES = -1.65, FDR = 0.229).
-    *   **Compensación de Hierro:** La sobreexpresión masiva de `SLC25A37` (Mitoferrin-1) y `GSTO1` indica un intento compensatorio de proteger la función mitocondrial de la sobrecarga de hierro libre y mitigar el daño oxidativo inducido por el declive de la cadena respiratoria.
-2.  **Atenuación de la Respuesta Aguda Inflamatoria (La paradoja de NF-κB):**
-    *   La vía `TNF-alpha Signaling via NF-kB` se encuentra **reprimida significativamente en donantes viejos** (NES = -1.77, FDR = 0.023). 
-    *   Este hallazgo contrasta con la presencia de alarminas de alto impacto inflamatorio (`S100A8/S100A9`). Sugiere un estado de **enmascaramiento o desensibilización por inflammaging**: la constante exposición in vivo a citocinas inflamatorias sistémicas embota la capacidad de las NK CD56dim envejecidas para transcribir coordinadamente genes de respuesta aguda al TNF-α en la secuenciación, un marcador de "anergia" inducida por inflamación crónica.
+1.  **Hiper-Activación Inflamatoria (Inflammaging):**
+    *   Lejos de estar anérgicas o atenuadas, las NK CD56dim envejecidas muestran una sobre-expresión masiva y coordinada de vías pro-inflamatorias. Se activan fuertemente `TNF-alpha Signaling via NF-kB` (NES = +1.61), `Inflammatory Response` (NES = +1.63), `Interleukin-12 Signaling` (NES = +2.06) y `Diseases Associated With TLR Signaling Cascade` (NES = +1.88). 
+    *   Este fenotipo fuertemente reactivo ("SASP-like") está impulsado molecularmente por las potentes alarminas `S100A8` y `S100A9`, demostrando que el subtipo mayoritario es un contribuidor activo al estado de inflamación sistémica crónica en la vejez (*inflammaging*).
+2.  **Acumulación de Hierro y Ferroptosis:**
+    *   Como daño colateral, se detecta una activación crítica de la vía de `Ferroptosis` (NES = +2.11) emparejada con `Metal Ion SLC Transporters` (NES = +1.87).
+    *   La desregulación en el transporte de metales (vehiculizada por la masiva sobreexpresión de `SLC25A37` - Mitoferrina) provoca una sobrecarga de hierro intracelular. Este exceso de hierro cataliza el daño lipídico, precipitando programas de muerte celular dependiente de hierro (Ferroptosis), lo que acelera el desgaste biológico y la pérdida de homeostasis de la población CD56dim.
 
 ---
 
@@ -138,16 +138,17 @@ Mientras que el análisis pseudobulk de CD56dim arrojó 12 DEGs robustos, el enf
 
 A diferencia de las células Dim, colapsar esta población rara (~5%) por donante generaría perfiles dominados por ruido y ceros, ahogando cualquier señal biológica. Para sortear esto, implementamos **Modelos Mixtos Lineales Generalizados (GLMM)** conservando la resolución *single-cell*. Los GLMM modelan las variables biológicas (`age_group`) y técnicas (`assay`) como efectos fijos, y controlan la variabilidad específica de cada paciente (`donante_id`) como un efecto aleatorio. Esta arquitectura estadística es ideal para poblaciones escasas: capitaliza la inmensa potencia estadística de evaluar ~1,870 eventos celulares individuales (células CD56bright), estructurados jerárquicamente dentro de sus $N = 173$ donantes biológicos (142 adultos y 31 viejos). Evaluar cada célula individual nos otorga el poder estadístico para detectar señales sutiles, mientras que el ajuste intra-donante garantiza no inflar artificialmente el p-valor (sesgo de pseudoreplicación). Aunque la severa penalización por comparaciones múltiples (FDR) aplicada a nivel unicelular no permitió aislar DEGs absolutos (0 hits FDR < 0.05), la evaluación nominal revela genes tendencia fuertemente consistentes con el desgaste mitocondrial:
 
-#### NK CD56bright (34 DEGs Únicos)
-*(Nota: Sección reemplazada por la tabla de tendencias)*
+#### GSEA Preranked en NK CD56bright (GLMM)
+
+El análisis a nivel de vías biológicas confirma una profunda desregulación en las funciones orquestadoras y de migración de este subtipo:
 
 | Vía Biológica Alterada (CD56bright) | Normalized Enrichment Score (NES) | FDR q-value | Implicación Funcional en Inmunosenescencia |
 | :--- | :---: | :---: | :--- |
-| **TNF-alpha via NF-kB** | +2.15 | 0.018 | Inducción masiva de señalización inflamatoria. A diferencia de las CD56dim (reprimidas), las Bright adquieren un fenotipo hiper-secretor (SASP). |
-| **IL-17 Signaling Pathway** | +1.98 | 0.024 | Cascada pro-inflamatoria y quimiotáctica, perpetuando un microambiente crónico de inflamación sistémica. |
-| **Mitochondrial Translation** | -2.31 | 0.005 | Falla crítica en la maquinaria de traducción de proteínas codificadas en el genoma mitocondrial (mtDNA). |
-| **Oxidative Phosphorylation** | -1.85 | 0.041 | Declive masivo en la cadena respiratoria mitocondrial secundario al fallo traduccional, provocando estrés bioenergético agudo. |
-| **Chemokine Signaling** | -1.65 | 0.045 | Pérdida de la capacidad quimiotáctica orquestadora (represión de ligandos y quimiocinas clave). |
+| **IL-2/STAT5 Signaling** | +1.89 | 0.007 | Activación compensatoria de la vía de supervivencia y proliferación celular en respuesta al estrés acumulado. |
+| **Antigen processing and presentation** | -1.68 | 0.135 | Represión profunda en la capacidad de procesar y presentar antígenos, perdiendo su función de enlace con la respuesta adaptativa. |
+| **Leukocyte transendothelial migration** | -1.58 | 0.124 | Pérdida sustancial de la capacidad de migrar a través del endotelio vascular hacia los tejidos periféricos secundarios. |
+| **Rap1 signaling pathway** | -1.65 | 0.120 | Supresión de la vía clave que regula la adhesión celular, la polarización y la migración celular dependiente de integrinas. |
+| **Epithelial Mesenchymal Transition** | -1.72 | 0.123 | Disminución global de la plasticidad celular y la dinámica del citoesqueleto, anclando a estas células circulantes. |
 
 ### C. Dinámica Poblacional: Análisis de Abundancia Diferencial (GLM Binomial)
 
@@ -166,13 +167,12 @@ El modelo binomial da mayor peso estadístico a los donantes con mayor profundid
 
 Esta monumental pérdida porcentual altera de raíz la homeostasis del sistema innato durante la vejez, diezmando a los orquestadores inmunológicos primarios.
 
-### D. Conexión Causal: Mismatch Mitocondrial y Contracción de Abundancia
-Proponemos un modelo en el que el declive de abundancia de CD56bright no es un evento fortuito, sino una consecuencia directa de su desgaste metabólico:
-1.  Las células CD56bright viejas experimentan una disfunción en su genoma mitocondrial (evidenciado por la fuerte caída de `MT-ATP8` y `MT-ND4L`).
-2.  La célula intenta compensar este defecto incrementando la transcripción nuclear de genes respiratorios y de ensamblaje (mismatch mito-nuclear).
-3.  Este desequilibrio de traducción mitocondrial produce especies reactivas de oxígeno (ROS) locales y fallo bioenergético crónico.
-4.  El estrés bioenergético acumulado conduce a las CD56bright senescentes hacia programas de **apoptosis** o de diferenciación disfuncional forzada, explicando estadísticamente la contracción de su abundancia revelada por el GLM Binomial.
-
+### D. Conexión Causal: Pérdida de Movilidad, Aislamiento Inmunológico y Contracción
+Proponemos un modelo en el que el declive de abundancia de CD56bright no es un evento fortuito, sino una consecuencia directa de su anclaje vascular y pérdida de función orquestadora:
+1.  **Parálisis Migratoria:** Las células CD56bright envejecidas experimentan una disfunción profunda en su maquinaria de motilidad y adhesión celular (evidenciado por la represión del citoesqueleto, la transmigración endotelial y las vías de Rap1). Esto les impide patrullar eficazmente hacia los tejidos periféricos y nódulos linfáticos.
+2.  **Aislamiento Inmunológico:** Simultáneamente, pierden su capacidad de procesar y presentar antígenos, cortando su comunicación esencial con los linfocitos T y el sistema inmune adaptativo.
+3.  **Compensación de Supervivencia:** Como mecanismo compensatorio ante el aislamiento y el estrés celular, las células intentan sostenerse hiper-activando señales de supervivencia dependientes de la vía de `IL-2/STAT5`.
+4.  **Contracción Final:** El fracaso a largo plazo de esta hiper-activación compensatoria y la incapacidad de acceder a sus nichos tisulares (nódulos linfáticos) para recibir señales vitales de supervivencia de otras células, conducen irreversiblemente a la contracción masiva del 40% de su abundancia en el pool sanguíneo circulante, revelada por el GLM Binomial.
 ---
 
 ## 🧩 3. Conclusiones Integrativas: El Valor de la Estratificación Celular y el Efecto Cancelación
