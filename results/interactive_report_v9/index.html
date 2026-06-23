@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte V9: Dinámica de Subtipos NK</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables based on user palette */
+        :root {
+            --bg-deep-charcoal: #2F4454;
+            --shadow-dark-sienna: #2E151B;
+            --accent-pink: #DA7B93;
+            --accent-teal: #376E6F;
+            --contrast-green: #1C3334;
+            --text-main: #E2E8F0;
+            --text-muted: #94A3B8;
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-deep-charcoal);
+            color: var(--text-main);
+            line-height: 1.6;
+            /* Grainy texture */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-pink);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* Typography adjustments */
+        h1 { font-size: 2.2rem; border-bottom: 2px solid var(--accent-teal); padding-bottom: 0.5rem; line-height: 1.3; }
+        h2 { font-size: 1.8rem; color: var(--text-main); border-left: 4px solid var(--accent-pink); padding-left: 10px; }
+        h3 { font-size: 1.4rem; color: var(--accent-teal); }
+        
+        p { margin-bottom: 1.2rem; }
+        
+        a { color: var(--accent-pink); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: var(--text-main); }
+
+        /* Layout */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background-color: var(--shadow-dark-sienna);
+            padding: 2rem 1.5rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 1000;
+            border-right: 1px solid var(--contrast-green);
+            box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--accent-teal);
+            padding-bottom: 1rem;
+            color: var(--accent-pink);
+            border-left: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-menu li { margin-bottom: 1rem; }
+
+        .nav-menu a {
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: var(--contrast-green);
+            color: var(--text-main);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            transition: filter 0.3s ease;
+            margin-top: 3rem; /* Space for mobile menu toggle */
+        }
+
+        /* Hamburger Menu */
+        .menu-toggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 1001;
+            background: var(--contrast-green);
+            border: 1px solid var(--accent-teal);
+            color: var(--accent-pink);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        
+        .menu-toggle:hover {
+            background: var(--bg-deep-charcoal);
+            transform: scale(1.05);
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(46, 21, 27, 0.7);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Modular Collapsible Sections (Accordions) */
+        details {
+            background: rgba(28, 51, 52, 0.4); /* contrast-green transparent */
+            border: 1px solid var(--contrast-green);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            background: rgba(28, 51, 52, 0.8);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border-color: var(--accent-teal);
+        }
+
+        summary {
+            padding: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            list-style: none; /* Hide default arrow */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-main);
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        summary:hover {
+            color: var(--accent-pink);
+        }
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] > summary {
+            border-bottom: 1px solid var(--accent-teal);
+            margin-bottom: 1rem;
+            color: var(--accent-pink);
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-teal);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] > summary::after {
+            transform: rotate(45deg);
+        }
+
+        .details-content {
+            padding: 0 1.2rem 1.2rem 1.2rem;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        /* Sub-details for code and parameters */
+        .sub-details {
+            background: var(--shadow-dark-sienna);
+            border-color: var(--bg-deep-charcoal);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-details summary {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--accent-teal);
+            text-transform: none;
+            padding: 0.8rem 1rem;
+            font-weight: 500;
+        }
+
+        .sub-details summary::after {
+            font-size: 1.2rem;
+            color: var(--accent-pink);
+        }
+
+        /* Code Blocks */
+        pre {
+            background: #151e25; /* Darker than charcoal for contrast */
+            color: #dcdcdc;
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            border-left: 3px solid var(--accent-pink);
+            margin-bottom: 1rem;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #151e25;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            color: var(--accent-pink);
+        }
+
+        pre code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+        }
+
+        /* Figures and Images */
+        .figure-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 2px solid var(--contrast-green);
+            cursor: zoom-in;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: #fff; /* For transparent plots */
+        }
+
+        .figure-container img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border-color: var(--accent-teal);
+        }
+
+        .figure-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.8rem;
+            font-style: italic;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(46, 21, 27, 0.95); /* Using Sienna base */
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox img {
+            max-width: 95vw;
+            max-height: 95vh;
+            border-radius: 4px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: #fff;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--contrast-green);
+            background: var(--bg-deep-charcoal);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--contrast-green);
+        }
+
+        th {
+            background-color: var(--shadow-dark-sienna);
+            color: var(--accent-pink);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(28, 51, 52, 0.2);
+        }
+
+        tr:hover {
+            background-color: rgba(55, 110, 111, 0.2);
+        }
+
+        /* Blockquotes / Notes */
+        .note {
+            background-color: rgba(218, 123, 147, 0.08);
+            border-left: 4px solid var(--accent-pink);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .warning {
+            background-color: rgba(55, 110, 111, 0.15); 
+            border-left: 4px solid var(--accent-teal);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Media Queries */
+        @media (min-width: 1200px) {
+            .menu-toggle { display: none; }
+            .sidebar { transform: translateX(0); }
+            .main-content { margin-left: 300px; padding: 4rem; margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu Toggle Button (Mobile/Tablet) -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+
+    <!-- Overlay for Sidebar -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>CONNECT THE COGNITIVE</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#intro" class="active">Delimitación</a></li>
+                <li><a href="#metodologia">Mapa Metodológico</a></li>
+                <li><a href="#validaciones">Validaciones y Sesgos</a></li>
+                <li><a href="#abundancia">Abundancia Diferencial</a></li>
+                <li><a href="#degs">Expresión Diferencial</a></li>
+                <li><a href="#gsea">Enriquecimiento Funcional</a></li>
+                <li><a href="#conclusiones">Conclusiones</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            
+            <section id="header">
+                <h1>🧬 Reporte de Integración y Cierre de Tesis: Dinámica de Subtipos NK y Abundancia Diferencial en Inmunosenescencia</h1>
+                <p>Este reporte consolida el análisis comparativo final del proyecto, contrastando la población mayoritaria citotóxica <strong>NK CD56dim</strong> con la población rara inmunomoduladora <strong>NK CD56bright</strong>. Aterriza la relevancia de la estratificación unicelular frente al análisis de "NK completo" (Global) y analiza el declive poblacional integrando modelos estadísticos de abundancia celular.</p>
+            </section>
+
+            <details id="intro" open>
+                <summary>🎯 Delimitación del Proyecto</summary>
+                <div class="details-content">
+                    <h3>Pregunta de Investigación</h3>
+                    <p>¿Es posible identificar patrones de alteración en el transcriptoma de subpoblaciones de células asesinas naturales en el contexto de la inmunosenescencia mediante la integración de datos de secuenciación de RNA de célula única?</p>
+                    
+                    <h3>Hipótesis Principal</h3>
+                    <p>La integración de datos de secuenciación de RNA de célula única permitirá la identificación de patrones de alteración en el transcriptoma de subpoblaciones de células asesinas naturales en el contexto de la inmunosenescencia.</p>
+                    
+                    <h3>Objetivo General</h3>
+                    <p>Realizar el análisis transcriptómico de células asesinas naturales en el contexto de la inmunosenescencia, mediante la integración de datos de secuenciación de RNA de célula única, para identificar patrones de alteración en el transcriptoma de subpoblaciones.</p>
+
+                    <h3>Objetivos Específicos</h3>
+                    <ul>
+                        <li>Procesar e integrar datos de múltiples estudios para construir un atlas transcriptómico representativo.</li>
+                        <li>Identificar genes diferencialmente expresados en el contexto de la inmunosenescencia.</li>
+                        <li>Determinar la heterogeneidad de la reacción al envejecimiento entre los distintos subtipos celulares.</li>
+                        <li>Dilucidar las vías biológicas comprometidas por las alteraciones transcriptómicas.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details id="metodologia">
+                <summary>🗺️ Mapa Metodológico del Proyecto</summary>
+                <div class="details-content">
+                    <p>A continuación, se detalla el flujo de trabajo computacional (Main Branch) que permitió purificar la señal biológica de inmunosenescencia, superando el ruido técnico (ambient RNA) y estadístico (shot noise):</p>
+                    
+                    <div class="figure-container">
+                        <div class="mermaid">
+flowchart TD
+    %% Obtención de Datos
+    subgraph Data_Procurement ["1. Procuración de Datos (Cellxgene)"]
+        A[Datos de scRNA-seq Primarios] --> B{Criterios de Inclusión}
+        B -->|Tejido| C1[PBMC]
+        B -->|Organismo| C2[Homo sapiens]
+        B -->|Condición| C3[Sanos / Controles]
+        B -->|Metadatos| C4[Edad y Sexo]
+        C1 & C2 & C3 & C4 --> D[Cohorte Inicial de Donantes]
+    end
+
+    %% Corrección Ambiental
+    subgraph Ambient_RNA ["2. Corrección de RNA Ambiental"]
+        D --> E[scAR - Single Cell Ambient RNA removal]
+        E --> F[Inferencia Nativa en Python GPU]
+        F --> G[Matriz de Conteos Purificada]
+    end
+
+    %% Control de Calidad
+    subgraph QC ["3. Control de Calidad Híbrido"]
+        G --> H[Filtro Adaptativo: DDQC]
+        H --> I[Exclusión de outliers vía MAD por clusters]
+        I --> J[Filtro Declarativo Fijo]
+        J --> K[Remoción de Ribosomales RPS/RPL]
+        J --> L[Remoción de Inmunoglobulinas IG]
+        K & L --> M[Filtro de Masa Crítica: >200 cél/donante]
+        M --> N[Dataset Gold Standard Purificado]
+    end
+
+    %% Análisis General NK
+    subgraph Global_Analysis ["4. Análisis NK Global (Efecto Cancelación)"]
+        N --> O[Agregación Pseudobulk por Donante]
+        O --> P[PyDESeq2 + apeGLM Shrinkage]
+        P --> Q[Diseño Aditivo: ~ assay + age_group]
+        Q --> R[DEA: Expresión Diferencial]
+        R --> S[GSEA Preranked & ORA]
+    end
+
+    %% Análisis de Subtipos
+    subgraph Subtype_Analysis ["5. Análisis de Subtipos"]
+        N --> U[Anotación Cellxgene]
+        U --> V{Estratificación Celular}
+        
+        V -->|CD56dim Mayoritarios ~95%| W[Pseudobulk + PyDESeq2]
+        W --> X[Diseño: ~ assay + age_group]
+        X --> Y[DEA: 12 Genes Significativos]
+        Y --> Z[GSEA Preranked & ORA]
+        
+        V -->|CD56bright Raros ~5%| AA[Modelado Unicelular Paralelizado]
+        AA --> AB[MixedLM Gen por Gen]
+        AB --> AC[Factor Fijo: age_group + assay]
+        AB --> AD[Factor Aleatorio: donante_id]
+        AC & AD --> AE[GSEA Preranked: Rescate de 31 Vías]
+        
+        V -->|Dinámica Poblacional| AF[Abundancia Diferencial]
+        AF --> AG[GLM Binomial: CD56bright/Total_NK]
+        AG --> AH[Contracción Significativa de Bright]
+    end
+    
+    Global_Analysis -.->|Demuestra Sesgo| Subtype_Analysis
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details id="validaciones">
+                <summary>🛠️ 1. Validaciones Metodológicas y Corrección de Sesgos</summary>
+                <div class="details-content">
+                    <h3>A. Corrección de RNA Ambiental (scAR)</h3>
+                    <p>La implementación de esta corrección fue una necesidad metodológica estricta para el flujo de trabajo. En las versiones iniciales del análisis, identificamos que el dataset mostraba sesgos estructurales al presentar una contaminación persistente de transcritos ajenos a la biología NK; particularmente de grupos celulares como células B y células T. La eliminación computacional de este RNA ambiental (la "sopa transcriptómica" flotante) mediante scAR garantizó que los perfiles de células NK estuvieran verdaderamente purificados y libres de contaminación cruzada.</p>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/06_scAR_Ambient_RNA_Correction.png" alt="Corrección scAR">
+                        <div class="figure-caption">Figura 1: Comparativa de expresión antes y después de la corrección por scAR.</div>
+                    </div>
+                    
+                    <details class="sub-details">
+                        <summary>🔍 Ver Código Python (scAR)</summary>
+                        <div class="details-content">
+                            <pre><code class="language-python">
+# Corrección de RNA Ambiental utilizando scAR
+import scar
+scar_model = scar.model(raw_adata, ambient_profile, feature_type='mRNA')
+scar_model.train(epochs=400, batch_size=64)
+scar_model.inference()
+                            </code></pre>
+                        </div>
+                    </details>
+
+                    <h3>B. Control de Calidad, Bimodalidad y Sesgo Técnico (Assay Bias)</h3>
+                    <p>Durante el control de calidad adaptativo (DDQC), descubrimos una marcada bimodalidad en la distribución de la métrica <code>n_genes_by_counts</code>.</p>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/01_qc_distributions_v4.png" alt="Bimodalidad por Ensayo">
+                        <div class="figure-caption">Figura 2: Distribución original bimodal de n_genes. Los dos picos (campanas) corresponden al sesgo técnico de la tecnología usada (ej. 10x 3' v2 con menor captura vs 10x 3' v3), no a una división biológica real.</div>
+                    </div>
+
+                    <p>Para explorar a fondo el origen de este sesgo técnico y cómo afecta directamente a nuestras covariables biológicas, desglosamos las variables subyacentes antes de aplicar cualquier corrección:</p>
+
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/09_PCA_Technical_Bias_Summary.png" alt="Infografía de Varianza">
+                        <div class="figure-caption">Figura 2A: Varianza Explicada en PC1. El "Assay" captura casi el 66% de la varianza total. A la derecha, se observa cómo este sesgo está fuertemente conducido por la captura asimétrica de genes ribosomales a lo largo de las distintas tecnologías.</div>
+                    </div>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/diag_n_genes_by_age_group.png" alt="Age Group">
+                        <div class="figure-caption">Figura 2B: Estratificación por grupo de edad. Muestra cómo las distribuciones técnicas dispares se entrelazan y distorsionan la señal biológica de las cohortes ancianas y adultas.</div>
+                    </div>
+
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/diag_n_genes_by_assay.png" alt="Assay">
+                        <div class="figure-caption">Figura 2C: Distribución por Ensayo tecnológico, ratificando el origen asimétrico de la campana inferior.</div>
+                    </div>
+
+                    <details class="sub-details">
+                        <summary>📊 Expandir Validaciones de Implementación y Mitigación del Sesgo</summary>
+                        <div class="details-content">
+                            <p>El descubrimiento de que el lote tecnológico secuestraba el 65% de la varianza total (dominado fuertemente por abundancia de transcritos ribosomales) sugirió inicialmente un problema de ruido específico. Sin embargo, las auditorías demostraron que la exclusión declarativa de familias ribosomales e inmunoglobulinas no era suficiente; la varianza técnica subyacente simplemente se anclaba a los siguientes genes más expresados debido a una marcada asimetría en la <strong>profundidad de secuenciación total</strong> entre ensayos.</p>
+                            
+                            <p>Para solucionar de raíz este sesgo estructural masivo, implementamos una corrección matemática activa utilizando <strong>Regresión Lineal</strong> (<code>sc.pp.regress_out</code>) frente a la métrica de profundidad celular (<code>total_counts</code>). Este algoritmo modela la relación de expresión de cada gen frente al volumen transcripcional capturado y extrae los "residuos", funcionando efectivamente como un ecualizador estadístico que nivela la profundidad de lectura para todas las células.</p>
+
+                            <pre><code class="language-python">
+# Regresión de profundidad para PCA/UMAP
+sc.pp.normalize_total(adata, target_sum=1e4)
+sc.pp.log1p(adata)
+sc.pp.regress_out(adata, ['total_counts'])
+                            </code></pre>
+                            
+                            <div class="figure-container">
+                                <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/01_QC_metrics_post_filtering.png" alt="QC Post-filtro">
+                                <div class="figure-caption">Figura 3A: Fusión de Poblaciones. Al nivelar matemáticamente las disparidades del Assay, la separación bimodal original colapsa fusionándose en una distribución unimodal y biológicamente coherente.</div>
+                            </div>
+                            
+                            <div class="figure-container">
+                                <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/Regression_QC_Evidence.png" alt="Regresión">
+                                <div class="figure-caption">Figura 3B: Ruptura de la Correlación. Antes, la varianza principal era un proxy directo de la profundidad (diagonal clara). Tras calcular los residuos, la relación se vuelve plana; la cantidad de ARN capturado ya no dicta el agrupamiento celular.</div>
+                            </div>
+                            
+                            <div class="figure-container">
+                                <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/Final_Methodology_Validation.png" alt="Validación Metodológica">
+                                <div class="figure-caption">Figura 3C: Emergencia Biológica. Al silenciar el ruido de profundidad, el PC1 reveló finalmente a los verdaderos conductores de la biología NK. Emergieron firmas canónicas de expansión de Células NK Adaptativas en el envejecimiento (pérdida del adaptador FCER1G e hiper-producción de CCL3/CCL4).</div>
+                            </div>
+
+                            <p><strong>Bifurcación Metodológica:</strong> Es crucial destacar que esta regresión de profundidad sobre matrices normalizadas se emplea <strong>exclusivamente como auditoría diagnóstica para la visualización celular (PCA/UMAP)</strong>. Alimentar algoritmos estadísticos de conteo con "residuos" (números decimales y negativos) invalidaría sus supuestos distributivos.</p>
+                            
+                            <p>Por lo tanto, una vez demostrada visualmente la naturaleza del sesgo, nuestro análisis formal de Expresión Diferencial se bifurca: ingresamos <strong>Conteos Brutos Enteros (Raw Counts)</strong> puros a la herramienta PyDESeq2. Este modelo matemático resuelve internamente la asimetría de profundidad mediante su normalización por <em>Size Factors</em> (Median of Ratios), blindando metodológicamente nuestra firma biológica de senescencia contra los artefactos del equipo de secuenciación.</p>
+                            
+                            <ol>
+                                <li>El uso ineludible de los <strong>Size Factors</strong> robustos de <strong>PyDESeq2</strong>.</li>
+                                <li>La inclusión obligatoria de la covariable técnica explícita <code>~ assay</code> en los <strong>Modelos Mixtos Lineales Generalizados (GLMM)</strong> a nivel <em>single-cell</em>.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <h3>C. Filtrado Declarativo del Transcriptoma</h3>
+                    <p>De forma adicional a la mitigación técnica por covarianza, el análisis demandó una estricta curación manual del vocabulario transcripcional. Excluimos sistemáticamente familias de genes hiperabundantes que ahogaban la señal de senescencia y distorsionaban las tasas de normalización cruzada: genes ribosomales (RPS/RPL), inmunoglobulinas (IGH/IGK/IGL) y genes de receptores de células T (TCR).</p>
+                    
+                    <h3>D. Validación Biológica: Singlets y Pureza de Linaje</h3>
+                    <p>Validamos computacionalmente la limpieza de nuestro conjunto de datos (N = 191,903 células). El modelo neuronal SOLO no detectó doublets por encima del umbral de clasificación establecido en la cohorte analizada post-QC. A nivel biológico, el <em>Dotplot</em> de marcadores genéticos verificó una pureza de linaje celular impecable, con completa exclusión del linaje linfocítico competidor (B-cells y T-cells).</p>
+
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/02_Lineage_Purity_DotPlot.png" alt="Pureza">
+                        <div class="figure-caption">Figura 3: Confirmación molecular de linaje, con total ausencia de marcadores competitivos.</div>
+                    </div>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/04_UMAP_Age_Group.png" alt="UMAP Age">
+                        <div class="figure-caption">Figura 4: Estructura bidimensional de la cohorte purificada, separando correctamente sub-linajes NK y controlando ruido.</div>
+                    </div>
+                </div>
+            </details>
+
+            <details id="abundancia">
+                <summary>📉 2. Abundancia Diferencial</summary>
+                <div class="details-content">
+                    <h3>A. Dinámica Poblacional (GLM Binomial)</h3>
+                    <p>Evaluamos estadísticamente el declive de la subpoblación inmadura inmunomoduladora (NK CD56bright) como proporción del pool total de células NK (NK CD56bright + NK CD56dim) mediante un <strong>Modelo Lineal Generalizado (GLM) Binomial</strong> ajustado por sobredispersión.</p>
+
+                    <p>El modelo estimó el impacto biológico de pertenecer al <code>age_group</code> "Old" frente a "Adult", siempre controlando la covarianza técnica de la plataforma <code>assay</code>. La fórmula modelizada fue:<br><code>Bright_Count, Dim_Count ~ age_group + assay</code></p>
+
+                    <p><strong>Resultados del Modelo:</strong></p>
+                    <ul>
+                        <li><strong>Log-Odds Ratio (Old):</strong> -0.4702 (IC 95%: -0.618 a -0.322)</li>
+                        <li><strong>Efecto Marginal:</strong> Una reducción de 37–40% en la probabilidad de muestrear una célula CD56bright del pool total de células NK en individuos envejecidos vs. adultos.</li>
+                        <li><strong>Significancia Estadística (z = -6.23, p < 0.001):</strong> Efecto altamente significativo tras controlar por el ensayo tecnológico.</li>
+                    </ul>
+
+                    <p>El agotamiento numérico de este subtipo inmunoregulador —que el ratio CD56bright/CD56dim ilustra directamente: el cociente cae de ~0.18 en adultos a ~0.10 en ancianos— representa una de las huellas funcionales más contundentes del envejecimiento del repertorio NK.</p>
+                    
+                    <div class="note">
+                        Este declive numérico plantea una pregunta biológica abierta: ¿la contracción cuantitativa de las CD56bright <em>precede</em> o <em>resulta</em> de su colapso funcional transcriptómico? El modelado de trayectorias de RNA (scVelo/CellRank) permitiría determinar si el envejecimiento acelera la transdiferenciación de fenotipos inmaduros bright hacia células CD56dim hiperreactivas, convirtiendo el declive numérico en un evento impulsado activamente por la dinámica de maduración.
+                    </div>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/nk_ratio_analysis.png" alt="Ratios">
+                        <div class="figure-caption">Figura 5: Distribución del ratio CD56bright/CD56dim y porcentajes celulares en donantes adultos jóvenes vs. mayores.</div>
+                    </div>
+                </div>
+            </details>
+
+            <details id="degs">
+                <summary>🧬 3. Expresión Diferencial (DEGs)</summary>
+                <div class="details-content">
+                    <p>Al enfrentar dos poblaciones con extremas asimetrías de captura (~95% NK CD56dim vs. ~5% NK CD56bright), el principal desafío estadístico radica en controlar la sobrerrepresentación y suprimir los falsos positivos. Implementamos dos arquitecturas matemáticas asimétricas y complementarias:</p>
+
+                    <div class="warning">
+                        <strong>Limitación de potencia estadística:</strong> El dataset presenta un desequilibrio inherente de cohorte, con una proporción aproximada de 4 adultos por cada 1 anciano (152 adultos vs. 35 ancianos en CD56dim; 142 vs. 31 en CD56bright). Esta asimetría es una limitación del dataset público de origen, no del diseño analítico. Limita la potencia estadística para detectar genes diferencialmente <em>reprimidos</em> en el envejecimiento (DOWN en old), lo que explica parcialmente la ausencia de hits DOWN en CD56dim y la escasez de hits FDR significativos en el modelo de células CD56bright.
+                    </div>
+                    
+                    <h3>A. NK CD56dim: Expresión Diferencial por Pseudobulk (PyDESeq2)</h3>
+                    <p>Dada la masividad de este linaje efector maduro, aplicamos agregación tipo <strong>pseudobulk</strong> colapsando las cuentas a nivel del paciente o donante ($N = 187$: 152 adultos y 35 viejos). Sumar los perfiles de RNA de las CD56dim erradica la sobredispersión de ceros intrínseca al scRNA-seq ("dropouts"), habilitando herramientas potentes como PyDESeq2 con contracción <code>apeGLM</code>.</p>
+                    
+                    <p>El modelo <code>~ assay + age_group</code> eliminó satisfactoriamente el ruido analítico y devolvió <strong>12 potentes genes significativos</strong> (FDR < 0.05), apuntando a una fuerte señal hiper-inflamatoria impulsada por alarminas.</p>
+
+                    <details class="sub-details">
+                        <summary>📋 Tabla Completa de DEGs y Código Analítico</summary>
+                        <div class="details-content">
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Gen</th>
+                                            <th>LFC</th>
+                                            <th>p-adj</th>
+                                            <th>Función Molecular y Relevancia en Inmunosenescencia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><strong>S100A9</strong></td><td>+7.41</td><td>0.0084</td><td>Alarmina inflamatoria (DAMP). Forma calprotectina con S100A8. Potente activador mediado por NF-κB.</td></tr>
+                                        <tr><td><strong>S100A8</strong></td><td>+7.02</td><td>0.0084</td><td>Alarmina inflamatoria. Su extrema inducción marca un estado senescente de estrés celular.</td></tr>
+                                        <tr><td><strong>AHR</strong></td><td>+5.95</td><td>0.0125</td><td><em>Aryl Hydrocarbon Receptor</em>. Sensor de toxinas y modulador vital del balance de activación inmune.</td></tr>
+                                        <tr><td><strong>SLC25A37</strong></td><td>+5.87</td><td>0.0119</td><td>Mitoferrina-1. Receptor transmembrana para saturación forzada de hierro mitocondrial intracelular.</td></tr>
+                                        <tr><td><strong>CD83</strong></td><td>+4.17</td><td>0.0161</td><td>Antígeno de maduración de la sinapsis inmunológica e interacción dendrítica-NK.</td></tr>
+                                        <tr><td><strong>LIMS1</strong></td><td>+3.11</td><td>0.0125</td><td>Proteína adaptadora para las adhesiones focales citoesqueléticas en la maquinaria migratoria.</td></tr>
+                                        <tr><td><strong>PELI1</strong></td><td>+2.89</td><td>0.0161</td><td>E3-ubiquitina ligasa, enrutador clave activando cascadas terminales TLR/IL-1.</td></tr>
+                                        <tr><td><strong>DSE</strong></td><td>+2.25</td><td>0.0251</td><td>Dermatan sulfato epimerasa, asociada a alteraciones en la matriz extracelular.</td></tr>
+                                        <tr><td><strong>GSTO1</strong></td><td>+1.80</td><td>0.0161</td><td>Glutatión S-transferasa omega-1, marcador canónico de respuesta celular al estrés oxidativo.</td></tr>
+                                        <tr><td><strong>HMGA1</strong></td><td>+1.77</td><td>0.0142</td><td>Modulador de la cromatina vinculado a la formación de heterocromatina asociada a senescencia (SAHF).</td></tr>
+                                        <tr><td><strong>RDX</strong></td><td>+1.15</td><td>0.0161</td><td>Radixina, proteína del citoesqueleto que altera la organización y dinámica de la membrana plasmática.</td></tr>
+                                        <tr><td><strong>RALA</strong></td><td>+0.95</td><td>0.0142</td><td>GTPasa implicada en la exocitosis de gránulos y señalización proliferativa alterada.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <pre><code class="language-python">
+# Diseño y Ejecución de PyDESeq2 para CD56dim
+from pydeseq2.dds import DeseqDataSet
+from pydeseq2.ds import DeseqStats
+
+dds = DeseqDataSet(
+    counts=pseudobulk_counts,
+    metadata=metadata,
+    design_factors=["assay", "age_group"],
+    ref_level=["age_group", "Adult"]
+)
+dds.deseq2()
+stat_res = DeseqStats(dds, contrast=["age_group", "Old", "Adult"])
+stat_res.summary()
+stat_res.lfc_shrink(coeff="age_group_Old_vs_Adult")
+                            </code></pre>
+                        </div>
+                    </details>
+                    
+                    <h4>Confirmación Funcional mediante Análisis de Sobre-Representación (ORA)</h4>
+                    <p>A pesar de contar con una firma selecta de 12 genes en CD56dim, el Análisis de Sobre-Representación (ORA) demuestra que esta firma no es producto del azar, sino un programa biológico sumamente orquestado.</p>
+                    <ul>
+                        <li><strong>Hiper-Activación por Citocinas:</strong> La firma enriquece contundentemente para <code>IL-2/STAT5 Signaling</code> y <code>Interleukin-12 Signaling</code>, ejes maestros en la polarización citotóxica e hiper-reactiva de las células NK.</li>
+                        <li><strong>Respuestas de Estrés e Inflamación:</strong> Se enriquecen fuertemente cascadas de alarminas e inmunidad innata como <code>Response To Molecule Of Bacterial Origin</code> y la señalización primaria de TLRs (<code>MyD88:MAL Cascade</code>), impulsado por la tormenta de S100A8/A9 y PELI1.</li>
+                    </ul>
+
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/barplot_cd56dim_UP.png" alt="ORA CD56dim">
+                        <div class="figure-caption">Figura 6: Top vías sobre-representadas en genes regulados al alza en CD56dim.</div>
+                    </div>
+
+                    <h3>B. NK CD56bright: Expresión Diferencial por Modelos Mixtos (GLMM)</h3>
+                    <p>Colapsar artificialmente las células CD56bright a nivel donante destruiría la minúscula señal subyacente. Para sortear esto, implementamos los rigurosos <strong>Modelos Mixtos Lineales Generalizados (GLMM)</strong> evaluando célula por célula en su contexto nativo individualizado.</p>
+                    
+                    <p>Modelamos variables fijas biológicas (<code>age_group</code>) y técnicas (<code>assay</code>), pero absorbimos la fuerte auto-correlación individual usando a cada paciente (<code>donante_id</code>) como factor aleatorio. El modelo opera sobre expresión en escala log normalizada (<code>log1p</code>) por gen —sin regresión de profundidad previa— preservando la distribución real de expresión de cada célula individual. Esta arquitectura, si bien sufre severas penalizaciones FDR al ser probada en iteraciones por miles de transcritos, nos proveyó una clasificación nominal altamente orientativa para el descubrimiento de vías funcionales comprometidas en el declive senescente.</p>
+
+                    <p>El total de células CD56bright analizadas fue N = 4,986 (distribuidas en 173 donantes: 142 adultos / 31 ancianos).</p>
+                </div>
+            </details>
+
+            <details id="gsea">
+                <summary>🔬 4. Enriquecimiento Funcional (GSEA Preranked)</summary>
+                <div class="details-content">
+                    <p>Nuestros resultados de <em>Gene Set Enrichment Analysis (GSEA Preranked)</em> exponen que, aunque ambas células padecen la senescencia, lo hacen a través de declives biológicos antagónicos.</p>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/comparative_summary_barplot.png" alt="Comparativo GSEA">
+                        <div class="figure-caption">Figura 6: Resumen Comparativo de Vías Hallmarks Significativas.</div>
+                    </div>
+
+                    <details class="sub-details">
+                        <summary>🔥 A. Vías Enriquecidas en NK CD56dim (Inflammaging y Ferroptosis)</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Activación Inflamatoria Sistémica (SASP-like):</strong> Contrario al agotamiento clásico o anergia, estas células se reactivan patológicamente contribuyendo a la inflamación sistémica crónica. Las rutas de señal inflamatoria como <code>TNF-alpha Signaling via NF-kB</code> (NES = +1.6), <code>Inflammatory Response</code> (NES = +1.63) e <code>Interleukin-12/JAK-STAT Signaling</code> (NES = +2.19) reportaron incrementos notables, catalizados por las alarminas celulares S100A8/A9.</li>
+                                <li><strong>Hierro, Daño Lipídico y Ferroptosis:</strong> Identificamos la catástrofe de peroxidación lipídica. Como daño colateral, la inducción forzada del transporte de cationes (<code>Metal Ion SLC Transporters</code>, NES = +1.87) —liderada por Mitoferrina (SLC25A37)— dispara la vía clásica de <code>Ferroptosis</code> (NES = +2.11) por acumulación intrínseca irreversible de hierro mitocondrial.</li>
+                            </ul>
+                            <div class="figure-container">
+                                <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/dotplot_cd56dim.png" alt="GSEA Dim">
+                                <div class="figure-caption">Figura 7: Dotplot GSEA Preranked para CD56dim. Se aprecia la represión de TNF-α/NF-κB (enmascaramiento por inflammaging).</div>
+                            </div>
+                        </div>
+                    </details>
+                    
+                    <details class="sub-details">
+                        <summary>🧊 B. Vías Enriquecidas en NK CD56bright (Parálisis Inmune y Colapso Bioenergético)</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Caída del Motor Bioenergético Mitocondrial:</strong> Desplome general de la cadena transportadora de electrones (<code>Respiratory Electron Transport</code>, NES = -1.61) y pérdida severa de capacidad de <code>Oxidative Phosphorylation</code> (NES = -1.33).</li>
+                                <li><strong>El Colapso de Traducción Mitocondrial:</strong> Lejos de presentar respuestas compensatorias nucleares, se comprueba una crisis regulatoria sistémica. Tanto la síntesis de componentes oxidativos codificados por el núcleo como la maquinaria mitocondrial caen en sincronía con la represión de los genes del ADNmt (e.g., MT-ATP8), indicando una falla terminal unificada en la biogénesis mitocondrial.</li>
+                                <li><strong>Parálisis Migratoria Extrema (Aislamiento Linfático):</strong> La inmensa caída de rutas locomotoras como <code>Cellular Response to Chemokine</code> (NES = -1.32) o el ensamblaje de la red motora celular <code>Actin Cytoskeleton</code> (NES = -1.25) privan a las células de infiltrarse en el tejido linfoide periférico; pierden por completo su vocación primigenia regulatoria.</li>
+                            </ul>
+                            <div class="figure-container">
+                                <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/dotplot_cd56bright.png" alt="GSEA Bright">
+                                <div class="figure-caption">Figura 8: Dotplot GSEA Preranked para CD56bright, exhibiendo represión en OXPHOS/ROS mitocondrial.</div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+            <details id="conclusiones">
+                <summary>🧩 5. Conclusiones Integrativas</summary>
+                <div class="details-content">
+                    <h3>A. El Efecto Cancelación en el Análisis "Global"</h3>
+                    <p>Analizar la población NK entera ("NK Cell Global") —ignorando los subtipos CD56— enmascara catastróficamente la verdadera biología de la vejez celular. Por ejemplo, en el pool global, la firma de transducción <code>TNF-alpha Signaling via NF-kB</code> aparenta estar fuertemente reprimida (NES = -2.38). Sin embargo, este silenciamiento algorítmico es una falsedad matemática ocasionada por la asimetría de abundancias: las células CD56dim —que constituyen ~95% del pool— exhiben esta vía inflamatoria activamente <strong>activada</strong> (NES = +1.62). El efecto cancelación ocurre porque la señal pro-inflamatoria de las dim queda diluida por el silenciamiento transcripcional general observado al colapsar las subpoblaciones en un pool mixto. Las CD56bright, en contraste, no contribuyen fuertemente a la inflamación senescente sino que sufren su propio colapso bioenergético — demostrando la imperativa necesidad analítica de la estratificación.</p>
+                    
+                    <p>Para corroborar visualmente este efecto global de senescencia, analizamos la sobre-representación de los más de 6,000 genes que son suprimidos a nivel pool completo. El ORA (Over Representation Analysis) dictamina una pérdida masiva de <code>mTORC1 Signaling</code>. Sabiendo que mTOR es el interruptor maestro del anabolismo, proliferación y energía, su caída concuerda totalmente con un estado de inmunosenescencia y agotamiento generalizado, oscureciendo las activaciones específicas de las células maduras hiperreactivas.</p>
+
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/barplot_nk_cell_general_DOWN.png" alt="Global Down">
+                        <div class="figure-caption">Figura 9: ORA Global (Genes Down). La represión generalizada de mTORC1 ilustra el silenciamiento transcripcional que caracteriza a la inmunosenescencia poblacional.</div>
+                    </div>
+                    
+                    <div class="figure-container">
+                        <img src="file:///C:/Users/PREDATOR/.gemini/antigravity-ide/brain/722fbc73-a99e-43ad-9b7c-d402d3708bcd/dotplot_global.png" alt="Global Hallmark">
+                        <div class="figure-caption">Figura 10: Dotplot GSEA Preranked Global. La firma pro-inflamatoria específica queda diluida o invertida algorítmicamente si no se estratifican los fenotipos.</div>
+                    </div>
+
+                    <details class="sub-details">
+                        <summary>🚀 B. Limitaciones y Rutas Bioinformáticas Futuras</summary>
+                        <div class="details-content">
+                            <p>Para consolidar empíricamente estos hallazgos predictivos, planteamos tres rutas analíticas clave de seguimiento validativo:</p>
+                            <ol>
+                                <li><strong>Modelado de Trayectorias y Velocidad de RNA (scVelo/CellRank):</strong> Confirmar experimentalmente si la contracción numérica reportada en el modelo de Abundancia se origina por un aceleramiento o sesgo direccional en el que el envejecimiento empuja a los fenotipos inmaduros Bright a madurar violentamente hacia células CD56dim hiperreactivas.</li>
+                                <li><strong>Mapeo de Destino Apoptótico (AUCell/UCell):</strong> Validar computacionalmente los puntajes unicelulares contra los clusters "Ferroptóticos" descubiertos, y evaluar inducción de familias de las Caspasas para certificar si la senescencia acaba ineludiblemente en muerte.</li>
+                                <li><strong>Inferencia del Flujo Metabólico Basado en scRNA (scFEA):</strong> Aproximar, desde la red metabólica humana, si el severo colapso unificado de la fosforilación oxidativa mitocondrial y la extrema importación de hierro logran impactar irrecuperablemente la transferencia de electrones y viabilidad celular.</li>
+                            </ol>
+                        </div>
+                    </details>
+                </div>
+            </details>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="High-res preview" id="lightbox-img">
+    </div>
+
+    <!-- Mermaid.js -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', themeVariables: { primaryColor: '#2F4454', primaryTextColor: '#E2E8F0', primaryBorderColor: '#376E6F', lineColor: '#DA7B93' } });
+    </script>
+
+    <!-- App Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sidebar Toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+
+            function toggleMenu() {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            }
+
+            menuToggle.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+
+            // Close sidebar when clicking a link (mobile)
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 1200) {
+                        toggleMenu();
+                    }
+                    
+                    // Smooth scroll
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.setAttribute('open', ''); // Ensure details is open
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                });
+            });
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const images = document.querySelectorAll('.figure-container img');
+
+            images.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.add('active');
+                });
+            });
+
+            lightbox.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            // Active section highlighting using Intersection Observer
+            const sections = document.querySelectorAll('details');
+            const observerOptions = {
+                root: null,
+                rootMargin: '-50px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        document.querySelectorAll('.nav-menu a').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if(section.id) observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

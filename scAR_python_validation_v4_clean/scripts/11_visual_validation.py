@@ -32,8 +32,8 @@ def run_visual_validation():
     axes[0].set_title('Genes per Cell (Post-QC)')
     axes[0].set_xlabel('n_genes_by_counts')
     
-    sns.histplot(adata.obs['total_counts'], bins=100, ax=axes[1], color='lightgreen')
-    axes[1].set_title('Total Counts per Cell (Post-QC)')
+    sns.histplot(adata.obs['total_counts'], bins=100, ax=axes[1], color='lightgreen', log_scale=True)
+    axes[1].set_title('Total Counts (Log Scale)')
     axes[1].set_xlabel('total_counts')
     
     sns.histplot(adata.obs[mt_col], bins=100, ax=axes[2], color='salmon')

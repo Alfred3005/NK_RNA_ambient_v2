@@ -38,6 +38,9 @@ def parse_markdown_to_html(md_content):
     in_list = False
     in_mermaid = False
     mermaid_content = ""
+    in_carousel = False
+    carousel_slides = []
+    import random
     
     for line in lines:
         line_strip = line.strip()
@@ -52,6 +55,31 @@ def parse_markdown_to_html(md_content):
             continue
         elif in_mermaid:
             mermaid_content += line + "\n"
+            continue
+
+        if line_strip.startswith("````carousel"):
+            in_carousel = True
+            carousel_slides = [""]
+            continue
+        elif in_carousel and line_strip.startswith("<!-- slide -->"):
+            carousel_slides.append("")
+            continue
+        elif in_carousel and line_strip.startswith("````"):
+            in_carousel = False
+            cid = f"carousel-{random.randint(10000,99999)}"
+            html += f"<div class='carousel-container' id='{cid}'>\n"
+            for i, slide in enumerate(carousel_slides):
+                active = "active" if i == 0 else ""
+                html += f"<div class='carousel-slide {active}'>\n"
+                html += parse_markdown_to_html(slide.strip())
+                html += "</div>\n"
+            html += f"""<div class='carousel-controls'>
+                <button onclick='moveCarousel("{cid}", -1)'>&#10094; Anterior</button>
+                <button onclick='moveCarousel("{cid}", 1)'>Siguiente &#10095;</button>
+            </div></div>\n"""
+            continue
+        elif in_carousel:
+            carousel_slides[-1] += line + "\n"
             continue
 
         # Manejo de listas
@@ -112,6 +140,26 @@ def parse_markdown_to_html(md_content):
                 html += f"<div class='table-responsive'><table>{table_html}</table></div>"
                 table_html = ""
                 in_table = False
+            
+            # Procesamiento de imágenes en Markdown
+            import re
+            if line_strip.startswith("!["):
+                img_match = re.match(r'!\[(.*?)\]\((.*?)\)', line_strip)
+                if img_match:
+                    alt_text = img_match.group(1)
+                    img_path = img_match.group(2)
+                    if img_path.startswith("../"):
+                        img_path = img_path[3:]
+                    b64_img = get_image_base64(img_path)
+                    html += f"<div class='image-card'><img src='{b64_img}' alt='{alt_text}'></div>"
+                    continue
+
+            # Procesamiento de Captions
+            if line_strip.startswith("*Figura") and line_strip.endswith("*"):
+                caption = line_strip[1:-1]
+                html += f"<div class='image-caption' style='text-align: center; margin-top: -15px; margin-bottom: 20px;'>{caption}</div>"
+                continue
+
             processed_line = line_strip
             while "**" in processed_line:
                 processed_line = processed_line.replace("**", "<strong>", 1).replace("**", "</strong>", 1)
@@ -172,6 +220,18 @@ def main():
     bright_top15 = generate_table_rows(df_bright_sig.head(15), de_cols_bright)
     bright_rest = generate_table_rows(df_bright_sig.iloc[15:], de_cols_bright)
     
+    # 2.5 Cargar DEGs Globales
+    print("📋 Cargando y filtrando DEGs Globales...")
+    global_de_csv = "scAR_python_validation_v4_clean/results/pydeseq2/deseq2_results_v4_final.csv"
+    df_global = pd.read_csv(global_de_csv)
+    if 'Unnamed: 0' in df_global.columns:
+        df_global = df_global.rename(columns={'Unnamed: 0': 'feature_name'})
+    df_global_sig = df_global[df_global['padj'] < 0.05].copy()
+    df_global_sig = df_global_sig.sort_values(by='padj')
+    
+    global_rows = generate_table_rows(df_global_sig.head(15), de_cols_dim)
+    global_rest = generate_table_rows(df_global_sig.iloc[15:], de_cols_dim)
+    
     # 3. Leer archivos de abundancia
     print("📖 Cargando archivos de texto de abundancia...")
     with open(glm_txt, "r", encoding="utf-8") as f:
@@ -183,16 +243,25 @@ def main():
     print("📝 Parseando narrativas de Markdown...")
     with open(report_md, "r", encoding="utf-8") as f:
         report_raw = f.read()
-    report_html = parse_markdown_to_html(report_raw)
     
-    with open(wiki_md, "r", encoding="utf-8") as f:
-        wiki_raw = f.read()
-    # Saltar el YAML frontmatter de la wiki
-    if wiki_raw.startswith("---"):
-        parts = wiki_raw.split("---", 2)
-        if len(parts) >= 3:
-            wiki_raw = parts[2].strip()
-    wiki_html = parse_markdown_to_html(wiki_raw)
+    # Dividir el reporte en Narrativa (Sección 1 e Introducción) y Conclusiones (Sección 5)
+    import re
+    # Extraer Narrativa (todo hasta la Sección 2)
+    narrative_match = re.search(r'(.*?)## \S*\s*2\.\s+Abundancia Diferencial', report_raw, re.DOTALL)
+    if narrative_match:
+        narrative_raw = narrative_match.group(1)
+    else:
+        narrative_raw = report_raw # fallback
+    
+    # Extraer Conclusiones (desde la Sección 5 hasta el final)
+    conclusions_match = re.search(r'(## \S*\s*5\.\s+Conclusiones Integrativas.*)', report_raw, re.DOTALL)
+    if conclusions_match:
+        conclusions_raw = conclusions_match.group(1)
+    else:
+        conclusions_raw = "<h2>Conclusiones</h2><p>No se encontraron conclusiones en el archivo markdown.</p>"
+
+    report_html = parse_markdown_to_html(narrative_raw)
+    conclusions_html = parse_markdown_to_html(conclusions_raw)
     
     # 5. Cargar imágenes en base64
     print("🖼️ Codificando imágenes a base64...")
@@ -202,7 +271,63 @@ def main():
     img_gsea_dim = get_image_base64(os.path.join(abundance_dir, "gsea/cd56dim/dotplot_MSigDB_Hallmark_2020.png"))
     img_gsea_bright = get_image_base64(os.path.join(abundance_dir, "gsea/cd56bright/dotplot_MSigDB_Hallmark_2020.png"))
     img_gsea_global = get_image_base64(os.path.join(abundance_dir, "gsea/global/dotplot_MSigDB_Hallmark_2020.png"))
+    img_gprofiler = get_image_base64("C:/Users/PREDATOR/.gemini/antigravity-ide/brain/662c0a88-56f3-4ff5-b408-4e4a65e442c9/gProfiler_Style_Comparative_Plot_v6.png")
     
+    img_ora_gen_up = get_image_base64("results/barplot_nk_cell_general_UP.png")
+    img_ora_gen_down = get_image_base64("results/barplot_nk_cell_general_DOWN.png")
+    img_ora_dim_up = get_image_base64("results/barplot_cd56dim_UP.png")
+    
+    # Cargar tablas GSEA
+    def load_gsea_table_html(csv_path):
+        if not os.path.exists(csv_path):
+            return "<p>No GSEA data available.</p>"
+        df = pd.read_csv(csv_path)
+        # Limpiar Term
+        df['Term'] = df['Term'].str.replace('HALLMARK_', '').str.replace('_', ' ').str.title()
+        # Sort by NES
+        df = df.sort_values(by='NES', ascending=False)
+        
+        def get_category(term):
+            term_upper = term.upper()
+            if any(x in term_upper for x in ['OXIDATIVE', 'GLYCOLYSIS', 'MTORC1', 'FATTY ACID', 'ADIPOGENESIS', 'CHOLESTEROL', 'BILE ACID', 'PEROXISOME', 'HEME', 'REACTIVE OXYGEN', 'METABOLISM']):
+                return 'Metabolismo y Bioenergética'
+            elif any(x in term_upper for x in ['TNF', 'INFLAMMATORY', 'IL6', 'INTERFERON', 'ALLOGRAFT', 'COMPLEMENT', 'IL2', 'TGF', 'COAGULATION', 'IMMUNE', 'STAT']):
+                return 'Señalización Inmune e Inflamatoria'
+            elif any(x in term_upper for x in ['G2M', 'APOPTOSIS', 'DNA REPAIR', 'E2F', 'MITOTIC', 'P53', 'MYC', 'WNT', 'HEDGEHOG', 'NOTCH', 'SPERMATOGENESIS', 'CELL CYCLE']):
+                return 'Ciclo Celular, Apoptosis y Daño al ADN'
+            elif any(x in term_upper for x in ['HYPOXIA', 'UNFOLDED', 'UV ', 'EPITHELIAL', 'SECRETION', 'APICAL', 'MYOGENESIS', 'ANGIOGENESIS', 'KRAS', 'ESTROGEN', 'ANDROGEN', 'PANCREAS', 'PI3K', 'ROS ']):
+                return 'Estrés Celular y Respuestas Estructurales'
+            else:
+                return 'Otras Vías Hallmark'
+
+        df['Category'] = df['Term'].apply(get_category)
+        
+        html = ""
+        # Mantener un orden lógico para las categorías
+        cat_order = ['Señalización Inmune e Inflamatoria', 'Metabolismo y Bioenergética', 'Ciclo Celular, Apoptosis y Daño al ADN', 'Estrés Celular y Respuestas Estructurales', 'Otras Vías Hallmark']
+        
+        for cat in cat_order:
+            cat_df = df[df['Category'] == cat]
+            if cat_df.empty: continue
+            
+            html += f"<h4 style='color: var(--primary-light); margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem;'>{cat}</h4>"
+            html += '<div class="table-responsive" style="margin-bottom: 1rem;"><table style="font-size: 0.85rem; margin-bottom: 0;">'
+            html += '<thead><tr><th>Term</th><th>NES</th><th>FDR</th><th>p-value</th><th>Metric</th></tr></thead><tbody>'
+            for _, row in cat_df.iterrows():
+                fdr = row['FDR']
+                pval = row['pval']
+                fdr_str = f"{fdr:.4f}" if isinstance(fdr, (int, float)) else str(fdr)
+                pval_str = f"{pval:.4f}" if isinstance(pval, (int, float)) else str(pval)
+                # Destacar NES visualmente dependiendo de su dirección
+                color = "color: #10b981; font-weight: bold;" if row['NES'] > 0 else "color: #ef4444; font-weight: bold;"
+                html += f"<tr><td>{row['Term']}</td><td style='{color}'>{row['NES']:.3f}</td><td>{fdr_str}</td><td>{pval_str}</td><td>{row['metric']}</td></tr>"
+            html += '</tbody></table></div>'
+        return html
+
+    table_gsea_dim = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56dim/gsea_MSigDB_Hallmark_2020.csv"))
+    table_gsea_bright = load_gsea_table_html(os.path.join(abundance_dir, "gsea/cd56bright/gsea_MSigDB_Hallmark_2020.csv"))
+    table_gsea_global = load_gsea_table_html(os.path.join(abundance_dir, "gsea/global/gsea_MSigDB_Hallmark_2020.csv"))
+
     # 6. Construir el HTML completo
     print("✍️ Ensamblando plantilla HTML...")
     full_html = f"""<!DOCTYPE html>
@@ -513,6 +638,46 @@ def main():
             font-style: italic;
         }}
 
+        /* Carousel Styles */
+        .carousel-container {{
+            position: relative;
+            background: #0f172a;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }}
+        .carousel-slide {{
+            display: none;
+            animation: fade 0.5s;
+        }}
+        .carousel-slide.active {{
+            display: block;
+        }}
+        .carousel-controls {{
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }}
+        .carousel-controls button {{
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }}
+        .carousel-controls button:hover {{
+            background: var(--primary-light);
+        }}
+        @keyframes fade {{
+            from {{opacity: .4}} 
+            to {{opacity: 1}}
+        }}
+
         /* Collapse Button */
         .collapse-btn {{
             display: block;
@@ -602,8 +767,8 @@ def main():
             <button class="nav-btn active" onclick="switchPanel('narrative-panel')">📖 Narrativa de Cierre</button>
             <button class="nav-btn" onclick="switchPanel('abundance-panel')">📊 Abundancia Diferencial</button>
             <button class="nav-btn" onclick="switchPanel('expression-panel')">🧬 Expresión Diferencial (DEGs)</button>
-            <button class="nav-btn" onclick="switchPanel('gsea-panel')">🖼️ Perfiles GSEApy</button>
-            <button class="nav-btn" onclick="switchPanel('wiki-panel')">🗺️ Wiki Obsidian & Conceptos</button>
+            <button class="nav-btn" onclick="switchPanel('gsea-panel')">🖼️ Enriquecimiento de Vías</button>
+            <button class="nav-btn" onclick="switchPanel('conclusions-panel')">🎯 Conclusiones</button>
         </nav>
 
         <!-- PANEL NARRATIVA -->
@@ -621,7 +786,10 @@ def main():
                 <div class="split-half">
                     <h3>Ajuste de GLM Binomial para Proporciones</h3>
                     <p>Este modelo ajusta la probabilidad binomial considerando la profundidad de lectura por donante e incorporando el ensayo técnico como covariable correctora.</p>
-                    <div class="terminal-block">{glm_content}</div>
+                    <details style="background: rgba(30, 41, 59, 0.5); padding: 10px; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; margin-top: 15px;">
+                        <summary style="font-weight: 600; color: var(--primary-light);">Ver Detalles del Modelo Estadístico (GLM)</summary>
+                        <div class="terminal-block" style="margin-top: 10px; cursor: default;">{glm_content}</div>
+                    </details>
                 </div>
                 <div class="split-half">
                     <h3>Abundancia Diferencial</h3>
@@ -642,8 +810,27 @@ def main():
 
         <!-- PANEL EXPRESIÓN DIFERENCIAL -->
         <div id="expression-panel" class="panel">
-            <h1>Expresión Diferencial (DEGs) por Subtipo</h1>
-            <p>Comparativa de las firmas moleculares depuradas por pseudobulk PyDESeq2 ($padj < 0.05$) bajo el diseño aditivo completo <code>~ assay + age_group</code>.</p>
+            <h1>Expresión Diferencial (DEGs)</h1>
+            <p>Comparativa de las firmas moleculares depuradas por modelos pseudobulk y single-cell bajo el diseño aditivo completo <code>~ assay + age_group</code>.</p>
+
+            <div style="margin-bottom: 3rem; background: rgba(30,41,59,0.3); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
+                <h2>NK Cells General (Pool Global Pseudobulk)</h2>
+                <p>Antes de estratificar por subpoblaciones, aplicamos PyDESeq2 sobre el pool completo de células NK a nivel donante ($N = 187$: 152 adultos y 35 ancianos). Este enfoque revela los marcadores más robustos del envejecimiento en el linaje general. Sin embargo, como demostraremos más adelante, analizar a las células NK como un solo bloque monolítico enmascara vías biológicas críticas que operan en direcciones opuestas entre los diferentes subtipos celulares. En este pool global se detectaron 24 genes significativos (FDR &lt; 0.05).</p>
+                <p>A continuación se listan los genes "Hit" que además superaron un umbral estricto de magnitud de cambio (|LFC| &gt; 1):</p>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr><th>Gen</th><th>Log2 Fold Change (LFC)</th><th>p-value ajustado (padj)</th><th>Función Molecular y Relevancia</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>KIR3DL1</strong></td><td>-1.40</td><td>0.0017</td><td>Receptor inhibidor clásico de células NK. Su represión global indica senescencia del repertorio.</td></tr>
+                            <tr><td><strong>SERGEF</strong></td><td>+1.19</td><td>0.0024</td><td>Factor intercambiador de nucleótidos de guanina, implicado en exocitosis.</td></tr>
+                            <tr><td><strong>S100A9</strong></td><td>+1.88</td><td>0.0364</td><td>Alarmina inflamatoria (DAMP). Aumento notable asociado a inflamación crónica.</td></tr>
+                            <tr><td><strong>KIR3DL2</strong></td><td>-1.18</td><td>0.0492</td><td>Receptor inhibidor secundario. Muestra la misma tendencia a la baja que KIR3DL1.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
             <div class="split-container">
                 <!-- COLUMNA CD56DIM -->
@@ -702,17 +889,39 @@ def main():
 
         <!-- PANEL GSEA -->
         <div id="gsea-panel" class="panel">
-            <h1>Enriquecimiento Funcional GSEA Preranked</h1>
-            <p>Dotplots y gráficos de enriquecimiento comparando los análisis funcionales de los subtipos y el pool completo (Global).</p>
+            <h1>Enriquecimiento de Vías (ORA y GSEA)</h1>
+            <p>Gráficos de análisis de sobre-representación (ORA) clásico y dotplots de enriquecimiento GSEA Preranked.</p>
+
+            <div class="image-card" style="margin-bottom: 3rem;">
+                <h3>Análisis de Sobre-Representación (ORA)</h3>
+                <p style="margin-top: 1rem;">Las siguientes figuras muestran las vías biológicas más enriquecidas (UP) y reprimidas (DOWN) utilizando un análisis ORA clásico sobre los genes diferencialmente expresados significativos. (Nota: CD56bright no presentó genes significativos suficientes para un análisis ORA robusto).</p>
+                <div class="split-container" style="align-items: flex-start;">
+                    <div class="split-half">
+                        <h4 style="text-align: center;">NK Cell General (Global)</h4>
+                        <img src="{img_ora_gen_up}" alt="ORA General UP">
+                        <div class="image-caption">Vías inducidas en NK Global (Señalización de Peligro).</div>
+                        <img src="{img_ora_gen_down}" alt="ORA General DOWN" style="margin-top: 2rem;">
+                        <div class="image-caption">Vías reprimidas en NK Global (Pérdida de Frenos).</div>
+                    </div>
+                    <div class="split-half">
+                        <h4 style="text-align: center;">NK CD56dim</h4>
+                        <img src="{img_ora_dim_up}" alt="ORA CD56dim UP">
+                        <div class="image-caption">Vías inducidas en CD56dim (Hiper-activación e Inmunidad Innata).</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Análisis GSEA Preranked</h2>
+
             <div class="methodology-explanation" style="margin-bottom: 20px;">
                 <h3>Metodología GSEA Preranked</h3>
-                <p>En lugar de depender de umbrales estadísticos arbitrarios para seleccionar una lista pequeña de "genes significativos" (Over-Representation Analysis), implementamos el algoritmo de <b>GSEA Preranked</b>. Este método evalúa el espectro continuo completo de los genes expresados, ordenándolos desde los más sobre-expresados hasta los más reprimidos. Esto es sumamente ventajoso para señales de envejecimiento o poblaciones raras (donde el ruido estadístico individual puede ocultar los genes a la penalización múltiple), ya que rescata de manera robusta el movimiento biológicamente coordinado de vías completas, superando el "shot noise" a nivel de gen individual.</p>
+                <p>En lugar de depender de umbrales estadísticos arbitrarios para seleccionar una lista pequeña de "genes significativos" (Over-Representation Analysis), implementamos el algoritmo de <b>GSEA Preranked</b>. Este método evalúa el espectro continuo completo de los genes expresados, ordenándolos desde los más sobre-expresados hasta los más reprimidos. Esto es sumamente ventajoso para señales de envejecimiento o poblaciones raras (donante el ruido estadístico individual puede ocultar los genes a la penalización múltiple), ya que rescata de manera robusta el movimiento biológicamente coordinado de vías completas, superando el "shot noise" a nivel de gen individual.</p>
             </div>
             
             <div class="image-card">
                 <h3>Resumen Comparativo de Vías Hallmarks Significativas</h3>
                 <img src="{img_gsea_compare}" alt="Comparación de GSEA Hallmarks">
-                <div class="image-caption">Comparativa del número de términos enriquecidos y sus scores entre Global, CD56dim y CD56bright.</div>
+                <div class="image-caption">Comparativa del número de términos enriquedidos y sus scores entre Global, CD56dim y CD56bright.</div>
             </div>
 
             <div class="tabs-container" style="margin-top: 2rem;">
@@ -729,12 +938,20 @@ def main():
                         <img src="{img_gsea_dim}" alt="GSEA CD56dim Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked para CD56dim. Se aprecia la represión de TNF-α/NF-κB (enmascaramiento por inflammaging).</div>
                     </div>
+                    <button class="collapse-btn" onclick="toggleCollapse('gsea-table-dim')">Mostrar/Ocultar Tabla Completa de Términos GSEA</button>
+                    <div id="gsea-table-dim" class="collapse-content">
+                        {table_gsea_dim}
+                    </div>
                 </div>
 
                 <div id="gsea-sub-bright" class="sub-panel">
                     <div class="image-card">
                         <img src="{img_gsea_bright}" alt="GSEA CD56bright Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked para CD56bright, exhibiendo represión en OXPHOS/ROS mitocondrial.</div>
+                    </div>
+                    <button class="collapse-btn" onclick="toggleCollapse('gsea-table-bright')">Mostrar/Ocultar Tabla Completa de Términos GSEA</button>
+                    <div id="gsea-table-bright" class="collapse-content">
+                        {table_gsea_bright}
                     </div>
                 </div>
 
@@ -743,14 +960,26 @@ def main():
                         <img src="{img_gsea_global}" alt="GSEA Global Hallmark">
                         <div class="image-caption">Dotplot GSEA Preranked Global. La firma de CD56dim domina completamente, cancelando la biología de la población rara.</div>
                     </div>
+                    <button class="collapse-btn" onclick="toggleCollapse('gsea-table-global')">Mostrar/Ocultar Tabla Completa de Términos GSEA</button>
+                    <div id="gsea-table-global" class="collapse-content">
+                        {table_gsea_global}
+                    </div>
                 </div>
+            </div>
+
+            <h2 style="border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem;">C. Integración Multidimensional de Vías y Genes (Dicotomía Transcriptómica)</h2>
+            <p>Para comprender de forma holística cómo se orquesta funcionalmente el envejecimiento en ambas subpoblaciones de manera simultánea y diseccionar la arquitectura de la dicotomía, hemos clasificado las vías significativas por su firma biológica (Exclusivas de Dim, Exclusivas de Bright, o Compartidas).</p>
+            <p>El siguiente gráfico tabular emula arquitecturas analíticas avanzadas (estilo g:Profiler), mostrando simultáneamente la competencia de NES (panel izquierdo), la matriz de pertenencia de genes a la vía (panel central) y el despliegue del LogFoldChange real del gen en la cabecera (anotación superior). En él se visualizan de manera integrada vías críticas como Apoptosis, Glycolysis, mTORC1 y Oxidative Phosphorylation, revelando cómo los mismos genes subyacentes dirigen comportamientos antagónicos en distintos subtipos.</p>
+            
+            <div class="image-card">
+                <img src="{img_gprofiler}" alt="Gráfico Comparativo Estilo g:Profiler">
+                <div class="image-caption">Figura 9: Matriz de intersección multidimensional. Muestra cómo los genes reguladores se distribuyen y comportan de manera dicotómica entre las dos subpoblaciones senescentes.</div>
             </div>
         </div>
 
-        <!-- PANEL WIKI -->
-        <div id="wiki-panel" class="panel">
-            <h1>Obsidian Wiki & Mapas Conceptuales</h1>
-            {wiki_html}
+        <!-- PANEL CONCLUSIONES -->
+        <div id="conclusions-panel" class="panel">
+            {conclusions_html}
         </div>
 
         <footer>
@@ -760,15 +989,12 @@ def main():
 
     <script>
         function switchPanel(panelId) {{
-            // Desactivar todos los botones de navegación
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
             
-            // Ocultar todos los paneles
             const panels = document.querySelectorAll('.panel');
             panels.forEach(p => p.classList.remove('active'));
             
-            // Activar botón actual y panel
             event.target.classList.add('active');
             document.getElementById(panelId).classList.add('active');
         }}
@@ -800,6 +1026,22 @@ def main():
                 content.classList.add('show');
                 event.target.innerText = "Ocultar genes adicionales";
             }}
+        }}
+        
+        function moveCarousel(id, direction) {{
+            const container = document.getElementById(id);
+            const slides = container.querySelectorAll('.carousel-slide');
+            let activeIndex = 0;
+            slides.forEach((slide, index) => {{
+                if (slide.classList.contains('active')) {{
+                    activeIndex = index;
+                    slide.classList.remove('active');
+                }}
+            }});
+            let newIndex = activeIndex + direction;
+            if (newIndex >= slides.length) newIndex = 0;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            slides[newIndex].classList.add('active');
         }}
     </script>
 </body>
